@@ -1,0 +1,2053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="images/LEAD PILOT LOGO.png">
+<link rel="apple-touch-icon" href="images/LEAD PILOT LOGO.png">
+<title>About LeadPilot | Building a Better Way for Sales Teams to Work</title>
+<meta name="description" content="LeadPilot is built in the UAE by Neuralence Solutions FZCO to bring lead generation, CRM, meetings, and AI sales tools into one simple, connected platform.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+  /* ── BASE & TOKENS ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    background-color: #FFFFFF;
+    overflow-x: hidden;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :root {
+    --purple: #7C3AED;
+    --purple-light: #8B5CF6;
+    --purple-pale: #F3E8FF;
+    --purple-subtle: #FAF5FF;
+    --pink: #EC4899;
+    --orange: #F97316;
+    --grad-text: linear-gradient(135deg, #2563EB 0%, #7C3AED 30%, #EC4899 70%, #F97316 100%);
+    --grad-primary: linear-gradient(135deg, #7C3AED 0%, #EC4899 50%, #F97316 100%);
+    --dark: #0F172A;
+    --dark-heading: #0A0A0F;
+    --text-slate: #475569;
+    --text-muted: #64748B;
+    --border-light: #E2E8F0;
+    --border-subtle: #F1F5F9;
+    --radius-lg: 24px;
+    --radius-md: 16px;
+    --radius-sm: 12px;
+    --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+    --shadow-md: 0 12px 32px rgba(15, 23, 42, 0.06), 0 2px 6px rgba(15, 23, 42, 0.03);
+    --shadow-glow: 0 20px 40px rgba(124, 58, 237, 0.12);
+  }
+
+  /* Container */
+  .container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* Animated Ombré Gradient Text */
+  .ombre-text {
+    background: linear-gradient(135deg, #2563EB 0%, #7C3AED 25%, #EC4899 50%, #F97316 75%, #2563EB 100%);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: textGradientFlow 8s ease infinite;
+    display: inline-block;
+  }
+
+  @keyframes textGradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Section Eyebrow */
+  .section-eyebrow {
+    font-size: 13px;
+    font-weight: 800;
+    color: #7C3AED;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  /* Headings */
+  .page-title {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: #0A0A0F;
+    margin-bottom: 24px;
+  }
+
+  .section-title {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    color: #0A0A0F;
+    margin-bottom: 24px;
+  }
+
+  /* ── 1. GLOBAL NAVIGATION (SHARED COMPONENT - EXACT MATCH WITH LANDING PAGE) ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: #ffffff;
+    border-bottom: 1px solid #F1F5F9;
+    padding: 0 60px;
+    height: 88px;
+    display: flex; align-items: center; justify-content: space-between;
+    transition: all 0.3s ease;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 8px; font-size: 19px; font-weight: 750; color: #0F172A; text-decoration: none; letter-spacing: -0.5px; }
+  .nav-logo img { width: 28px; height: 28px; object-fit: contain; }
+  .nav-links { display: flex; gap: 36px; align-items: center; position: absolute; left: 50%; transform: translateX(-50%); }
+  .nav-links a { color: #475569; text-decoration: none; font-size: 15px; font-weight: 500; display: flex; align-items: center; gap: 4px; transition: color 0.2s ease; }
+  .nav-links a:hover { color: #0F172A; }
+  
+  .nav-dropdown-wrapper {
+    position: relative;
+    height: 88px;
+    display: flex;
+    align-items: center;
+  }
+  .nav-dropdown-trigger {
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  .nav-dropdown-trigger.active {
+    color: var(--purple) !important;
+    font-weight: 600;
+  }
+  .nav-actions { display: flex; gap: 16px; align-items: center; }
+  .nav-actions a { text-decoration: none; font-size: 15px; font-weight: 600; transition: all 0.2s ease; }
+  .btn-ghost-nav { color: #475569; padding: 10px 16px; }
+  .btn-ghost-nav:hover { color: #0F172A; }
+  .btn-outline-nav {
+    border: 1px solid #E2E8F0;
+    border-radius: 9999px;
+    padding: 10px 22px;
+    color: #0F172A;
+    background: #ffffff;
+  }
+  .btn-outline-nav:hover { background: #F8FAFC; border-color: #CBD5E1; }
+  .btn-solid-nav {
+    background: #0F172A;
+    color: #ffffff;
+    border-radius: 9999px;
+    padding: 10px 22px;
+  }
+  .btn-solid-nav:hover { background: #1E293B; }
+
+  /* ── NAVIGATION DROPDOWN & MEGA MENU (EXACT LANDING PAGE MATCH) ── */
+  .mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(12px) !important;
+    width: calc(100vw - 80px);
+    max-width: 1080px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 24px;
+    box-shadow: 0 40px 80px -15px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(15, 23, 42, 0.04);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s;
+    z-index: 1000;
+    overflow: hidden;
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-dropdown-wrapper:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(8px) !important;
+  }
+  .mega-menu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    padding: 40px;
+    background: #FFFFFF;
+    box-sizing: border-box;
+  }
+  .mega-menu-column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+    box-sizing: border-box;
+  }
+  .mega-menu-category {
+    font-size: 11px;
+    font-weight: 700;
+    color: #8B5CF6;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+    padding-left: 12px;
+  }
+  .mega-menu-item {
+    display: flex !important;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 12px !important;
+    border-radius: 14px !important;
+    text-decoration: none !important;
+    background: transparent !important;
+    transition: all 0.2s ease !important;
+    cursor: pointer;
+    text-align: left;
+    margin: 0 !important;
+    box-sizing: border-box;
+  }
+  .mega-menu-item:hover {
+    background: rgba(108, 75, 255, 0.04) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(108, 75, 255, 0.03);
+  }
+  .mega-menu-icon-wrap {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+  .mega-menu-item:hover .mega-menu-icon-wrap {
+    transform: scale(1.05);
+  }
+  .mega-menu-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    box-sizing: border-box;
+  }
+  .mega-menu-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0F172A;
+    line-height: 1.2;
+    transition: color 0.2s ease;
+  }
+  .mega-menu-item:hover .mega-menu-title {
+    color: var(--purple);
+  }
+  .mega-menu-desc {
+    font-size: 12px;
+    font-weight: 450;
+    color: #64748B;
+    line-height: 1.4;
+  }
+  .mega-menu-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 40px;
+    background: #FAF9FB;
+    border-top: 1px solid #F1F5F9;
+    box-sizing: border-box;
+  }
+  .mega-menu-footer-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
+    box-sizing: border-box;
+  }
+  .mega-menu-footer .footer-badge {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--purple);
+    background: rgba(108, 75, 255, 0.08);
+    padding: 4px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+  .mega-menu-footer .footer-text {
+    font-size: 13px;
+    font-weight: 450;
+    color: #64748B;
+  }
+  .mega-menu-footer-link {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--purple) !important;
+    text-decoration: none !important;
+    transition: opacity 0.2s;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .mega-menu-footer-link:hover {
+    opacity: 0.8;
+  }
+
+  /* ── RESOURCES MEGA MENU ── */
+  .mega-menu-resources {
+    width: calc(100vw - 60px) !important;
+    max-width: 1220px !important;
+    border-radius: 26px !important;
+  }
+  .mega-menu-resources-grid {
+    display: grid;
+    grid-template-columns: 370px 1fr;
+    gap: 36px;
+    padding: 36px 40px;
+    background: #FFFFFF;
+    box-sizing: border-box;
+  }
+  .resources-left-col, .resources-right-col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .resource-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .resource-item {
+    display: flex !important;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 14px !important;
+    border-radius: 16px !important;
+    text-decoration: none !important;
+    background: transparent !important;
+    transition: all 0.2s ease !important;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+  .resource-item:hover {
+    background: rgba(108, 75, 255, 0.04) !important;
+    transform: translateY(-1px);
+  }
+  .resource-icon-wrap {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+  .resource-item:hover .resource-icon-wrap {
+    transform: scale(1.05);
+  }
+  .resource-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    flex: 1;
+  }
+  .resource-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0F172A;
+    line-height: 1.2;
+    transition: color 0.2s ease;
+  }
+  .resource-item:hover .resource-title {
+    color: var(--purple, #7C3AED);
+  }
+  .resource-desc {
+    font-size: 12.5px;
+    color: #64748B;
+    line-height: 1.4;
+  }
+  .resource-arrow {
+    color: #CBD5E1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+  .resource-item:hover .resource-arrow {
+    color: var(--purple, #7C3AED);
+    transform: translateX(4px);
+  }
+
+  /* Right Column: Featured Cards */
+  .featured-cards-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .featured-card-main {
+    background: linear-gradient(135deg, rgba(245, 243, 255, 0.75) 0%, rgba(254, 243, 249, 0.75) 50%, rgba(255, 247, 237, 0.75) 100%);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    border-radius: 20px;
+    padding: 28px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .featured-card-main:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 36px rgba(124, 58, 237, 0.06);
+  }
+  .featured-main-content {
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .featured-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 750;
+    letter-spacing: 0.06em;
+    color: #7C3AED;
+    background: rgba(124, 58, 237, 0.1);
+    padding: 4px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+  }
+  .featured-headline {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 21px;
+    font-weight: 800;
+    color: #0F172A;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+  .featured-desc {
+    font-size: 13px;
+    color: #64748B;
+    line-height: 1.5;
+    margin: 0;
+  }
+  .featured-link {
+    font-size: 14px;
+    font-weight: 700;
+    color: #7C3AED !important;
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+    transition: gap 0.2s ease;
+  }
+  .featured-link:hover {
+    gap: 10px;
+  }
+
+  /* Mini Dashboard Illustration in Main Card */
+  .featured-main-visual {
+    position: relative;
+    flex-shrink: 0;
+    width: 290px;
+  }
+  .mini-dashboard-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(15, 23, 42, 0.02);
+    position: relative;
+  }
+  .mini-dash-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #0F172A;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #F1F5F9;
+    margin-bottom: 12px;
+  }
+  .mini-dash-pipeline-title {
+    color: #64748B;
+    font-weight: 600;
+  }
+  .mini-dash-body {
+    display: flex;
+    gap: 14px;
+  }
+  .mini-dash-stats {
+    flex: 1.1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .mini-stat-label {
+    font-size: 10.5px;
+    color: #64748B;
+    font-weight: 500;
+  }
+  .mini-stat-val {
+    font-size: 19px;
+    font-weight: 800;
+    color: #0F172A;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .mini-stat-growth {
+    font-size: 11px;
+    font-weight: 700;
+    color: #10B981;
+    background: rgba(16, 185, 129, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  .mini-chart-svg {
+    margin-top: 6px;
+    width: 100%;
+    height: 34px;
+  }
+  .mini-dash-stages {
+    flex: 0.9;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 11px;
+    color: #475569;
+    justify-content: center;
+  }
+  .stage-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+  }
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .dot-purple { background: #2563EB; }
+  .dot-violet { background: #7C3AED; }
+  .dot-orange { background: #EA580C; }
+  .dot-pink { background: #EC4899; }
+  .stage-num {
+    font-weight: 700;
+    color: #0F172A;
+  }
+
+  .floating-closed-won-badge {
+    position: absolute;
+    bottom: -14px;
+    right: -10px;
+    background: #FFFFFF;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 14px;
+    padding: 10px 14px;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 5;
+  }
+  .won-check-circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #10B981;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .won-text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .won-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #0F172A;
+  }
+  .won-growth {
+    font-size: 10.5px;
+    font-weight: 600;
+    color: #10B981;
+  }
+
+  /* Featured Card 2 (Secondary Horizontal) */
+  .featured-card-secondary {
+    background: #FFFFFF;
+    border: 1px solid #F1F5F9;
+    border-radius: 16px;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .featured-card-secondary:hover {
+    border-color: #E2E8F0;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+  }
+  .secondary-card-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .secondary-text-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .secondary-title {
+    font-size: 14px;
+    font-weight: 750;
+    color: #0F172A;
+  }
+  .secondary-subtitle {
+    font-size: 13px;
+    color: #64748B;
+  }
+  .secondary-card-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .secondary-cta-link {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #7C3AED !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease;
+  }
+  .secondary-cta-link:hover {
+    color: #6D28D9 !important;
+  }
+  .calendar-icon-box {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: rgba(124, 58, 237, 0.08);
+    color: #7C3AED;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* Resources Footer Strip */
+  .mega-menu-resources-footer {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 40px;
+    background: #FBF9FE;
+    border-top: 1px solid #F1F5F9;
+    box-sizing: border-box;
+  }
+  .resources-footer-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #7C3AED 0%, #EC4899 100%);
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .resources-footer-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .res-footer-title {
+    font-size: 14px;
+    font-weight: 750;
+    color: #0F172A;
+  }
+  .res-footer-desc {
+    font-size: 13px;
+    color: #64748B;
+  }
+
+  /* Mobile navigation styles managed globally by css/navbar.css */
+
+  /* ── SECTION 1 — HERO ── */
+  .about-hero {
+    padding: 130px 0 110px 0;
+    background-color: #FFFFFF;
+    background-image: 
+      radial-gradient(ellipse 65% 55% at 85% 20%, rgba(240, 233, 255, 0.40) 0%, rgba(255, 255, 255, 0) 70%),
+      radial-gradient(ellipse 55% 45% at 15% 80%, rgba(254, 238, 230, 0.35) 0%, rgba(255, 255, 255, 0) 70%);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 44% 56%;
+    gap: 56px;
+    align-items: center;
+  }
+  .hero-left {
+    max-width: 540px;
+  }
+  .hero-subhead {
+    font-size: 22px;
+    font-weight: 600;
+    color: #0F172A;
+    margin-bottom: 18px;
+    line-height: 1.35;
+  }
+  .hero-body {
+    font-size: 17px;
+    color: #475569;
+    line-height: 1.65;
+  }
+  .hero-accent-line {
+    width: 48px;
+    height: 4px;
+    background: var(--purple);
+    border-radius: 2px;
+    margin-top: 32px;
+  }
+  .hero-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    width: 100%;
+  }
+  .hero-img-wrap {
+    width: 100%;
+    max-width: 740px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+  }
+  .hero-img-wrap img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    mask-image: radial-gradient(ellipse 92% 92% at 50% 50%, #000 75%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 92% 92% at 50% 50%, #000 75%, transparent 100%);
+    filter: none;
+  }
+
+  /* ── SECTION 2 — WHY WE BUILT LEADPILOT ── */
+  .why-section {
+    padding: 110px 0;
+    background: #FFFFFF;
+    border-top: 1px solid #F1F5F9;
+  }
+  .why-grid {
+    display: grid;
+    grid-template-columns: 46% 54%;
+    gap: 60px;
+    align-items: flex-start;
+  }
+  .why-left h2 {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: #0A0A0F;
+  }
+  .why-accent-line {
+    width: 48px;
+    height: 4px;
+    background: var(--purple);
+    border-radius: 2px;
+    margin-top: 28px;
+  }
+  .why-right-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 8px;
+  }
+  .why-lead-para {
+    font-size: 20px;
+    font-weight: 500;
+    color: #1E293B;
+    line-height: 1.5;
+  }
+  .why-body-para {
+    font-size: 17px;
+    color: #64748B;
+    line-height: 1.65;
+  }
+  .why-bold-statement {
+    font-size: 24px;
+    font-weight: 800;
+    color: #0F172A;
+    line-height: 1.35;
+    margin-top: 8px;
+  }
+  .why-final-line {
+    font-size: 17px;
+    color: #64748B;
+  }
+
+  /* ── SECTION 3 — OUR MISSION ── */
+  .mission-section {
+    position: relative;
+    padding: 140px 0 130px 0;
+    background-color: #FFFFFF;
+    background-image: 
+      radial-gradient(circle at 85% 25%, rgba(240, 233, 255, 0.45) 0%, rgba(255, 255, 255, 0) 65%),
+      radial-gradient(circle at 40% 65%, rgba(254, 238, 230, 0.40) 0%, rgba(255, 255, 255, 0) 55%);
+    overflow: hidden;
+    min-height: 540px;
+    display: flex;
+    align-items: center;
+  }
+  .mission-landscape-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .mission-landscape-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right top;
+    display: block;
+    mask-image: linear-gradient(to right, transparent 0%, transparent 28%, rgba(0, 0, 0, 0.12) 40%, rgba(0, 0, 0, 0.75) 58%, #000 78%, #000 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 28%, rgba(0, 0, 0, 0.12) 40%, rgba(0, 0, 0, 0.75) 58%, #000 78%, #000 100%);
+  }
+  .mission-section .container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+  }
+  .mission-content {
+    max-width: 520px;
+  }
+  .mission-section .section-eyebrow {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #7C3AED;
+    margin-bottom: 16px;
+  }
+  .mission-section .section-title {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 58px;
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: #0A0A0F;
+    margin-bottom: 22px;
+  }
+  .mission-accent-line {
+    width: 48px;
+    height: 4px;
+    background: var(--purple);
+    border-radius: 2px;
+    margin-bottom: 28px;
+  }
+  .mission-body {
+    font-size: 18px;
+    color: #475569;
+    line-height: 1.7;
+  }
+  .mission-body .mission-lead {
+    font-size: 20px;
+    font-weight: 600;
+    color: #0F172A;
+    margin-bottom: 12px;
+  }
+  .mission-body p + p {
+    margin-top: 10px;
+  }
+
+  /* ── SECTION 4 — THE PEOPLE BEHIND LEADPILOT ── */
+  .people-section {
+    position: relative;
+    padding: 140px 0 130px 0;
+    background-color: #FFFFFF;
+    background-image: 
+      radial-gradient(ellipse 65% 55% at 85% 25%, rgba(240, 233, 255, 0.40) 0%, rgba(255, 255, 255, 0) 70%),
+      radial-gradient(ellipse 55% 45% at 15% 75%, rgba(254, 238, 230, 0.35) 0%, rgba(255, 255, 255, 0) 70%);
+    overflow: hidden;
+  }
+  .people-grid {
+    display: grid;
+    grid-template-columns: 44% 56%;
+    gap: 56px;
+    align-items: center;
+  }
+  .people-left {
+    max-width: 520px;
+  }
+  .people-section .section-eyebrow {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #7C3AED;
+    margin-bottom: 16px;
+  }
+  .people-section .section-title {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 58px;
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: #0A0A0F;
+    margin-bottom: 24px;
+  }
+  .people-copy-block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .people-intro-text {
+    font-size: 19px;
+    font-weight: 500;
+    color: #334155;
+    line-height: 1.5;
+  }
+  .people-tags-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .people-pill-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    background: rgba(124, 58, 237, 0.06);
+    border: 1px solid rgba(124, 58, 237, 0.12);
+    border-radius: 9999px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #7C3AED;
+  }
+  .people-highlight-statement {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0F172A;
+    line-height: 1.5;
+  }
+  .people-values-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 4px;
+  }
+  .people-value-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #475569;
+  }
+  .people-dot-purple {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #7C3AED;
+  }
+  .people-dot-pink {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #EC4899;
+  }
+  .people-dot-orange {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #F97316;
+  }
+  .people-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    width: 100%;
+  }
+  .people-img-wrap {
+    width: 100%;
+    max-width: 700px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+  }
+  .people-img-wrap img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    mask-image: radial-gradient(ellipse 92% 92% at 50% 50%, #000 75%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 92% 92% at 50% 50%, #000 75%, transparent 100%);
+    filter: none;
+  }
+
+  /* ── SECTION 5 — OUR CORE VALUES ── */
+  .values-section {
+    padding: 110px 0;
+    background: #FAF8FF;
+  }
+  .values-header {
+    margin-bottom: 48px;
+  }
+  
+  /* Values 5-column / 3-column layout matching reference */
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    align-items: stretch;
+  }
+
+  .value-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 20px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03);
+  }
+  .value-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(124, 58, 237, 0.08);
+    border-color: #CBD5E1;
+  }
+  .value-icon-circle {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: #F3E8FF;
+    color: #7C3AED;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .value-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 10px;
+  }
+  .value-card p {
+    font-size: 14px;
+    color: #64748B;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  .value-tag {
+    font-size: 11px;
+    font-weight: 800;
+    color: #7C3AED;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    display: inline-block;
+  }
+
+  /* Central Tile */
+  .values-central-tile {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+    background: linear-gradient(135deg, #7C3AED 0%, #EC4899 50%, #F97316 100%);
+    border-radius: 24px;
+    padding: 40px 28px;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(124, 58, 237, 0.22);
+    position: relative;
+    overflow: hidden;
+  }
+  .values-central-tile::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .central-icon {
+    width: 46px;
+    height: 46px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    color: #FFFFFF;
+  }
+  .values-central-tile h2 {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1.15;
+    color: #FFFFFF;
+    margin-bottom: 16px;
+  }
+  .central-accent-line {
+    width: 36px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 2px;
+  }
+
+  /* Explicit grid column mappings */
+  .grid-val-1 { grid-column: 1 / 2; grid-row: 1 / 2; }
+  .grid-val-2 { grid-column: 2 / 3; grid-row: 1 / 2; }
+  .grid-val-3 { grid-column: 4 / 5; grid-row: 1 / 2; }
+  .grid-val-4 { grid-column: 5 / 6; grid-row: 1 / 2; }
+  .grid-val-5 { grid-column: 1 / 3; grid-row: 2 / 3; }
+  .grid-val-6 { grid-column: 4 / 6; grid-row: 2 / 3; }
+
+  /* ── SECTION 6 — WHERE WE'RE FROM ── */
+  .location-section {
+    position: relative;
+    padding: 150px 0 140px 0;
+    background-color: #FFFFFF;
+    background-image: 
+      radial-gradient(circle at 75% 30%, rgba(240, 233, 255, 0.45) 0%, rgba(255, 255, 255, 0) 65%),
+      radial-gradient(circle at 35% 70%, rgba(254, 238, 230, 0.40) 0%, rgba(255, 255, 255, 0) 55%);
+    overflow: hidden;
+    min-height: 580px;
+    display: flex;
+    align-items: center;
+  }
+
+  .location-landscape-wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 74vw;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .location-landscape-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: right bottom;
+    display: block;
+    mix-blend-mode: multiply;
+    mask-image: linear-gradient(to right, transparent 0%, transparent 10%, rgba(0, 0, 0, 0.15) 25%, rgba(0, 0, 0, 0.8) 48%, #000 68%, #000 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 10%, rgba(0, 0, 0, 0.15) 25%, rgba(0, 0, 0, 0.8) 48%, #000 68%, #000 100%);
+  }
+
+  .location-section .container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .location-content {
+    max-width: 480px;
+  }
+
+  .location-section .section-eyebrow {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #7C3AED;
+    margin-bottom: 20px;
+  }
+
+  .location-section .section-title {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 1.06;
+    letter-spacing: -0.035em;
+    color: #0A0A0F;
+    margin-bottom: 24px;
+  }
+
+  .location-body {
+    font-size: 17px;
+    color: #475569;
+    line-height: 1.65;
+  }
+
+  .location-body p + p {
+    margin-top: 10px;
+  }
+
+  /* Glassmorphism Floating Location Card */
+  .location-card-overlay {
+    position: relative;
+    z-index: 4;
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-radius: 26px;
+    padding: 24px 28px;
+    width: 350px;
+    margin-bottom: 12px;
+    box-shadow: 
+      0 20px 40px rgba(124, 58, 237, 0.06), 
+      0 4px 14px rgba(15, 23, 42, 0.03);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .location-card-overlay:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+      0 26px 50px rgba(124, 58, 237, 0.10), 
+      0 6px 18px rgba(15, 23, 42, 0.05);
+  }
+
+  .location-card-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .location-pin-circle {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(124, 58, 237, 0.1);
+    color: #7C3AED;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .location-company-name {
+    font-size: 15px;
+    font-weight: 800;
+    color: #0F172A;
+    line-height: 1.3;
+  }
+
+  .location-address {
+    font-size: 13.5px;
+    color: #475569;
+    line-height: 1.45;
+  }
+
+  .location-map-link {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #7C3AED;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.2s ease;
+  }
+  .location-map-link:hover {
+    color: #6D28D9;
+    text-decoration: underline;
+  }
+
+  /* ── SECTION 7 — FINAL CTA ── */
+  .cta-section {
+    padding: 80px 0 100px 0;
+    background: #FFFFFF;
+  }
+  .cta-card-box {
+    background: linear-gradient(180deg, #FAF8FF 0%, #F3E8FF 100%);
+    border: 1px solid #E9D5FF;
+    border-radius: 28px;
+    padding: 60px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .cta-icon-wrap {
+    width: 52px;
+    height: 52px;
+    background: #FFFFFF;
+    border-radius: 16px;
+    color: #7C3AED;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px auto;
+    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.12);
+  }
+  .cta-title {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #0A0A0F;
+    margin-bottom: 16px;
+  }
+  .cta-desc {
+    font-size: 17px;
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 32px;
+  }
+  .cta-btn-group {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+  }
+  .btn-grad-cta {
+    background: linear-gradient(135deg, #7C3AED 0%, #EC4899 100%);
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 14px 28px;
+    border-radius: 9999px;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.25);
+    transition: all 0.2s ease;
+  }
+  .btn-grad-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(124, 58, 237, 0.35);
+  }
+  .btn-outline-cta {
+    background: #FFFFFF;
+    color: #0F172A;
+    border: 1px solid #E2E8F0;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 14px 28px;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .btn-outline-cta:hover {
+    background: #F8FAFC;
+    border-color: #CBD5E1;
+  }
+
+  /* ── 8. GLOBAL DARK FOOTER (EXACT SHARED COMPONENT) ── */
+  /* Footer styles are governed by css/footer.css & components/footer.js */
+
+  /* ── RESPONSIVE MEDIA QUERIES ── */
+  @media (max-width: 1024px) {
+    nav { padding: 0 30px; }
+    .nav-links { display: none; }
+    .mobile-nav-toggle { display: flex; }
+    
+    .hero-grid, .why-grid, .people-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .hero-left, .people-left {
+      max-width: 100%;
+    }
+    .hero-right {
+      justify-content: center;
+    }
+
+    .mission-section {
+      padding: 80px 0 0 0;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .mission-content {
+      max-width: 100%;
+    }
+    .mission-landscape-wrap {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      margin-top: 40px;
+    }
+    .mission-landscape-img {
+      mask-image: linear-gradient(to bottom, transparent 0%, #000 25%);
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 25%);
+    }
+    
+    .values-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .values-central-tile {
+      grid-column: 1 / -1;
+      grid-row: auto;
+      padding: 36px 28px;
+    }
+    .grid-val-1, .grid-val-2, .grid-val-3, .grid-val-4, .grid-val-5, .grid-val-6 {
+      grid-column: auto;
+      grid-row: auto;
+    }
+
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container { padding: 0 20px; }
+    .about-hero { padding: 60px 0; }
+    .page-title { font-size: 42px; }
+    .section-title { font-size: 34px; }
+    .why-left h2 { font-size: 36px; }
+    
+    .values-grid { grid-template-columns: 1fr; }
+    
+    .location-banner-wrap { height: 380px; }
+    .location-card-overlay {
+      position: relative;
+      bottom: auto;
+      right: auto;
+      width: 100%;
+      margin-top: 16px;
+    }
+    
+    .cta-card-box { padding: 40px 20px; }
+    .cta-title { font-size: 30px; }
+    .cta-btn-group { flex-direction: column; width: 100%; }
+    .btn-grad-cta, .btn-outline-cta { width: 100%; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 1. GLOBAL NAVIGATION (EXACT LANDING PAGE COMPONENT MATCH) -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="images/LEAD PILOT LOGO.png" alt="LeadPilot Logo" class="nav-logo-img" style="width: 28px; height: 28px; object-fit: contain;">
+    LeadPilot
+  </a>
+  <div class="nav-links">
+    <!-- 1. PRODUCT DROPDOWN -->
+    <div class="nav-dropdown-wrapper">
+      <a href="#" class="nav-dropdown-trigger nav-link-product">Product</a>
+      <div class="mega-menu">
+        <div class="mega-menu-grid">
+          <!-- Column 1: Lead Generation -->
+          <div class="mega-menu-column">
+            <div class="mega-menu-category">Lead Generation</div>
+            
+            <a href="lead-generator.html" class="mega-menu-item">
+              <div class="mega-menu-icon-wrap" style="background: rgba(37, 99, 235, 0.08); color: #2563EB;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21l-6-6" /><circle cx="15" cy="9" r="3" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">Lead Generator</span>
+                <span class="mega-menu-desc">Find verified companies and decision-makers using advanced filters.</span>
+              </div>
+            </a>
+            
+            <a href="lead-forms.html" class="mega-menu-item">
+              <div class="mega-menu-icon-wrap" style="background: rgba(16, 163, 74, 0.08); color: #16A34A;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><line x1="9" y1="9" x2="15" y2="9" /><line x1="9" y1="13" x2="15" y2="13" /><line x1="9" y1="17" x2="13" y2="17" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">AI Lead Forms</span>
+                <span class="mega-menu-desc">Capture inbound leads with smart forms that sync with CRM.</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Column 2: Sales Pipeline -->
+          <div class="mega-menu-column">
+            <div class="mega-menu-category">Sales Pipeline</div>
+            
+            <a href="crm-pipeline.html" class="mega-menu-item">
+              <div class="mega-menu-icon-wrap" style="background: rgba(234, 88, 12, 0.08); color: #EA580C;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 3v18h18" /><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">CRM &amp; Pipeline</span>
+                <span class="mega-menu-desc">Manage leads, deals, and your complete pipeline from one workspace.</span>
+              </div>
+            </a>
+            
+            <a href="meeting-booking.html" class="mega-menu-item">
+              <div class="mega-menu-icon-wrap" style="background: rgba(37, 99, 235, 0.08); color: #2563EB;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /><path d="M9 16l2 2 4-4" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">Meeting Booking</span>
+                <span class="mega-menu-desc">Let prospects book meetings instantly with calendar sync.</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Column 3: AI & Automation -->
+          <div class="mega-menu-column">
+            <div class="mega-menu-category">AI &amp; Automation</div>
+            
+            <a href="ai-sales-assistant.html" class="mega-menu-item">
+              <div class="mega-menu-icon-wrap" style="background: rgba(124, 58, 237, 0.08); color: #7C3AED;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">AI Sales Assistant</span>
+                <span class="mega-menu-desc">AI assistance for research and sales productivity.</span>
+              </div>
+            </a>
+            
+            <a href="ai-chatbot.html" class="mega-menu-item">
+              <div class="mega-menu-icon-wrap" style="background: rgba(5, 150, 105, 0.08); color: #059669;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /><path d="M8 10h.01M12 10h.01M16 10h.01" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">AI Chatbot</span>
+                <span class="mega-menu-desc">Automatically qualify website visitors and convert them.</span>
+              </div>
+            </a>
+
+            <a href="ai-sales-coach.html" class="mega-menu-item">
+              <div class="mega-menu-icon-wrap" style="background: rgba(124, 58, 237, 0.08); color: #7C3AED;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">AI Sales Coach</span>
+                <span class="mega-menu-desc">Analyze conversations and improve performance with AI.</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Column 4: Outreach -->
+          <div class="mega-menu-column">
+            <div class="mega-menu-category">Outreach</div>
+            
+            <a href="ai-sales-sequences.html" class="mega-menu-item">
+              <div class="mega-menu-icon-wrap" style="background: rgba(217, 119, 6, 0.08); color: #D97706;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">Sales Sequences</span>
+                <span class="mega-menu-desc">Build automated multi-step email and follow-up sequences.</span>
+              </div>
+            </a>
+            
+            <a href="quotations.html" class="mega-menu-item">
+<div class="mega-menu-icon-wrap" style="background: rgba(225, 29, 72, 0.08); color: #E11D48;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">Quotations</span>
+                <span class="mega-menu-desc">Generate proposals in seconds with built-in workflows.</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Mega Menu Footer -->
+        <div class="mega-menu-footer">
+          <div class="mega-menu-footer-left">
+            <span class="footer-badge">Everything connected.</span>
+            <span class="footer-text">LeadPilot combines lead generation, CRM, meetings, automation, AI, and sales coaching.</span>
+          </div>
+          <a href="index.html#tools" class="mega-menu-footer-link">View All Products →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRICING LINK -->
+    <a href="pricing.html" class="nav-link-pricing">Pricing</a>
+
+    <!-- 2. RESOURCES DROPDOWN -->
+    <div class="nav-dropdown-wrapper">
+      <a href="#" class="nav-dropdown-trigger nav-link-resources">Resources</a>
+      <div class="mega-menu mega-menu-resources">
+        <div class="mega-menu-resources-grid">
+          <!-- Left Column: RESOURCES -->
+          <div class="resources-left-col">
+            <div class="mega-menu-category">RESOURCES</div>
+            <div class="resource-items-list">
+                <!-- Item 1: Blog -->
+                <a href="blog.html" class="resource-item">
+                  <div class="resource-icon-wrap" style="background: rgba(124, 58, 237, 0.08); color: #7C3AED;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+                  </div>
+                  <div class="resource-text">
+                    <span class="resource-title">Blog</span>
+                    <span class="resource-desc">Product updates, sales insights, and industry trends.</span>
+                  </div>
+                  <div class="resource-arrow">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </div>
+                </a>
+
+                <!-- Item 2: Case Studies -->
+                <a href="case-studies.html" class="resource-item">
+                  <div class="resource-icon-wrap" style="background: rgba(234, 88, 12, 0.08); color: #EA580C;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </div>
+                  <div class="resource-text">
+                    <span class="resource-title">Case Studies</span>
+                    <span class="resource-desc">Real customer stories, results, and success journeys.</span>
+                  </div>
+                  <div class="resource-arrow">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </div>
+                </a>
+
+                <!-- Item 3: Free Resources -->
+                <a href="free-resources.html" class="resource-item">
+                  <div class="resource-icon-wrap" style="background: rgba(16, 185, 129, 0.08); color: #10B981;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                  </div>
+                  <div class="resource-text">
+                    <span class="resource-title">Free Resources</span>
+                    <span class="resource-desc">Templates, ebooks, playbooks, and checklists.</span>
+                  </div>
+                  <div class="resource-arrow">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </div>
+                </a>
+
+                <!-- Item 4: Webinars -->
+                <a href="webinars.html" class="resource-item">
+                  <div class="resource-icon-wrap" style="background: rgba(37, 99, 235, 0.08); color: #2563EB;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                  </div>
+                  <div class="resource-text">
+                    <span class="resource-title">Webinars</span>
+                    <span class="resource-desc">Live demos, training sessions, and product walkthroughs.</span>
+                  </div>
+                  <div class="resource-arrow">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+          <!-- Right Column: FEATURED -->
+          <div class="resources-right-col">
+            <div class="mega-menu-category">FEATURED</div>
+            <div class="featured-cards-wrap">
+              <!-- Featured Card 1 (Large Main Card) -->
+              <div class="featured-card-main">
+                <div class="featured-main-content">
+                  <span class="featured-badge">CASE STUDY</span>
+                  <h3 class="featured-headline">How sales teams close more deals with LeadPilot</h3>
+                  <p class="featured-desc">See how businesses simplified lead generation, CRM and follow-ups in one workspace.</p>
+                  <a href="case-studies.html" class="featured-link">Read Case Study &rarr;</a>
+                </div>
+                
+                <!-- Dashboard UI Graphic Illustration -->
+                <div class="featured-main-visual">
+                  <div class="mini-dashboard-card">
+                    <div class="mini-dash-header">
+                      <div class="mini-dash-title">Deals Overview</div>
+                      <div class="mini-dash-pipeline-title">Pipeline</div>
+                    </div>
+                    <div class="mini-dash-body">
+                      <div class="mini-dash-stats">
+                        <div class="mini-stat-label">Total Deals</div>
+                        <div class="mini-stat-val">248 <span class="mini-stat-growth">↑ 32.6%</span></div>
+                        <svg width="140" height="50" viewBox="0 0 140 50" fill="none" class="mini-chart-svg">
+                          <path d="M0 42 C 20 40, 35 30, 50 35 C 65 40, 80 18, 100 24 C 120 30, 130 10, 140 8" stroke="#7C3AED" stroke-width="2.5" fill="none"/>
+                        </svg>
+                      </div>
+                      <div class="mini-dash-stages">
+                        <div class="stage-row"><span class="dot dot-purple"></span> Qualified <span class="stage-num">82</span></div>
+                        <div class="stage-row"><span class="dot dot-violet"></span> Proposal <span class="stage-num">64</span></div>
+                        <div class="stage-row"><span class="dot dot-orange"></span> Negotiation <span class="stage-num">48</span></div>
+                        <div class="stage-row"><span class="dot dot-pink"></span> Closed Won <span class="stage-num">54</span></div>
+                      </div>
+                    </div>
+                    <!-- Floating Badge -->
+                    <div class="floating-closed-won-badge">
+                      <div class="won-check-circle">✓</div>
+                      <div class="won-text-block">
+                        <div class="won-title">Closed Won</div>
+                        <div class="won-growth">↑ 28% vs last month</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Featured Card 2 (Smaller Horizontal Card) -->
+              <div class="featured-card-secondary">
+                <div class="secondary-card-left">
+                  <span class="featured-badge">WEBINAR</span>
+                  <div class="secondary-text-group">
+                    <span class="secondary-title">AI for Modern Sales Teams</span>
+                    <span class="secondary-subtitle">Join our next live session.</span>
+                  </div>
+                </div>
+                <div class="secondary-card-right">
+                  <a href="webinars.html" class="secondary-cta-link">Reserve Your Seat &rarr;</a>
+                  <div class="calendar-icon-box">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mega Menu Footer Strip (No "Browse all resources" button) -->
+        <div class="mega-menu-resources-footer">
+          <div class="resources-footer-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+          </div>
+          <div class="resources-footer-text">
+            <span class="res-footer-title">Everything connected.</span>
+            <span class="res-footer-desc">Learn how LeadPilot helps sales teams generate leads, manage deals and automate repetitive work.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT LINK -->
+    <a href="about.html" class="nav-link-about active" style="color: #0F172A; font-weight: 700;">About</a>
+  </div>
+  <div class="nav-actions">
+    <a href="index.html#cta" class="btn-ghost-nav">Login</a>
+    <a href="index.html#cta" class="btn-outline-nav">Book Demo</a>
+    <a href="index.html#cta" class="btn-solid-nav">Start Free Trial</a>
+  </div>
+
+  <button class="mobile-nav-toggle" aria-label="Toggle Menu">
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+  </button>
+</nav>
+
+
+
+
+<!-- ── SECTION 1 — HERO ── -->
+<section class="about-hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <span class="section-eyebrow">ABOUT LEADPILOT</span>
+        <h1 class="page-title">We are <span class="ombre-text">LeadPilot.</span></h1>
+        <p class="hero-subhead">We’re building a better way for sales teams to work.</p>
+        <p class="hero-body">LeadPilot is built in the UAE by a team that believes sales software should make work simpler — not give you more work to manage.</p>
+        <div class="hero-accent-line"></div>
+      </div>
+      
+      <div class="hero-right">
+        <div class="hero-img-wrap">
+          <img src="images/hero-infographic-clean.png" alt="LeadPilot 3D Platform Infographic">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── SECTION 2 — WHY WE BUILT LEADPILOT ── -->
+<section class="why-section">
+  <div class="container">
+    <div class="why-grid">
+      <div class="why-left">
+        <h2>So why did we build <span class="ombre-text">LeadPilot?</span></h2>
+        <div class="why-accent-line"></div>
+      </div>
+      
+      <div class="why-right-content">
+        <p class="why-lead-para">Because sales teams were working across too many disconnected tools.</p>
+        <p class="why-body-para">Leads in one place. Follow-ups somewhere else.<br>Meetings somewhere else. Quotes somewhere else.</p>
+        <p class="why-bold-statement">We thought it should all work together.</p>
+        <p class="why-final-line">That’s where LeadPilot started.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── SECTION 3 — OUR MISSION ── -->
+<section class="mission-section">
+  <!-- Single continuous canvas: 100% full-bleed landscape background -->
+  <div class="mission-landscape-wrap">
+    <img src="images/mission-mountain.jpg" alt="LeadPilot Mission Mountain Summit with Flag" class="mission-landscape-img">
+  </div>
+
+  <div class="container">
+    <div class="mission-content">
+      <span class="section-eyebrow">OUR MISSION</span>
+      <h2 class="section-title">Make selling <span class="ombre-text">simpler.</span></h2>
+      <div class="mission-accent-line"></div>
+      <div class="mission-body">
+        <p class="mission-lead">Not by adding another tool.</p>
+        <p>By bringing the work sales teams already do into one connected place — so they can spend less time managing software and more time actually selling.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── SECTION 4 — THE PEOPLE BEHIND LEADPILOT ── -->
+<section class="people-section">
+  <div class="container">
+    <div class="people-grid">
+      <div class="people-left">
+        <span class="section-eyebrow">THE PEOPLE BEHIND LEADPILOT</span>
+        <h2 class="section-title">It’s all about the <span class="ombre-text">people.</span></h2>
+        
+        <div class="people-copy-block">
+          <p class="people-intro-text">LeadPilot is built by a small team in the UAE.</p>
+
+          <div class="people-tags-row">
+            <span class="people-pill-tag">We design.</span>
+            <span class="people-pill-tag">We build.</span>
+            <span class="people-pill-tag">We improve.</span>
+          </div>
+
+          <p class="people-highlight-statement">Every feature starts with a real customer problem — not a roadmap.</p>
+
+          <div class="people-values-list">
+            <div class="people-value-item">
+              <span class="people-dot-purple"></span>
+              <span>Simple software.</span>
+            </div>
+            <div class="people-value-item">
+              <span class="people-dot-pink"></span>
+              <span>Thoughtful decisions.</span>
+            </div>
+            <div class="people-value-item">
+              <span class="people-dot-orange"></span>
+              <span>Less busywork.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="people-right">
+        <div class="people-img-wrap">
+          <img src="images/team-network-clean.png" alt="LeadPilot Team and Network Infographic">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── SECTION 5 — OUR CORE VALUES ── -->
+<section class="values-section">
+  <div class="container">
+    <div class="values-header">
+      <span class="section-eyebrow">OUR CORE VALUES</span>
+    </div>
+    
+    <div class="values-grid">
+      <!-- VALUE 1 -->
+      <div class="value-card grid-val-1">
+        <div>
+          <div class="value-icon-circle">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          </div>
+          <h3>Keep it simple.</h3>
+          <p>If something can be easier, make it easier.</p>
+        </div>
+        <div>
+          <span class="value-tag">#SIMPLICITY</span>
+        </div>
+      </div>
+      
+      <!-- VALUE 2 -->
+      <div class="value-card grid-val-2">
+        <div>
+          <div class="value-icon-circle">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+          </div>
+          <h3>Build things that matter.</h3>
+          <p>Work on things that actually make a difference.</p>
+        </div>
+        <div>
+          <span class="value-tag">#BUILD</span>
+        </div>
+      </div>
+
+      <!-- CENTRAL DOMINANT TILE -->
+      <div class="values-central-tile grid-val-center">
+        <div class="central-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" /></svg>
+        </div>
+        <h2>Our core<br>values.</h2>
+        <div class="central-accent-line"></div>
+      </div>
+      
+      <!-- VALUE 3 -->
+      <div class="value-card grid-val-3">
+        <div>
+          <div class="value-icon-circle">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </div>
+          <h3>Stay curious.</h3>
+          <p>Ask why. Try things. Keep learning.</p>
+        </div>
+        <div>
+          <span class="value-tag">#CURIOSITY</span>
+        </div>
+      </div>
+      
+      <!-- VALUE 4 -->
+      <div class="value-card grid-val-4">
+        <div>
+          <div class="value-icon-circle">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+          </div>
+          <h3>Own the outcome.</h3>
+          <p>Don’t just finish the task. Care about what happens after.</p>
+        </div>
+        <div>
+          <span class="value-tag">#OWNERSHIP</span>
+        </div>
+      </div>
+      
+      <!-- VALUE 5 -->
+      <div class="value-card grid-val-5">
+        <div>
+          <div class="value-icon-circle">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+          </div>
+          <h3>Move.</h3>
+          <p>Good ideas don’t matter if they never leave the whiteboard.</p>
+        </div>
+        <div>
+          <span class="value-tag">#ACTION</span>
+        </div>
+      </div>
+
+      <!-- VALUE 6 -->
+      <div class="value-card grid-val-6">
+        <div>
+          <div class="value-icon-circle">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          </div>
+          <h3>Listen to users.</h3>
+          <p>Build around real problems, not assumptions.</p>
+        </div>
+        <div>
+          <span class="value-tag">#CUSTOMERFIRST</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── SECTION 6 — WHERE WE'RE FROM ── -->
+<section class="location-section">
+  <!-- Full-bleed background glass skyline illustration layer -->
+  <div class="location-landscape-wrap">
+    <img src="images/dubai-skyline-glass-clean.png" alt="Dubai Skyline Glass 3D Illustration" class="location-landscape-img">
+  </div>
+
+  <div class="container">
+    <!-- Left: Content -->
+    <div class="location-content">
+      <span class="section-eyebrow">WHERE WE’RE FROM</span>
+      <h2 class="section-title">Proudly built<br>in the <span class="ombre-text">UAE.</span></h2>
+      <div class="location-body">
+        <p>LeadPilot is built by Neuralence Solutions FZCO in Dubai.</p>
+        <p>We’re building from the UAE for sales teams<br>wherever business takes them.</p>
+      </div>
+    </div>
+
+    <!-- Right: Glassmorphism Floating Location Card -->
+    <div class="location-card-overlay">
+      <div class="location-card-top">
+        <div class="location-pin-circle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        </div>
+        <div class="location-company-name">Neuralence Solutions FZCO</div>
+      </div>
+      <div class="location-address">
+        Dubai Silicon Oasis<br>
+        Dubai, United Arab Emirates
+      </div>
+      <a href="https://maps.google.com/?q=Dubai+Silicon+Oasis+Dubai+UAE" target="_blank" rel="noopener noreferrer" class="location-map-link">
+        View on map &rarr;
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── SECTION 7 — FINAL CTA ── -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-card-box">
+      <div class="cta-icon-wrap">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" /></svg>
+      </div>
+      <h2 class="cta-title">We’re just getting <span class="ombre-text">started.</span></h2>
+      <p class="cta-desc">LeadPilot will keep changing as the teams using it change.<br><strong>That’s the point.</strong></p>
+      
+      <div class="cta-btn-group">
+        <a href="index.html#cta" class="btn-grad-cta">Start Free Trial &rarr;</a>
+        <a href="index.html#cta" class="btn-outline-cta">Book a Demo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 8. OFFICIAL GLOBAL FOOTER -->
+<script src="components/footer.js"></script>
+
+
+<!-- SHARED NAVBAR CONTROLLER SCRIPT -->
+<script src="components/navbar.js"></script>
+
+</body>
+</html>

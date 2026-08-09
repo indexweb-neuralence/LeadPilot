@@ -1,0 +1,20 @@
+python3 -c "
+import json
+
+with open('/Users/amanamuhammed/.gemini/antigravity/brain/67b9bfad-7c28-4c07-8386-12036697c9aa/.system_generated/logs/transcript_full.jsonl') as f:
+    for line in f:
+        if 'crm-pipeline.html' in line and 'ReplacementContent' in line:
+            try:
+                data = json.loads(line)
+                tool_calls = data.get('tool_calls', [])
+                for tc in tool_calls:
+                    args = tc.get('args', {})
+                    rc = args.get('ReplacementContent', '')
+                    if 'function initHero' in rc or 'function initKanban' in rc:
+                        print('Found matching tool call! Len:', len(rc))
+                        with open('restored_js_block.js', 'w') as out:
+                            out.write(rc)
+                        print('Saved restored_js_block.js!')
+            except Exception as e:
+                pass
+"

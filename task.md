@@ -1,0 +1,54 @@
+# Scroll Expansion & Showcase Redesign Task List
+
+- [x] Implementation Phase 1: Background Curves & Card Aesthetics (HTML/CSS)
+  - [x] Add background grid, subtle curved wave paths, and ambient glows behind cards.
+  - [x] Configure card heights to `840px` and internal paddings to `40px`.
+  - [x] Set thin, glassmorphic borders on cards and circular glass connectors.
+- [x] Implementation Phase 2: High-Fidelity Mockups & HTML Refinements
+  - [x] Rebuild Card 1: Browser chrome window, left panel logo/meeting text, right panel 5x7 calendar grid and time slots, style preview theme pills.
+  - [x] Rebuild Card 2: Dotted vertical lines, 4 pipeline nodes (booked, qualify, passed, assigned), rep card gradient.
+  - [x] Rebuild Card 3: CRM captured widget, User/Pipeline KPI metrics widget cards, horizontal reminder nodes flow, LeadPilot logo footer.
+- [x] Implementation Phase 3: React Showcase Component (how-it-works-dark.tsx)
+  - [x] Rebuild the Framer Motion transforms and SVG background curves.
+  - [x] Adapt all refined mockup calendars, pipelines, CRM activities, and reminder timelines into the React structure.
+- [x] Verification & QA Checklist
+  - [x] Scroll expansion and shrink test.
+  - [x] Test color preset clicks.
+  - [x] Run checks at http://localhost:3000/meeting-booking.html.
+- [x] Responsiveness Phase 1: Global Responsive Foundation
+  - [x] Injected missing responsive classes (`showcase-composition`, `booking-centerpiece`) into the HTML markup.
+  - [x] Restructured horizontal layout elements (tables, timelines) to stack on small screens.
+  - [x] Standardized viewport scaling computations for large mockups and visual containers.
+  - [x] Reduced navigation paddings, gaps, and buttons size progressively down to 320px.
+- [x] Features Cards Redesign: Team Booking & Round Robin
+  - [x] Replace initial placeholders with real circular profile images cropped from project images folder.
+  - [x] Enlarge Round Robin routing orbit from 170px to 250px (~45% increase).
+  - [x] Position 5 team members evenly on the enlarged orbit ring.
+  - [x] Add LeadPilot logo asset in center hub with soft ambient glow.
+  - [x] Improve orbit routing with glowing connection lines, dotted circle, tangent direction arrows, and glowing intersection points.
+  - [x] Engineer a 60 FPS requestAnimationFrame animation looping token Center -> Member -> Center.
+  - [x] Coordinate states between Team Booking (Available/Busy/In Meeting) and Round Robin active step highlights.
+- [x] Features Cards Redesign: Instant Confirmations
+  - [x] Design a curved horizontal workflow visualization inside the card.
+  - [x] Reconstruct SVG with central confirmation card, outgoing envelope, calendar invite card, notification chat bubble, and verified green badge.
+  - [x] Integrate animated CSS offset-path particles travelling along connecting spokes.
+  - [x] Implement smooth 60 FPS CSS keyframe choreography loop (Booking -> Slide Envelope -> Pop Calendar -> Pulse Bubble -> Draw Green Checkmark -> Fade Back to Idle).
+- [x] Features Cards Redesign: Calendar Sync Infographic Overhaul
+  - [x] Replaced horizontal/stacked cards layout with vertical hub-and-sync diagram.
+  - [x] Configured Google Calendar and Outlook Calendar logos to stand on their own directly with no outlined boxes or surrounding backgrounds.
+  - [x] Styled LeadPilot central hub circle with a soft breathing purple glow.
+  - [x] Positioned a single thin glowing vertical line running from Google Calendar -> LeadPilot -> Outlook Calendar with two nodes.
+  - [x] Animated 4 glowing particles traveling continuously down and up the sync line.
+  - [x] Created rotating status indicator pill near the center hub that fades between messages (Syncing..., Calendar Updated, Availability Synced, Meeting Created) every 3 seconds.
+  - [x] Resolved JS syntax error at bottom of file to fully restore active animations in Round Robin and Team Booking.
+- [x] Layout Bug Fix: Bento Grid Restored
+  - [x] Fixed premature closing div tag at line 4317 inside Calendar Sync card.
+  - [x] Verified correct positioning, widths, and row gap heights at all grid breakpoints.
+- [x] LeadPilot vs Calendly Comparison Section
+  - [x] Rebuild comparison styles (white background, cards, table, and quote card layout).
+  - [x] Add HTML markup for Comparison Section immediately after Features section (#booking-features).
+  - [x] Design horizontal journey flows (dotted lines for Calendly, animated flow line/particles for LeadPilot).
+  - [x] Build premium comparison table & quote card area.
+  - [x] Implement scroll reveal animation triggers in JS.
+  - [x] Clean up redundant old comparison section table.
+  - [x] Verify responsiveness and visual styles across screen widths.

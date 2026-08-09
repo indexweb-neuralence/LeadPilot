@@ -1,0 +1,1 @@
+grep -n "runAllInits\|initKanban\|initStages\|initHeroAnimation" /Users/amanamuhammed/.gemini/antigravity/brain/67b9bfad-7c28-4c07-8386-12036697c9aa/.system_generated/logs/transcript.jsonl | head -10

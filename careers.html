@@ -1,0 +1,2751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="images/LEAD PILOT LOGO.png">
+<link rel="apple-touch-icon" href="images/LEAD PILOT LOGO.png">
+<title>Careers at LeadPilot – Build What's Next in AI Sales Technology</title>
+<meta name="description" content="Join the LeadPilot team. We are building intelligent sales technology to help businesses grow smarter. Explore open remote and hybrid roles today.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+  /* ── BASE & TOKENS ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    background-color: #FFFFFF;
+    overflow-x: hidden;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :root {
+    --purple: #7C3AED;
+    --purple-light: #8B5CF6;
+    --purple-pale: #F3E8FF;
+    --purple-subtle: #FAF5FF;
+    --pink: #EC4899;
+    --grad: linear-gradient(135deg, #7C3AED 0%, #EC4899 100%);
+    --grad-text: linear-gradient(135deg, #2563EB 0%, #7C3AED 30%, #EC4899 70%, #F97316 100%);
+    --dark: #0A0A0F;
+    --dark-muted: #475569;
+    --text-slate: #6B7280;
+    --border-color: #E2E8F0;
+    --border-light: #F1F5F9;
+    --radius-lg: 24px;
+    --radius-md: 16px;
+    --radius-sm: 12px;
+    --radius-full: 9999px;
+    --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+    --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.03);
+    --shadow-glow: 0 16px 40px rgba(124, 58, 237, 0.12);
+  }
+
+  /* Container */
+  .container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* Animated Ombré Gradient Text */
+  .ombre-text {
+    background: linear-gradient(135deg, #2563EB 0%, #7C3AED 25%, #EC4899 50%, #F97316 75%, #2563EB 100%);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: textGradientFlow 8s ease infinite;
+    display: inline-block;
+  }
+
+  @keyframes textGradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Eyebrow badge */
+  .eyebrow-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #F3E8FF;
+    color: #7C3AED;
+    border: 1px solid #E9D5FF;
+    padding: 8px 20px;
+    border-radius: var(--radius-full);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(124, 58, 237, 0.08);
+  }
+
+  /* ── 1. GLOBAL NAVIGATION (EXACT SHARED COMPONENT) ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: #ffffff;
+    border-bottom: 1px solid #F1F5F9;
+    padding: 0 60px;
+    height: 88px;
+    display: flex; align-items: center; justify-content: space-between;
+    transition: all 0.3s ease;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; font-size: 19px; font-weight: 800; color: #0F172A; text-decoration: none; letter-spacing: -0.5px; }
+  .nav-logo img { width: 28px; height: 28px; object-fit: contain; }
+  .nav-links { display: flex; gap: 36px; align-items: center; position: absolute; left: 50%; transform: translateX(-50%); }
+  .nav-links a { color: #475569; text-decoration: none; font-size: 15px; font-weight: 500; display: flex; align-items: center; gap: 4px; transition: color 0.2s ease; }
+  .nav-links a:hover { color: #0F172A; }
+  
+  .nav-dropdown-wrapper {
+    position: relative;
+    height: 88px;
+    display: flex;
+    align-items: center;
+  }
+  .nav-dropdown-trigger {
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  .nav-actions { display: flex; gap: 14px; align-items: center; }
+  .nav-actions a { text-decoration: none; font-size: 15px; font-weight: 600; transition: all 0.2s ease; }
+  .btn-ghost-nav { color: #475569; padding: 10px 16px; }
+  .btn-ghost-nav:hover { color: #0F172A; }
+  .btn-outline-nav {
+    border: 1px solid #E2E8F0;
+    border-radius: 9999px;
+    padding: 10px 22px;
+    color: #0F172A;
+    background: #ffffff;
+  }
+  .btn-outline-nav:hover { background: #F8FAFC; border-color: #CBD5E1; }
+  .btn-solid-nav {
+    background: #0F172A;
+    color: #ffffff;
+    border-radius: 9999px;
+    padding: 10px 22px;
+  }
+  .btn-solid-nav:hover { background: #1E293B; }
+
+  /* Mega Menu */
+  .mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    width: 920px;
+    background: #ffffff;
+    border: 1px solid #E2E8F0;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+    padding: 28px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    z-index: 1000;
+  }
+  .nav-dropdown-wrapper:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+  }
+  .mega-menu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .mega-menu-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .mega-menu-category {
+    font-size: 11px;
+    font-weight: 700;
+    color: #94A3B8;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #F1F5F9;
+    margin-bottom: 6px;
+  }
+  .mega-menu-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+  .mega-menu-item:hover {
+    background: #F8FAFC;
+  }
+  .mega-menu-icon-wrap {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .mega-menu-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .mega-menu-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0F172A;
+  }
+  .mega-menu-desc {
+    font-size: 12px;
+    color: #64748B;
+    line-height: 1.35;
+  }
+  .mega-menu-footer {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #F1F5F9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+  }
+  .mega-menu-footer-left { display: flex; align-items: center; gap: 10px; }
+  .footer-badge { background: #F3E8FF; color: #7C3AED; font-weight: 600; padding: 3px 10px; border-radius: 100px; font-size: 12px; }
+  .footer-text { color: #64748B; font-size: 12px; }
+  .mega-menu-footer-link { color: #7C3AED; font-weight: 600; text-decoration: none; }
+  .mega-menu-footer-link:hover { text-decoration: underline; }
+
+  /* Mobile navigation styles managed globally by css/navbar.css */
+
+  /* ── 2. HERO SECTION ── */
+  .careers-hero-section {
+    padding: 110px 0 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle at 50% 30%, rgba(243, 232, 255, 0.6) 0%, rgba(255, 255, 255, 1) 70%);
+  }
+  /* Faint connected node grid background */
+  .careers-hero-bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(124, 58, 237, 0.08) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+  }
+  .hero-ambient-glow {
+    position: absolute;
+    width: 600px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.15) 0%, rgba(124, 58, 237, 0.12) 50%, transparent 70%);
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: blur(60px);
+    pointer-events: none;
+  }
+  .hero-content {
+    max-width: 860px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-title {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 68px;
+    font-weight: 850;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: #0F172A;
+    margin-bottom: 24px;
+  }
+  .hero-title-dark {
+    display: block;
+    color: #0F172A;
+  }
+  .hero-subcopy {
+    font-size: 20px;
+    color: #475569;
+    line-height: 1.55;
+    max-width: 720px;
+    margin: 0 auto 40px auto;
+    font-weight: 450;
+  }
+  .hero-cta-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+  .btn-gradient-hero {
+    background: var(--grad);
+    color: #FFFFFF;
+    padding: 16px 36px;
+    border-radius: var(--radius-full);
+    font-size: 16px;
+    font-weight: 750;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 10px 25px rgba(124, 58, 237, 0.25);
+    transition: all 0.25s ease;
+  }
+  .btn-gradient-hero:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(124, 58, 237, 0.35);
+    filter: brightness(1.05);
+  }
+  .btn-outline-hero {
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    color: #0F172A;
+    padding: 16px 32px;
+    border-radius: var(--radius-full);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    box-shadow: var(--shadow-sm);
+  }
+  .btn-outline-hero:hover {
+    background: #F8FAFC;
+    border-color: #94A3B8;
+    transform: translateY(-1px);
+  }
+
+  /* ── RESOURCES MEGA MENU ── */
+  .mega-menu-resources {
+    width: calc(100vw - 60px) !important;
+    max-width: 1220px !important;
+    border-radius: 26px !important;
+  }
+  .mega-menu-resources-grid {
+    display: grid;
+    grid-template-columns: 370px 1fr;
+    gap: 36px;
+    padding: 36px 40px;
+    background: #FFFFFF;
+    box-sizing: border-box;
+  }
+  .resources-left-col, .resources-right-col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .resource-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .resource-item {
+    display: flex !important;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 14px !important;
+    border-radius: 16px !important;
+    text-decoration: none !important;
+    background: transparent !important;
+    transition: all 0.2s ease !important;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+  .resource-item:hover {
+    background: rgba(108, 75, 255, 0.04) !important;
+    transform: translateY(-1px);
+  }
+  .resource-icon-wrap {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+  .resource-item:hover .resource-icon-wrap {
+    transform: scale(1.05);
+  }
+  .resource-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    flex: 1;
+  }
+  .resource-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0F172A;
+    line-height: 1.2;
+    transition: color 0.2s ease;
+  }
+  .resource-item:hover .resource-title {
+    color: var(--purple, #7C3AED);
+  }
+  .resource-desc {
+    font-size: 12.5px;
+    color: #64748B;
+    line-height: 1.4;
+  }
+  .resource-arrow {
+    color: #CBD5E1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+  .resource-item:hover .resource-arrow {
+    color: var(--purple, #7C3AED);
+    transform: translateX(4px);
+  }
+
+  /* Right Column: Featured Cards */
+  .featured-cards-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .featured-card-main {
+    background: linear-gradient(135deg, rgba(245, 243, 255, 0.75) 0%, rgba(254, 243, 249, 0.75) 50%, rgba(255, 247, 237, 0.75) 100%);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    border-radius: 20px;
+    padding: 28px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .featured-card-main:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 36px rgba(124, 58, 237, 0.06);
+  }
+  .featured-main-content {
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .featured-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 750;
+    letter-spacing: 0.06em;
+    color: #7C3AED;
+    background: rgba(124, 58, 237, 0.1);
+    padding: 4px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+  }
+  .featured-headline {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 21px;
+    font-weight: 800;
+    color: #0F172A;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+  .featured-desc {
+    font-size: 13px;
+    color: #64748B;
+    line-height: 1.5;
+    margin: 0;
+  }
+  .featured-link {
+    font-size: 14px;
+    font-weight: 700;
+    color: #7C3AED !important;
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+    transition: gap 0.2s ease;
+  }
+  .featured-link:hover {
+    gap: 10px;
+  }
+
+  /* Mini Dashboard Illustration in Main Card */
+  .featured-main-visual {
+    position: relative;
+    flex-shrink: 0;
+    width: 290px;
+  }
+  .mini-dashboard-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(15, 23, 42, 0.02);
+    position: relative;
+  }
+  .mini-dash-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #0F172A;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #F1F5F9;
+    margin-bottom: 12px;
+  }
+  .mini-dash-pipeline-title {
+    color: #64748B;
+    font-weight: 600;
+  }
+  .mini-dash-body {
+    display: flex;
+    gap: 14px;
+  }
+  .mini-dash-stats {
+    flex: 1.1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .mini-stat-label {
+    font-size: 10.5px;
+    color: #64748B;
+    font-weight: 500;
+  }
+  .mini-stat-val {
+    font-size: 19px;
+    font-weight: 800;
+    color: #0F172A;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .mini-stat-growth {
+    font-size: 11px;
+    font-weight: 700;
+    color: #10B981;
+    background: rgba(16, 185, 129, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  .mini-chart-svg {
+    margin-top: 6px;
+    width: 100%;
+    height: 34px;
+  }
+  .mini-dash-stages {
+    flex: 0.9;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 11px;
+    color: #475569;
+    justify-content: center;
+  }
+  .stage-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+  }
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .dot-purple { background: #2563EB; }
+  .dot-violet { background: #7C3AED; }
+  .dot-orange { background: #EA580C; }
+  .dot-pink { background: #EC4899; }
+  .stage-num {
+    font-weight: 700;
+    color: #0F172A;
+  }
+
+  .floating-closed-won-badge {
+    position: absolute;
+    bottom: -14px;
+    right: -10px;
+    background: #FFFFFF;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 14px;
+    padding: 10px 14px;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 5;
+  }
+  .won-check-circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #10B981;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .won-text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .won-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #0F172A;
+  }
+  .won-growth {
+    font-size: 10.5px;
+    font-weight: 600;
+    color: #10B981;
+  }
+
+  /* Featured Card 2 (Secondary Horizontal) */
+  .featured-card-secondary {
+    background: #FFFFFF;
+    border: 1px solid #F1F5F9;
+    border-radius: 16px;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .featured-card-secondary:hover {
+    border-color: #E2E8F0;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+  }
+  .secondary-card-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .secondary-text-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .secondary-title {
+    font-size: 14px;
+    font-weight: 750;
+    color: #0F172A;
+  }
+  .secondary-subtitle {
+    font-size: 13px;
+    color: #64748B;
+  }
+  .secondary-card-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .secondary-cta-link {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #7C3AED !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease;
+  }
+  .secondary-cta-link:hover {
+    color: #6D28D9 !important;
+  }
+  .calendar-icon-box {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: rgba(124, 58, 237, 0.08);
+    color: #7C3AED;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* Resources Footer Strip */
+  .mega-menu-resources-footer {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 40px;
+    background: #FBF9FE;
+    border-top: 1px solid #F1F5F9;
+    box-sizing: border-box;
+  }
+  .resources-footer-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #7C3AED 0%, #EC4899 100%);
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .resources-footer-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .res-footer-title {
+    font-size: 14px;
+    font-weight: 750;
+    color: #0F172A;
+  }
+  .res-footer-desc {
+    font-size: 13px;
+    color: #64748B;
+  }
+
+  /* ── 3. SECTION 2: COMPANY STATS ── */
+  .stats-section {
+    padding: 90px 0;
+    background: #FFFFFF;
+  }
+  .stats-header-wrap {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 56px auto;
+  }
+  .section-eyebrow {
+    font-size: 12px;
+    font-weight: 800;
+    color: #7C3AED;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .section-title {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 44px;
+    font-weight: 850;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    color: #0F172A;
+    margin-bottom: 16px;
+  }
+  .section-sub {
+    font-size: 17px;
+    color: #64748B;
+    line-height: 1.6;
+  }
+
+  /* Stats Container Strip */
+  .stats-container-card {
+    background: linear-gradient(135deg, #FAF5FF 0%, #FFFFFF 100%);
+    border: 1px solid #E9D5FF;
+    border-radius: 28px;
+    padding: 48px 32px;
+    box-shadow: var(--shadow-md);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    position: relative;
+  }
+  .stat-item {
+    text-align: center;
+    padding: 0 24px;
+    position: relative;
+    transition: transform 0.25s ease;
+  }
+  .stat-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 15%;
+    height: 70%;
+    width: 1px;
+    background: #E2E8F0;
+  }
+  .stat-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: #F3E8FF;
+    color: #7C3AED;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+  }
+  .stat-number {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 52px;
+    font-weight: 900;
+    color: #0F172A;
+    line-height: 1;
+    margin-bottom: 8px;
+    letter-spacing: -0.03em;
+    transition: color 0.25s ease;
+  }
+  .stat-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #64748B;
+  }
+  .stat-item:hover {
+    transform: translateY(-4px);
+  }
+  .stat-item:hover .stat-number {
+    color: #7C3AED;
+  }
+
+  /* ── 4. SECTION 3: WHY WORK WITH US (4 FEATURE CARDS) ── */
+  .why-section {
+    padding: 100px 0;
+    background: linear-gradient(180deg, #FFFFFF 0%, #FAF5FF 100%);
+  }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    margin-top: 56px;
+  }
+  .why-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .why-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  .why-num-badge {
+    font-family: 'Inter Tight', monospace;
+    font-size: 13px;
+    font-weight: 800;
+    color: #7C3AED;
+    background: #F3E8FF;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    letter-spacing: 0.05em;
+  }
+  .why-card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    color: #7C3AED;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+  .why-card-title {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 12px;
+  }
+  .why-card-desc {
+    font-size: 15.5px;
+    color: #475569;
+    line-height: 1.65;
+  }
+
+  .why-card:hover {
+    transform: translateY(-6px);
+    border-color: #C084FC;
+    box-shadow: 0 16px 40px rgba(124, 58, 237, 0.12);
+    background: #FFFFFF;
+  }
+  .why-card:hover .why-card-icon {
+    background: var(--grad);
+    color: #FFFFFF;
+    border-color: transparent;
+  }
+
+  /* ── 5. SECTION 4: HOW WE WORK (VALUES GRID 3x2) ── */
+  .work-section {
+    padding: 120px 0 130px 0;
+    background: radial-gradient(ellipse at 50% 30%, #FAF5FF 0%, #FFFFFF 70%);
+    position: relative;
+  }
+  .work-section::before {
+    content: '';
+    position: absolute;
+    top: 20%; left: 5%;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .work-section::after {
+    content: '';
+    position: absolute;
+    bottom: 15%; right: 5%;
+    width: 350px; height: 350px;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 64px;
+    position: relative;
+    z-index: 2;
+  }
+  .value-card {
+    background: linear-gradient(135deg, #FFFFFF 0%, #FAF5FF 100%);
+    border: 1.5px solid #E9D5FF;
+    border-radius: 24px;
+    padding: 40px 36px;
+    position: relative;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .value-card::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 130px; height: 130px;
+    background: radial-gradient(circle at 100% 0%, rgba(236, 72, 153, 0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .value-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  .value-icon-wrap {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: #F3E8FF;
+    color: #7C3AED;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+  .value-card-num {
+    font-family: 'Inter Tight', monospace;
+    font-size: 28px;
+    font-weight: 900;
+    color: #CBD5E1;
+    letter-spacing: -0.02em;
+    transition: color 0.3s ease;
+  }
+  .value-card-title {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 850;
+    color: #0F172A;
+    margin-bottom: 12px;
+    letter-spacing: -0.015em;
+  }
+  .value-card-desc {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.65;
+  }
+
+  .value-card:hover {
+    transform: translateY(-5px);
+    border-color: #C084FC;
+    box-shadow: 0 16px 40px rgba(124, 58, 237, 0.12);
+    background: #FFFFFF;
+  }
+  .value-card:hover .value-icon-wrap {
+    background: var(--grad);
+    color: #FFFFFF;
+    box-shadow: 0 6px 18px rgba(124, 58, 237, 0.3);
+  }
+
+  /* ── 6. SECTION 5: OUR PERFECT FIT & WHAT DRIVES US ── */
+  .fit-section {
+    padding: 120px 0 130px 0;
+    background: linear-gradient(180deg, #FFFFFF 0%, #FAF5FF 50%, #FFFFFF 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fit-header-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 56px;
+    flex-wrap: wrap;
+  }
+
+  .fit-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-bottom: 96px;
+  }
+
+  .fit-editorial-card {
+    background: linear-gradient(135deg, #FFFFFF 0%, #FAF5FF 100%);
+    border: 1.5px solid #E9D5FF;
+    border-radius: 28px;
+    padding: 36px 32px 28px 32px;
+    min-height: 520px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .fit-card-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fit-tag {
+    font-family: 'Inter Tight', monospace;
+    font-size: 11px;
+    font-weight: 800;
+    color: #7C3AED;
+    background: #F3E8FF;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    letter-spacing: 0.08em;
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 16px;
+  }
+
+  .fit-card-title {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 850;
+    color: #0F172A;
+    margin-bottom: 12px;
+    letter-spacing: -0.015em;
+  }
+
+  .fit-card-desc {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.65;
+  }
+
+  /* Seamless Integrated PNG Artwork Wrapper */
+  .fit-artwork-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 20px -32px -28px -32px;
+    width: calc(100% + 64px);
+    height: 275px;
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+  }
+
+  .fit-artwork-img {
+    display: block;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Card 01 - Build Things That Matter: Ribbon extends to left edge, right line to right edge */
+  .fit-card-builder .fit-artwork-img {
+    width: 122%;
+    max-width: none;
+    height: auto;
+    object-fit: contain;
+    object-position: center bottom;
+    transform: translateX(-4%) translateY(12px);
+  }
+
+  /* Card 02 - Stay Curious: 25-30% larger, prominent orbital central orb */
+  .fit-card-curious .fit-artwork-img {
+    width: 128%;
+    max-width: none;
+    height: auto;
+    object-fit: contain;
+    object-position: center bottom;
+    transform: translateY(14px);
+  }
+
+  /* Card 03 - Own The Outcome: Blue track starts at left edge, target near right edge */
+  .fit-card-owner .fit-artwork-img {
+    width: 124%;
+    max-width: none;
+    height: auto;
+    object-fit: contain;
+    object-position: center bottom;
+    transform: translateX(3%) translateY(12px);
+  }
+
+  .fit-editorial-card:hover {
+    transform: translateY(-5px);
+    border-color: #C084FC;
+    box-shadow: 0 20px 45px rgba(124, 58, 237, 0.14);
+  }
+
+  .fit-editorial-card:hover .fit-artwork-img {
+    transform: scale(1.04);
+  }
+
+  /* Lower "WHAT DRIVES US" Editorial Layout */
+  .drives-divider {
+    height: 1px;
+    background: linear-gradient(90deg, rgba(226, 232, 240, 0.4), #CBD5E1, rgba(226, 232, 240, 0.4));
+    margin: 20px 0 48px 0;
+  }
+
+  .drives-two-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+
+  .drives-col-title {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 850;
+    color: #0F172A;
+    margin-bottom: 14px;
+    letter-spacing: -0.02em;
+  }
+
+  .drives-col-body {
+    font-size: 16px;
+    color: #475569;
+    line-height: 1.7;
+  }
+
+  .drives-highlight-box {
+    background: linear-gradient(135deg, #FAF5FF 0%, #FFFFFF 100%);
+    border: 1.5px solid #E9D5FF;
+    border-radius: 20px;
+    padding: 28px 36px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .drives-highlight-text {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: #0F172A;
+  }
+
+  @media (max-width: 1024px) {
+    .fit-cards-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .drives-two-col { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  @media (max-width: 680px) {
+    .fit-cards-grid { grid-template-columns: 1fr; }
+    .fit-editorial-card { min-height: auto; }
+  }
+  .value-card:hover .value-card-num {
+    color: #7C3AED;
+  }
+  .principle-title {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 19px;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 8px;
+  }
+  .principle-desc {
+    font-size: 14.5px;
+    color: #64748B;
+    line-height: 1.6;
+  }
+
+  /* ── 6. SECTION 5: CURRENT OPPORTUNITIES (#open-roles) ── */
+  .jobs-section {
+    padding: 110px 0;
+    background: linear-gradient(180deg, #FAF5FF 0%, #FFFFFF 100%);
+    scroll-margin-top: 90px;
+  }
+  .jobs-header-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .positions-count-badge {
+    background: #F3E8FF;
+    color: #7C3AED;
+    border: 1.5px solid #E9D5FF;
+    padding: 8px 18px;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+  }
+
+  .job-rows-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .job-row-card {
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 20px;
+    padding: 32px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: var(--shadow-sm);
+  }
+  .job-info-left {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .job-category-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    color: #7C3AED;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .job-title {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: #0F172A;
+    transition: color 0.25s ease;
+  }
+  .job-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 14px;
+    color: #64748B;
+    font-weight: 500;
+  }
+  .job-btn-wrap {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #7C3AED;
+    transition: all 0.25s ease;
+  }
+  .job-arrow {
+    display: inline-block;
+    transition: transform 0.25s ease;
+  }
+
+  .job-row-card {
+    cursor: pointer;
+  }
+  .job-short-desc {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.5;
+    margin: 4px 0 6px 0;
+    max-width: 720px;
+  }
+
+  /* Job Details Modal */
+  .role-modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  .role-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  .role-modal-container {
+    background: #FFFFFF;
+    border: 1.5px solid #E9D5FF;
+    border-radius: 28px;
+    width: 100%;
+    max-width: 860px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 25px 60px rgba(15, 23, 42, 0.25);
+    position: relative;
+    padding: 44px;
+    transform: translateY(20px);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .role-modal-overlay.active .role-modal-container {
+    transform: translateY(0);
+  }
+  .modal-close-btn {
+    position: absolute;
+    top: 24px; right: 24px;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: #F1F5F9;
+    border: none;
+    font-size: 22px;
+    color: #475569;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s ease;
+  }
+  .modal-close-btn:hover {
+    background: #F3E8FF;
+    color: #7C3AED;
+  }
+  .role-section-title {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: #0F172A;
+    margin: 28px 0 12px 0;
+    letter-spacing: -0.01em;
+  }
+  .role-body-text {
+    font-size: 16px;
+    color: #475569;
+    line-height: 1.65;
+  }
+  .role-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .role-list li {
+    position: relative;
+    padding-left: 26px;
+    font-size: 15.5px;
+    color: #475569;
+    line-height: 1.55;
+  }
+  .role-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0; top: 0;
+    color: #7C3AED;
+    font-weight: 800;
+    font-size: 14px;
+  }
+  .challenge-card-box {
+    background: linear-gradient(135deg, #FFFFFF 0%, #FAF5FF 100%);
+    border: 1.5px solid #E9D5FF;
+    border-radius: 20px;
+    padding: 28px;
+    margin-top: 32px;
+  }
+  .challenge-q-box {
+    background: #FFFFFF;
+    border: 1px solid #D8B4FE;
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin-top: 14px;
+  }
+  .challenge-q-text {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 17px;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 6px;
+  }
+  .modal-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  .modal-label {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #0F172A;
+  }
+  .modal-input, .modal-textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 15px;
+    color: #0F172A;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+  .modal-input:focus, .modal-textarea:focus {
+    border-color: #7C3AED;
+  }
+  .modal-textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+
+  .job-row-card:hover {
+    border-color: #C084FC;
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(124, 58, 237, 0.12);
+    background: #FAF5FF;
+  }
+  .job-row-card:hover .job-title {
+    color: #7C3AED;
+  }
+  .job-row-card:hover .job-arrow {
+    transform: translateX(5px);
+  }
+
+  /* ── 7. SECTION 6: DON'T SEE YOUR ROLE? ── */
+  .spontaneous-section {
+    padding: 80px 0;
+  }
+  .spontaneous-card {
+    background: linear-gradient(135deg, #FFFFFF 0%, #FAF5FF 100%);
+    border: 1.5px solid #E9D5FF;
+    border-radius: 28px;
+    padding: 56px 48px;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+  .spontaneous-title {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 34px;
+    font-weight: 850;
+    color: #0F172A;
+    margin-bottom: 14px;
+  }
+  .spontaneous-sub {
+    font-size: 16.5px;
+    color: #475569;
+    max-width: 640px;
+    margin: 0 auto 32px auto;
+    line-height: 1.6;
+  }
+  .btn-spontaneous-apply {
+    background: #0F172A;
+    color: #FFFFFF;
+    padding: 15px 36px;
+    border-radius: var(--radius-full);
+    font-size: 15px;
+    font-weight: 750;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.25s ease;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.15);
+  }
+  .btn-spontaneous-apply:hover {
+    background: #1E293B;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.25);
+  }
+
+  /* ── 8. SECTION 7: FINAL CAREERS ANIMATED GRADIENT CTA ── */
+  .cta-section {
+    padding: 120px 0;
+  }
+  .cta-banner {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #7C3AED, #8B5CF6, #EC4899, #D946EF);
+    background-size: 400% 400%;
+    animation: containerGradientMove 12s ease infinite;
+    border-radius: 36px;
+    padding: 84px 56px;
+    text-align: center;
+    color: #FFFFFF;
+    box-shadow: 0 25px 50px -12px rgba(124, 58, 237, 0.3);
+  }
+  @keyframes containerGradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  .cta-glow-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.45;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .blob-1 {
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, #F472B6, transparent 70%);
+    top: -50px; left: 10%;
+    animation: floatBlob1 20s ease-in-out infinite alternate;
+  }
+  .blob-2 {
+    width: 350px; height: 350px;
+    background: radial-gradient(circle, #8B5CF6, transparent 70%);
+    bottom: -50px; right: 5%;
+    animation: floatBlob2 25s ease-in-out infinite alternate;
+  }
+  @keyframes floatBlob1 { 0% { transform: translate(0, 0) scale(1); } 100% { transform: translate(60px, 40px) scale(1.15); } }
+  @keyframes floatBlob2 { 0% { transform: translate(0, 0) scale(1); } 100% { transform: translate(-50px, -30px) scale(1.1); } }
+
+  .cta-banner-eyebrow {
+    font-size: 12px;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 2;
+  }
+  .cta-banner-title {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 48px;
+    font-weight: 850;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 2;
+  }
+  .cta-banner-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 36px;
+    font-weight: 400;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 2;
+  }
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+  }
+  .btn-cta-primary-white {
+    background: #FFFFFF;
+    color: #7C3AED;
+    padding: 16px 36px;
+    border-radius: var(--radius-full);
+    font-size: 16px;
+    font-weight: 750;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: all 0.25s ease;
+  }
+  .btn-cta-primary-white:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.22);
+    background: #FAFAFA;
+    color: #6D28D9;
+  }
+  .btn-cta-secondary {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    color: #FFFFFF;
+    padding: 16px 36px;
+    border-radius: var(--radius-full);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    backdrop-filter: blur(8px);
+  }
+  .btn-cta-secondary:hover {
+    background: rgba(255, 255, 255, 0.22);
+    border-color: #FFFFFF;
+  }
+
+  /* ── 9. GLOBAL DARK FOOTER (EXACT SHARED COMPONENT) ── */
+  footer {
+    background: var(--dark);
+    padding: 80px 40px 40px;
+    position: relative;
+    z-index: 10;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 60px;
+  }
+  .footer-brand p {
+    font-size: 14px;
+    color: #9CA3AF;
+    margin-top: 16px;
+    line-height: 1.6;
+    max-width: 300px;
+  }
+  .footer-socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+  }
+  .social-btn {
+    width: 36px;
+    height: 36px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.06);
+    color: #9CA3AF;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .social-btn:hover {
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    border-color: rgba(255,255,255,0.15);
+    transform: translateY(-2px);
+  }
+  .footer-col-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 24px;
+  }
+  .footer-link {
+    display: block;
+    font-size: 14px;
+    color: #9CA3AF;
+    text-decoration: none;
+    margin-bottom: 14px;
+    transition: all 0.2s ease;
+  }
+  .footer-link:hover {
+    color: #fff;
+    transform: translateX(2px);
+  }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .footer-bottom p {
+    font-size: 13px;
+    color: #6B7280;
+  }
+  .footer-bottom-links {
+    display: flex;
+    gap: 24px;
+  }
+  .footer-bottom-links a {
+    font-size: 13px;
+    color: #6B7280;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .footer-bottom-links a:hover {
+    color: #fff;
+  }
+
+  /* Footer CTA Card */
+  .footer-cta-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 28px;
+    max-width: 300px;
+    box-sizing: border-box;
+    text-align: left;
+  }
+  .footer-cta-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+    letter-spacing: -0.2px;
+    text-transform: none;
+  }
+  .footer-cta-desc {
+    font-size: 13px;
+    color: #9CA3AF;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  .footer-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: var(--grad);
+    color: #fff !important;
+    text-decoration: none !important;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    width: 100%;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+  .footer-cta-btn:hover {
+    transform: translateY(-1.5px);
+    box-shadow: 0 4px 15px rgba(124,58,237,0.35);
+    filter: brightness(1.05);
+  }
+
+  /* Mobile CTA visible only on mobile/tablet */
+  .mobile-only-cta { display: none; }
+
+  /* ── RESPONSIVE STYLES ── */
+  @media (max-width: 1024px) {
+    nav { padding: 0 30px; }
+    .nav-links { display: none; }
+    .mobile-nav-toggle { display: flex; }
+    .hero-title { font-size: 52px; }
+    .stats-container-card { grid-template-columns: repeat(2, 1fr); gap: 32px; padding: 40px 24px; }
+    .stat-item:not(:last-child)::after { display: none; }
+    .why-grid { grid-template-columns: 1fr; }
+    .principles-grid { grid-template-columns: 1fr; }
+    .locations-strip-card { flex-direction: column; gap: 16px; text-align: center; }
+    .locations-divider-line { display: none; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .footer-brand { grid-column: span 2; }
+    .desktop-only-cta { display: none; }
+    .mobile-only-cta { display: block; grid-column: span 2; max-width: 100%; margin-top: 16px; }
+  }
+
+  @media (max-width: 680px) {
+    .careers-hero-section { padding: 80px 0 60px 0; }
+    .hero-title { font-size: 38px; }
+    .hero-subcopy { font-size: 17px; }
+    .section-title { font-size: 32px; }
+    .stats-container-card { grid-template-columns: 1fr; }
+    .job-row-card { flex-direction: column; align-items: flex-start; gap: 20px; padding: 24px; }
+    .job-btn-wrap { align-self: flex-start; }
+    .spontaneous-card { padding: 36px 24px; }
+    .spontaneous-title { font-size: 26px; }
+    .cta-banner { padding: 48px 24px; }
+    .cta-banner-title { font-size: 32px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+    .footer-brand { grid-column: span 1; }
+    .mobile-only-cta { grid-column: span 1; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; gap: 16px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ombre-text { animation: none; }
+    .cta-banner { animation: none; }
+    .blob-1, .blob-2 { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 1. NAVIGATION -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="images/LEAD PILOT LOGO.png" alt="LeadPilot Logo" class="nav-logo-img" style="width: 28px; height: 28px; object-fit: contain;">
+    LeadPilot
+  </a>
+  
+  <div class="nav-links">
+    <!-- 1. PRODUCT DROPDOWN -->
+    <div class="nav-dropdown-wrapper">
+      <a href="#" class="nav-dropdown-trigger nav-link-product">Product</a>
+      <div class="mega-menu">
+        <div class="mega-menu-grid">
+          <!-- Column 1: Lead Generation -->
+          <div class="mega-menu-column">
+            <div class="mega-menu-category">Lead Generation</div>
+            
+            <a href="lead-generator.html" class="mega-menu-item">
+              <div class="mega-menu-icon-wrap" style="background: rgba(37, 99, 235, 0.08); color: #2563EB;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21l-6-6" /><circle cx="15" cy="9" r="3" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">Lead Generator</span>
+                <span class="mega-menu-desc">Find verified companies and decision-makers using advanced filters.</span>
+              </div>
+            </a>
+            
+            <a href="lead-forms.html" class="mega-menu-item">
+              <div class="mega-menu-icon-wrap" style="background: rgba(16, 163, 74, 0.08); color: #16A34A;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><line x1="9" y1="9" x2="15" y2="9" /><line x1="9" y1="13" x2="15" y2="13" /><line x1="9" y1="17" x2="13" y2="17" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">AI Lead Forms</span>
+                <span class="mega-menu-desc">Capture inbound leads with smart forms that sync with CRM.</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Column 2: Sales Pipeline -->
+          <div class="mega-menu-column">
+            <div class="mega-menu-category">Sales Pipeline</div>
+            
+            <a href="crm-pipeline.html" class="mega-menu-item">
+              <div class="mega-menu-icon-wrap" style="background: rgba(234, 88, 12, 0.08); color: #EA580C;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 3v18h18" /><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">CRM &amp; Pipeline</span>
+                <span class="mega-menu-desc">Manage leads, deals, and your complete pipeline from one workspace.</span>
+              </div>
+            </a>
+            
+            <a href="meeting-booking.html" class="mega-menu-item">
+              <div class="mega-menu-icon-wrap" style="background: rgba(37, 99, 235, 0.08); color: #2563EB;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /><path d="M9 16l2 2 4-4" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">Meeting Booking</span>
+                <span class="mega-menu-desc">Let prospects book meetings instantly with calendar sync.</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Column 3: AI & Automation -->
+          <div class="mega-menu-column">
+            <div class="mega-menu-category">AI &amp; Automation</div>
+            
+            <a href="ai-sales-assistant.html" class="mega-menu-item">
+              <div class="mega-menu-icon-wrap" style="background: rgba(124, 58, 237, 0.08); color: #7C3AED;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">AI Sales Assistant</span>
+                <span class="mega-menu-desc">AI assistance for research and sales productivity.</span>
+              </div>
+            </a>
+            
+            <a href="ai-chatbot.html" class="mega-menu-item">
+              <div class="mega-menu-icon-wrap" style="background: rgba(5, 150, 105, 0.08); color: #059669;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /><path d="M8 10h.01M12 10h.01M16 10h.01" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">AI Chatbot</span>
+                <span class="mega-menu-desc">Automatically qualify website visitors and convert them.</span>
+              </div>
+            </a>
+
+            <a href="ai-sales-coach.html" class="mega-menu-item">
+              <div class="mega-menu-icon-wrap" style="background: rgba(124, 58, 237, 0.08); color: #7C3AED;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">AI Sales Coach</span>
+                <span class="mega-menu-desc">Analyze conversations and improve performance with AI.</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Column 4: Outreach -->
+          <div class="mega-menu-column">
+            <div class="mega-menu-category">Outreach</div>
+            
+            <a href="ai-sales-sequences.html" class="mega-menu-item">
+              <div class="mega-menu-icon-wrap" style="background: rgba(217, 119, 6, 0.08); color: #D97706;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">Sales Sequences</span>
+                <span class="mega-menu-desc">Build automated multi-step email and follow-up sequences.</span>
+              </div>
+            </a>
+            
+            <a href="quotations.html" class="mega-menu-item">
+<div class="mega-menu-icon-wrap" style="background: rgba(225, 29, 72, 0.08); color: #E11D48;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">Quotations</span>
+                <span class="mega-menu-desc">Generate proposals in seconds with built-in workflows.</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Mega Menu Footer -->
+        <div class="mega-menu-footer">
+          <div class="mega-menu-footer-left">
+            <span class="footer-badge">Everything connected.</span>
+            <span class="footer-text">LeadPilot combines lead generation, CRM, meetings, automation, AI, and sales coaching.</span>
+          </div>
+          <a href="index.html#tools" class="mega-menu-footer-link">View All Products →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRICING LINK -->
+    <a href="pricing.html" class="nav-link-pricing">Pricing</a>
+
+    <!-- 2. RESOURCES DROPDOWN -->
+    <div class="nav-dropdown-wrapper">
+      <a href="#" class="nav-dropdown-trigger nav-link-resources">Resources</a>
+      <div class="mega-menu mega-menu-resources">
+        <div class="mega-menu-resources-grid">
+          <!-- Left Column: RESOURCES -->
+          <div class="resources-left-col">
+            <div class="mega-menu-category">RESOURCES</div>
+            <div class="resource-items-list">
+                <!-- Item 1: Blog -->
+                <a href="blog.html" class="resource-item">
+                  <div class="resource-icon-wrap" style="background: rgba(124, 58, 237, 0.08); color: #7C3AED;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+                  </div>
+                  <div class="resource-text">
+                    <span class="resource-title">Blog</span>
+                    <span class="resource-desc">Product updates, sales insights, and industry trends.</span>
+                  </div>
+                  <div class="resource-arrow">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </div>
+                </a>
+
+                <!-- Item 2: Case Studies -->
+                <a href="case-studies.html" class="resource-item">
+                  <div class="resource-icon-wrap" style="background: rgba(234, 88, 12, 0.08); color: #EA580C;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </div>
+                  <div class="resource-text">
+                    <span class="resource-title">Case Studies</span>
+                    <span class="resource-desc">Real customer stories, results, and success journeys.</span>
+                  </div>
+                  <div class="resource-arrow">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </div>
+                </a>
+
+                <!-- Item 3: Free Resources -->
+                <a href="free-resources.html" class="resource-item">
+                  <div class="resource-icon-wrap" style="background: rgba(16, 185, 129, 0.08); color: #10B981;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                  </div>
+                  <div class="resource-text">
+                    <span class="resource-title">Free Resources</span>
+                    <span class="resource-desc">Templates, ebooks, playbooks, and checklists.</span>
+                  </div>
+                  <div class="resource-arrow">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </div>
+                </a>
+
+                <!-- Item 4: Webinars -->
+                <a href="webinars.html" class="resource-item">
+                  <div class="resource-icon-wrap" style="background: rgba(37, 99, 235, 0.08); color: #2563EB;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                  </div>
+                  <div class="resource-text">
+                    <span class="resource-title">Webinars</span>
+                    <span class="resource-desc">Live demos, training sessions, and product walkthroughs.</span>
+                  </div>
+                  <div class="resource-arrow">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+          <!-- Right Column: FEATURED -->
+          <div class="resources-right-col">
+            <div class="mega-menu-category">FEATURED</div>
+            <div class="featured-cards-wrap">
+              <!-- Featured Card 1 (Large Main Card) -->
+              <div class="featured-card-main">
+                <div class="featured-main-content">
+                  <span class="featured-badge">CASE STUDY</span>
+                  <h3 class="featured-headline">How sales teams close more deals with LeadPilot</h3>
+                  <p class="featured-desc">See how businesses simplified lead generation, CRM and follow-ups in one workspace.</p>
+                  <a href="case-studies.html" class="featured-link">Read Case Study &rarr;</a>
+                </div>
+                
+                <!-- Dashboard UI Graphic Illustration -->
+                <div class="featured-main-visual">
+                  <div class="mini-dashboard-card">
+                    <div class="mini-dash-header">
+                      <div class="mini-dash-title">Deals Overview</div>
+                      <div class="mini-dash-pipeline-title">Pipeline</div>
+                    </div>
+                    <div class="mini-dash-body">
+                      <div class="mini-dash-stats">
+                        <div class="mini-stat-label">Total Deals</div>
+                        <div class="mini-stat-val">248 <span class="mini-stat-growth">↑ 32.6%</span></div>
+                        <svg width="140" height="50" viewBox="0 0 140 50" fill="none" class="mini-chart-svg">
+                          <path d="M0 42 C 20 40, 35 30, 50 35 C 65 40, 80 18, 100 24 C 120 30, 130 10, 140 8" stroke="#7C3AED" stroke-width="2.5" fill="none"/>
+                        </svg>
+                      </div>
+                      <div class="mini-dash-stages">
+                        <div class="stage-row"><span class="dot dot-purple"></span> Qualified <span class="stage-num">82</span></div>
+                        <div class="stage-row"><span class="dot dot-violet"></span> Proposal <span class="stage-num">64</span></div>
+                        <div class="stage-row"><span class="dot dot-orange"></span> Negotiation <span class="stage-num">48</span></div>
+                        <div class="stage-row"><span class="dot dot-pink"></span> Closed Won <span class="stage-num">54</span></div>
+                      </div>
+                    </div>
+                    <!-- Floating Badge -->
+                    <div class="floating-closed-won-badge">
+                      <div class="won-check-circle">✓</div>
+                      <div class="won-text-block">
+                        <div class="won-title">Closed Won</div>
+                        <div class="won-growth">↑ 28% vs last month</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Featured Card 2 (Smaller Horizontal Card) -->
+              <div class="featured-card-secondary">
+                <div class="secondary-card-left">
+                  <span class="featured-badge">WEBINAR</span>
+                  <div class="secondary-text-group">
+                    <span class="secondary-title">AI for Modern Sales Teams</span>
+                    <span class="secondary-subtitle">Join our next live session.</span>
+                  </div>
+                </div>
+                <div class="secondary-card-right">
+                  <a href="webinars.html" class="secondary-cta-link">Reserve Your Seat &rarr;</a>
+                  <div class="calendar-icon-box">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mega Menu Footer Strip (No "Browse all resources" button) -->
+        <div class="mega-menu-resources-footer">
+          <div class="resources-footer-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+          </div>
+          <div class="resources-footer-text">
+            <span class="res-footer-title">Everything connected.</span>
+            <span class="res-footer-desc">Learn how LeadPilot helps sales teams generate leads, manage deals and automate repetitive work.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT LINK -->
+    <a href="about.html" class="nav-link-about">About</a>
+  </div>
+
+  <div class="nav-actions">
+    <a href="index.html#cta" class="btn-ghost-nav">Login</a>
+    <a href="index.html#cta" class="btn-outline-nav">Book Demo</a>
+    <a href="index.html#cta" class="btn-solid-nav">Start Free Trial</a>
+  </div>
+
+  <button class="mobile-nav-toggle" aria-label="Toggle Menu">
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+  </button>
+</nav>
+
+
+
+
+<!-- 2. CAREERS HERO SECTION -->
+<section class="careers-hero-section">
+  <div class="careers-hero-bg-grid"></div>
+  <div class="hero-ambient-glow"></div>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="eyebrow-badge-pill">✦ CAREERS AT LEADPILOT</div>
+
+      <h1 class="hero-title">
+        <span class="hero-title-dark">Big ideas need great people.</span>
+        <span class="ombre-text">Come build with us.</span>
+      </h1>
+
+      <p class="hero-subcopy">
+        We’re looking for curious, driven people who want to solve meaningful problems, take ownership, and help shape what LeadPilot becomes next.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#open-roles" class="btn-gradient-hero">View Open Roles ↓</a>
+        <a href="about.html" class="btn-outline-hero">About LeadPilot →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 3. COMPANY STATS SECTION -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-header-wrap">
+      <span class="section-eyebrow">OUR TEAM</span>
+      <h2 class="section-title">
+        Small team. <span class="ombre-text">Big ambition.</span>
+      </h2>
+      <p class="section-sub">
+        We’re building across borders, disciplines, and ideas — with one shared goal: create technology businesses genuinely want to use.
+      </p>
+    </div>
+
+    <!-- 4 Stats Horizontal Container -->
+    <div class="stats-container-card">
+      <div class="stat-item">
+        <div class="stat-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="stat-number">10+</div>
+        <div class="stat-label">Team Members</div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <div class="stat-number">5</div>
+        <div class="stat-label">Countries</div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Remote Collaboration</div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="stat-number">50+</div>
+        <div class="stat-label">Businesses Served</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 4. WHY WORK WITH US (4 FEATURE CARDS) -->
+<section class="why-section">
+  <div class="container">
+    <div class="stats-header-wrap" style="margin-bottom: 0;">
+      <span class="section-eyebrow">✦ WHY LEADPILOT</span>
+      <h2 class="section-title">
+        Build fast. Learn faster. <br><span class="ombre-text">Make an impact.</span>
+      </h2>
+      <p class="section-sub">
+        We’re a growing team where ideas move quickly, ownership matters, and good work can shape the product from day one.
+      </p>
+    </div>
+
+    <div class="why-grid">
+      <!-- CARD 1 -->
+      <div class="why-card">
+        <div class="why-card-top">
+          <span class="why-num-badge">01 — REAL OWNERSHIP</span>
+          <div class="why-card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+        </div>
+        <h3 class="why-card-title">Own meaningful work.</h3>
+        <p class="why-card-desc">Work on ideas and projects that directly influence the product, customers, and company.</p>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="why-card">
+        <div class="why-card-top">
+          <span class="why-num-badge">02 — WORK WITHOUT BORDERS</span>
+          <div class="why-card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+        </div>
+        <h3 class="why-card-title">Collaborate globally.</h3>
+        <p class="why-card-desc">Work with a distributed team across countries while staying connected around shared goals.</p>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="why-card">
+        <div class="why-card-top">
+          <span class="why-num-badge">03 — MOVE FAST</span>
+          <div class="why-card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+        </div>
+        <h3 class="why-card-title">Ideas become action.</h3>
+        <p class="why-card-desc">Less bureaucracy, faster decisions, and room to experiment, learn, and improve.</p>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="why-card">
+        <div class="why-card-top">
+          <span class="why-num-badge">04 — GROW WITH US</span>
+          <div class="why-card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+        </div>
+        <h3 class="why-card-title">Build your next chapter.</h3>
+        <p class="why-card-desc">As LeadPilot grows, we want the people building it to grow with it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 5. HOW WE WORK (VALUES GRID 3x2) -->
+<section class="work-section">
+  <div class="container">
+    <div class="stats-header-wrap" style="margin-bottom: 0;">
+      <span class="section-eyebrow">HOW WE WORK</span>
+      <h2 class="section-title" style="margin-bottom: 24px;">
+        How we build. <span class="ombre-text">How we work.</span>
+      </h2>
+      <p class="section-sub" style="margin-bottom: 0; max-width: 720px; margin-left: auto; margin-right: auto;">
+        Our values are not statements on a wall; they represent how we prioritize our daily engineering choices, product pipelines, and collaborative efforts.
+      </p>
+    </div>
+
+    <!-- Values 3x2 Grid -->
+    <div class="values-grid">
+      <!-- 01 THINK LONG TERM -->
+      <div class="value-card">
+        <div class="value-card-header">
+          <div class="value-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-9"/><path d="M12 13a4 4 0 1 0-4-4"/><path d="M12 13a4 4 0 1 1 4-4"/><path d="M12 2a7 7 0 0 0-7 7c0 3 2 5.5 5 6.5"/><path d="M12 2a7 7 0 0 1 7 7c0 3-2 5.5-5 6.5"/></svg>
+          </div>
+          <span class="value-card-num">01</span>
+        </div>
+        <h3 class="value-card-title">Think Long Term</h3>
+        <p class="value-card-desc">We build durable software structures and relationships that create lasting value for our clients.</p>
+      </div>
+
+      <!-- 02 BIAS FOR ACTION -->
+      <div class="value-card">
+        <div class="value-card-header">
+          <div class="value-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <span class="value-card-num">02</span>
+        </div>
+        <h3 class="value-card-title">Bias For Action</h3>
+        <p class="value-card-desc">Execution speaks louder than debate. We prefer building, testing, and iterating over endless planning.</p>
+      </div>
+
+      <!-- 03 CUSTOMER OBSESSION -->
+      <div class="value-card">
+        <div class="value-card-header">
+          <div class="value-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          </div>
+          <span class="value-card-num">03</span>
+        </div>
+        <h3 class="value-card-title">Customer Obsession</h3>
+        <p class="value-card-desc">We measure our company's success by the tangible operational success and growth of our customers.</p>
+      </div>
+
+      <!-- 04 STAY CURIOUS -->
+      <div class="value-card">
+        <div class="value-card-header">
+          <div class="value-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+          </div>
+          <span class="value-card-num">04</span>
+        </div>
+        <h3 class="value-card-title">Stay Curious</h3>
+        <p class="value-card-desc">We constantly seek out improvements, challenge established assumptions, and research better technologies.</p>
+      </div>
+
+      <!-- 05 KEEP IT SIMPLE -->
+      <div class="value-card">
+        <div class="value-card-header">
+          <div class="value-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+          </div>
+          <span class="value-card-num">05</span>
+        </div>
+        <h3 class="value-card-title">Keep It Simple</h3>
+        <p class="value-card-desc">We value simplicity over complexity in our product designs, backend architectures, and organization workflows.</p>
+      </div>
+
+      <!-- 06 OWN THE OUTCOME -->
+      <div class="value-card">
+        <div class="value-card-header">
+          <div class="value-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5z"/><path d="M5 19h14"/></svg>
+          </div>
+          <span class="value-card-num">06</span>
+        </div>
+        <h3 class="value-card-title">Own The Outcome</h3>
+        <p class="value-card-desc">We take deep responsibility for outcomes, following tasks through to complete resolution and satisfaction.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 6. OUR PERFECT FIT & WHAT DRIVES US -->
+<section class="fit-section">
+  <div class="container">
+    <!-- Intro Row -->
+    <div class="fit-header-row">
+      <div>
+        <span class="section-eyebrow">OUR PERFECT FIT</span>
+        <h2 class="section-title" style="margin-bottom: 16px;">
+          Who thrives <span class="ombre-text">at LeadPilot?</span>
+        </h2>
+        <p class="section-sub" style="margin-bottom: 0; max-width: 680px;">
+          We’re building ambitious products with a small, focused team. We look for people who are curious, move with purpose, take ownership, and care deeply about the quality of what they create.
+        </p>
+      </div>
+      <a href="#open-roles" class="btn-outline-hero" style="flex-shrink: 0;">View Open Roles →</a>
+    </div>
+
+    <!-- 3 Large Editorial Visual Cards -->
+    <div class="fit-cards-grid">
+      <!-- CARD 01: BUILDERS -->
+      <div class="fit-editorial-card fit-card-builder">
+        <div class="fit-card-text">
+          <span class="fit-tag">01 — BUILDERS</span>
+          <h3 class="fit-card-title">Build Things That Matter</h3>
+          <p class="fit-card-desc">We love people who turn ideas into real products, experiences, and systems that create measurable value.</p>
+        </div>
+
+        <div class="fit-artwork-wrapper">
+          <img src="images/build-things-that-matter.png" alt="Build Things That Matter" class="fit-artwork-img">
+        </div>
+      </div>
+
+      <!-- CARD 02: PROBLEM SOLVERS -->
+      <div class="fit-editorial-card fit-card-curious">
+        <div class="fit-card-text">
+          <span class="fit-tag">02 — PROBLEM SOLVERS</span>
+          <h3 class="fit-card-title">Stay Curious</h3>
+          <p class="fit-card-desc">Ask why, challenge assumptions, explore better approaches, and keep learning until the problem makes sense.</p>
+        </div>
+
+        <div class="fit-artwork-wrapper">
+          <img src="images/stay-curious.png" alt="Stay Curious" class="fit-artwork-img">
+        </div>
+      </div>
+
+      <!-- CARD 03: OWNERS -->
+      <div class="fit-editorial-card fit-card-owner">
+        <div class="fit-card-text">
+          <span class="fit-tag">03 — OWNERS</span>
+          <h3 class="fit-card-title">Own The Outcome</h3>
+          <p class="fit-card-desc">Take responsibility beyond the task. Follow ideas through, solve what gets in the way, and care about the final result.</p>
+        </div>
+
+        <div class="fit-artwork-wrapper">
+          <img src="images/own-the-outcome.png" alt="Own The Outcome" class="fit-artwork-img">
+        </div>
+      </div>
+    </div>
+
+    <!-- Lower WHAT DRIVES US Editorial Area -->
+    <div style="margin-top: 20px;">
+      <span class="section-eyebrow">WHAT DRIVES US</span>
+      <div class="drives-divider"></div>
+
+      <!-- 2-Column Text Layout -->
+      <div class="drives-two-col">
+        <div>
+          <h3 class="drives-col-title">Small team. Big ownership.</h3>
+          <p class="drives-col-body">
+            LeadPilot is built by Neuralence Solutions FZCO, where product, engineering, design, sales, and customer insight work closely together. Good ideas are not limited by titles or departments. Everyone has the opportunity to question assumptions, improve the product, and influence what we build next.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="drives-col-title">Grow with what you build.</h3>
+          <p class="drives-col-body">
+            We look for people who want more than a list of assigned tasks. You’ll have room to experiment, learn quickly, take responsibility, and see the direct impact of your work on the businesses using LeadPilot.
+          </p>
+        </div>
+      </div>
+
+      <!-- Highlighted Statement -->
+      <div class="drives-highlight-box">
+        <p class="drives-highlight-text">
+          Do meaningful work. <span class="ombre-text">Own the outcome.</span> Keep getting better.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 6. CURRENT OPPORTUNITIES (#open-roles) -->
+<section class="jobs-section" id="open-roles">
+  <div class="container">
+    <div class="jobs-header-row">
+      <div>
+        <span class="section-eyebrow">✦ JOIN THE TEAM</span>
+        <h2 class="section-title" style="margin-bottom: 8px;">
+          Find your next <span class="ombre-text">opportunity.</span>
+        </h2>
+        <p class="section-sub" style="margin-bottom: 0;">Explore our current openings and find a role where you can make an impact.</p>
+      </div>
+      <span class="positions-count-badge">2 OPEN POSITIONS</span>
+    </div>
+
+    <div class="job-rows-container">
+      <!-- JOB 01: SALES EXECUTIVE -->
+      <div class="job-row-card" onclick="openRoleModal('sales')">
+        <div class="job-info-left">
+          <span class="job-category-tag">SALES</span>
+          <h3 class="job-title">Sales Executive</h3>
+          <p class="job-short-desc">Help us find, connect with, and convert the right businesses into LeadPilot customers. You’ll work closely with the team to build relationships and drive growth.</p>
+          <div class="job-meta-row">
+            <span>📍 Remote / UAE</span>
+            <span>•</span>
+            <span>💼 Full Time</span>
+          </div>
+        </div>
+        <div class="job-btn-wrap">
+          <span>View Role</span>
+          <span class="job-arrow">→</span>
+        </div>
+      </div>
+
+      <!-- JOB 02: MARKETING EXECUTIVE -->
+      <div class="job-row-card" onclick="openRoleModal('marketing')">
+        <div class="job-info-left">
+          <span class="job-category-tag">MARKETING</span>
+          <h3 class="job-title">Marketing Executive</h3>
+          <p class="job-short-desc">Help shape how LeadPilot shows up in the market. You’ll work on campaigns, content, positioning, and ideas that turn attention into meaningful growth.</p>
+          <div class="job-meta-row">
+            <span>📍 Remote / UAE</span>
+            <span>•</span>
+            <span>💼 Full Time</span>
+          </div>
+        </div>
+        <div class="job-btn-wrap">
+          <span>View Role</span>
+          <span class="job-arrow">→</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 7. DON'T SEE YOUR ROLE? -->
+<section class="spontaneous-section">
+  <div class="container">
+    <div class="spontaneous-card">
+      <h2 class="spontaneous-title">
+        Don’t see your role? <br><span class="ombre-text">We’d still love to hear from you.</span>
+      </h2>
+      <p class="spontaneous-sub">
+        Great people don’t always fit neatly into an open job title. If you think you can help us build, grow, or improve LeadPilot, introduce yourself.
+      </p>
+      <a href="mailto:careers@neuralence.ai?subject=General%20Application%20-%20LeadPilot" class="btn-spontaneous-apply">Introduce Yourself →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- 8. FINAL CAREERS ANIMATED GRADIENT CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-banner">
+      <!-- Animated ambient light blobs -->
+      <div class="cta-glow-blob blob-1"></div>
+      <div class="cta-glow-blob blob-2"></div>
+
+      <div class="cta-banner-eyebrow">✦ BUILD WITH US</div>
+      <h2 class="cta-banner-title">
+        Your next big move <span style="display:block">could start here.</span>
+      </h2>
+      <p class="cta-banner-sub">
+        Join a growing team building smarter tools for the businesses shaping tomorrow.
+      </p>
+
+      <div class="cta-buttons">
+        <a href="#open-roles" class="btn-cta-primary-white">Explore Open Roles →</a>
+        <a href="index.html#problem" class="btn-cta-secondary">Learn About LeadPilot →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 9. OFFICIAL GLOBAL FOOTER -->
+<script src="components/footer.js"></script>
+
+
+<!-- JOB DETAILS MODAL -->
+<div class="role-modal-overlay" id="role-modal">
+  <div class="role-modal-container">
+    <button class="modal-close-btn" onclick="closeRoleModal()">&times;</button>
+    <div id="modal-role-content"></div>
+  </div>
+</div>
+
+<!-- INTERACTIVITY SCRIPT -->
+<script>
+const rolesData = {
+  sales: {
+    badge: 'SALES',
+    title: 'Sales Executive',
+    location: '📍 Remote / UAE',
+    type: '💼 Full Time',
+    overview: 'You’ll help grow LeadPilot by identifying the right businesses, starting meaningful conversations, understanding their needs, and turning qualified opportunities into customers.',
+    responsibilities: [
+      'Identify and research potential customers.',
+      'Reach out to prospects and start meaningful conversations.',
+      'Understand customer challenges and communicate how LeadPilot can help.',
+      'Manage leads and opportunities through the sales process.',
+      'Follow up consistently and build strong relationships.',
+      'Work closely with the team to improve our sales approach based on what you learn from customers.'
+    ],
+    requirements: [
+      'Strong communication and interpersonal skills.',
+      'Comfortable speaking with potential customers and decision-makers.',
+      'Self-motivated and comfortable taking ownership.',
+      'Able to understand a product and communicate its value clearly.',
+      'Organised and consistent with follow-ups.',
+      'Curious about sales, technology, and business growth.'
+    ],
+    challengeQuestion: '“If you joined LeadPilot tomorrow, how would you approach finding and converting our next 10 customers?”',
+    challengeSupport: 'There’s no perfect answer. We’re interested in how you think, what you noticed about LeadPilot, and where you believe you could contribute.'
+  },
+  marketing: {
+    badge: 'MARKETING',
+    title: 'Marketing Executive',
+    location: '📍 Remote / UAE',
+    type: '💼 Full Time',
+    overview: 'You’ll help shape how people discover and understand LeadPilot. From content and campaigns to positioning and experiments, you’ll work on ideas that help us reach the right audience and grow.',
+    responsibilities: [
+      'Create and execute marketing campaigns.',
+      'Develop content for digital channels.',
+      'Help communicate LeadPilot’s product and value proposition clearly.',
+      'Research audiences, competitors, and market opportunities.',
+      'Experiment with new ways to generate awareness and leads.',
+      'Track results and continuously improve what we do.',
+      'Bring new ideas rather than simply executing a fixed playbook.'
+    ],
+    requirements: [
+      'Strong written and verbal communication.',
+      'Good understanding of digital marketing and content.',
+      'Creative thinking combined with a willingness to experiment.',
+      'Ability to understand an audience and communicate clearly to them.',
+      'Comfortable taking initiative and working independently.',
+      'Interest in technology, SaaS, AI, sales, or business growth is a plus.'
+    ],
+    challengeQuestion: '“What’s one thing you would improve about how LeadPilot is currently marketed, and what would you do differently?”',
+    challengeSupport: 'Keep it short. We’re looking for thoughtful observations and ideas, not a polished presentation.'
+  }
+};
+
+function openRoleModal(roleKey) {
+  const role = rolesData[roleKey];
+  if (!role) return;
+
+  const contentDiv = document.getElementById('modal-role-content');
+  
+  contentDiv.innerHTML = `
+    <span class="job-category-tag">${role.badge}</span>
+    <h2 style="font-family: 'Inter Tight', sans-serif; font-size: 32px; font-weight: 850; color: #0F172A; margin: 6px 0 12px 0;">${role.title}</h2>
+    <div class="job-meta-row" style="margin-bottom: 24px;">
+      <span>${role.location}</span>
+      <span>•</span>
+      <span>${role.type}</span>
+    </div>
+
+    <h3 class="role-section-title">Role Overview</h3>
+    <p class="role-body-text">${role.overview}</p>
+
+    <h3 class="role-section-title">What You’ll Do</h3>
+    <ul class="role-list">
+      ${role.responsibilities.map(r => `<li>${r}</li>`).join('')}
+    </ul>
+
+    <h3 class="role-section-title">What We’re Looking For</h3>
+    <ul class="role-list">
+      ${role.requirements.map(req => `<li>${req}</li>`).join('')}
+    </ul>
+
+    <div style="background: #F3E8FF; border-left: 3px solid #7C3AED; padding: 14px 18px; border-radius: 12px; margin-top: 20px;">
+      <p style="font-size: 14px; color: #6D28D9; margin: 0; font-weight: 500;">
+        💡 <strong>Note:</strong> We do not make years of experience a strict requirement. We care more about ability, initiative, communication, and willingness to learn.
+      </p>
+    </div>
+
+    <!-- BEFORE YOU APPLY: APPLICATION CHALLENGE -->
+    <div class="challenge-card-box">
+      <span class="section-eyebrow" style="margin-bottom: 6px;">BEFORE YOU APPLY</span>
+      <h3 style="font-family: 'Inter Tight', sans-serif; font-size: 22px; font-weight: 850; color: #0F172A; margin-bottom: 8px;">Explore &amp; Share Your Approach</h3>
+      <p style="font-size: 15px; color: #475569; line-height: 1.55; margin-bottom: 16px;">
+        Spend a few minutes exploring LeadPilot and understanding what we’re building. We’d rather see how you think than read another generic cover letter.
+      </p>
+
+      <div class="challenge-q-box">
+        <div class="challenge-q-text">${role.challengeQuestion}</div>
+        <div style="font-size: 13.5px; color: #64748B;">${role.challengeSupport}</div>
+      </div>
+    </div>
+
+    <!-- APPLICATION FORM -->
+    <div style="margin-top: 36px; padding-top: 28px; border-top: 1.5px solid #F1F5F9;" id="apply-form-section">
+      <h3 class="role-section-title" style="margin-top: 0;">Apply for this role</h3>
+      
+      <form id="job-application-form" onsubmit="submitJobApplication(event, '${role.title}')">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div class="modal-form-group">
+            <label class="modal-label">Full Name *</label>
+            <input type="text" class="modal-input" required placeholder="Jane Doe">
+          </div>
+          <div class="modal-form-group">
+            <label class="modal-label">Email Address *</label>
+            <input type="email" class="modal-input" required placeholder="jane@example.com">
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div class="modal-form-group">
+            <label class="modal-label">Phone Number *</label>
+            <input type="tel" class="modal-input" required placeholder="+1 (555) 000-0000">
+          </div>
+          <div class="modal-form-group">
+            <label class="modal-label">LinkedIn / Portfolio URL</label>
+            <input type="url" class="modal-input" placeholder="https://linkedin.com/in/username">
+          </div>
+        </div>
+
+        <div class="modal-form-group">
+          <label class="modal-label">Application Challenge Response *</label>
+          <p style="font-size: 13px; color: #64748B; margin-bottom: 6px;">${role.challengeQuestion}</p>
+          <textarea class="modal-textarea" required placeholder="Share a short summary of how you think about this question..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-gradient-hero" style="width: 100%; border: none; cursor: pointer; padding: 16px; font-size: 16px; justify-content: center; margin-top: 12px;">
+          Submit Application &rarr;
+        </button>
+      </form>
+      <div id="application-success-msg" style="display: none; background: #ECFDF5; border: 1.5px solid #10B981; border-radius: 16px; padding: 24px; text-align: center; margin-top: 16px;">
+        <div style="font-size: 32px; margin-bottom: 8px;">🎉</div>
+        <h4 style="font-size: 20px; font-weight: 850; color: #065F46; margin-bottom: 6px;">Application Submitted!</h4>
+        <p style="font-size: 15px; color: #047857; margin: 0;">Thank you for applying. We’ve received your response and will be in touch with you shortly.</p>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('role-modal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeRoleModal() {
+  document.getElementById('role-modal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function submitJobApplication(e, roleTitle) {
+  e.preventDefault();
+  document.getElementById('job-application-form').style.display = 'none';
+  document.getElementById('application-success-msg').style.display = 'block';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Mobile Drawer Toggle
+  const mobileToggleBtn = document.querySelector('.mobile-nav-toggle');
+  const mobileCloseBtn = document.querySelector('.mobile-drawer-close');
+  const mobileDrawer = document.querySelector('.mobile-nav-drawer');
+
+  if (mobileToggleBtn && mobileCloseBtn && mobileDrawer) {
+    mobileToggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      mobileDrawer.classList.add('active');
+    });
+
+    const closeDrawer = () => mobileDrawer.classList.remove('active');
+
+    mobileCloseBtn.addEventListener('click', closeDrawer);
+
+    document.addEventListener('click', (e) => {
+      if (mobileDrawer.classList.contains('active') && !mobileDrawer.contains(e.target) && !mobileToggleBtn.contains(e.target)) {
+        closeDrawer();
+      }
+    });
+  }
+
+  // Close modal on overlay click
+  const modalOverlay = document.getElementById('role-modal');
+  if (modalOverlay) {
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target.id === 'role-modal') closeRoleModal();
+    });
+  }
+});
+</script>
+
+<script src="components/navbar.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+python3 -c "
+with open('/Users/amanamuhammed/.gemini/antigravity/brain/67b9bfad-7c28-4c07-8386-12036697c9aa/.system_generated/logs/transcript_full.jsonl') as f:
+    text = f.read()
+
+import re
+matches = [m.start() for m in re.finditer(r'initKanban', text)]
+print('Matches for initKanban:', len(matches))
+if matches:
+    pos = matches[-1]
+    print('Extracting around pos:', pos)
+    sub = text[max(0, pos-200):min(len(text), pos+3000)]
+    with open('found_kanban.txt', 'w') as out:
+        out.write(sub)
+    print('Wrote found_kanban.txt')
+"

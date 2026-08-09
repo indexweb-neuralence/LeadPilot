@@ -1,0 +1,8 @@
+python3 -c "
+with open('/Users/amanamuhammed/.gemini/antigravity/brain/67b9bfad-7c28-4c07-8386-12036697c9aa/.system_generated/logs/transcript.jsonl') as f:
+    lines = f.readlines()
+
+for idx, line in enumerate(lines):
+    if 'function initHero' in line or 'function initKanban' in line or '<footer>' in line:
+        print(f'Found at line {idx}: {line[:120]}...')
+"

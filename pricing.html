@@ -1,0 +1,2670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="images/LEAD PILOT LOGO.png">
+<link rel="apple-touch-icon" href="images/LEAD PILOT LOGO.png">
+<title>Pricing Plans & Packages – LeadPilot</title>
+<meta name="description" content="Simple, transparent pricing for LeadPilot. Find the right plan for your sales team, from Starter to Growth and Enterprise. Start your free trial today.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+  /* ── BASE & TOKENS ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    background-color: #FFFFFF;
+    overflow-x: hidden;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :root {
+    --purple: #7C3AED;
+    --purple-light: #8B5CF6;
+    --purple-pale: #F3E8FF;
+    --purple-subtle: #FAF5FF;
+    --pink: #EC4899;
+    --pink-hot: #F43F5E;
+    --grad: linear-gradient(135deg, #7C3AED 0%, #EC4899 100%);
+    --dark: #0A0A0F;
+    --dark2: #111118;
+    --card-dark: #1A1A24;
+    --dark-muted: #475569;
+    --text-slate: #6B7280;
+    --border-color: #E2E8F0;
+    --border-light: #F1F5F9;
+    --radius-lg: 24px;
+    --radius-md: 16px;
+    --radius-full: 9999px;
+    --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+    --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.03);
+    --shadow-glow: 0 16px 40px rgba(124, 58, 237, 0.14), 0 4px 12px rgba(124, 58, 237, 0.08);
+  }
+
+  /* Container */
+  .container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .grad-text {
+    background: var(--grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Eyebrow badge */
+  .eyebrow-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #F3E8FF;
+    color: #7C3AED;
+    border: 1px solid #E9D5FF;
+    padding: 6px 16px;
+    border-radius: var(--radius-full);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  /* Section Titles */
+  .section-header {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .section-title {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    color: #0F172A;
+    margin-bottom: 16px;
+  }
+  .section-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    color: #6B7280;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+
+  /* ── 1. GLOBAL NAVIGATION ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: #ffffff;
+    border-bottom: 1px solid #F1F5F9;
+    padding: 0 60px;
+    height: 88px;
+    display: flex; align-items: center; justify-content: space-between;
+    transition: all 0.3s ease;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; font-size: 19px; font-weight: 800; color: #0F172A; text-decoration: none; letter-spacing: -0.5px; }
+  .nav-logo img { width: 28px; height: 28px; object-fit: contain; }
+  .nav-links { display: flex; gap: 36px; align-items: center; position: absolute; left: 50%; transform: translateX(-50%); }
+  .nav-links a { color: #475569; text-decoration: none; font-size: 15px; font-weight: 500; display: flex; align-items: center; gap: 4px; transition: color 0.2s ease; }
+  .nav-links a:hover { color: #0F172A; }
+  .nav-links a.nav-link-active { color: var(--purple); font-weight: 600; }
+  
+  .nav-dropdown-wrapper {
+    position: relative;
+    height: 88px;
+    display: flex;
+    align-items: center;
+  }
+  .nav-dropdown-trigger {
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  .nav-actions { display: flex; gap: 14px; align-items: center; }
+  .nav-actions a { text-decoration: none; font-size: 15px; font-weight: 600; transition: all 0.2s ease; }
+  .btn-ghost-nav { color: #475569; padding: 10px 16px; }
+  .btn-ghost-nav:hover { color: #0F172A; }
+  .btn-outline-nav {
+    border: 1px solid #E2E8F0;
+    border-radius: 9999px;
+    padding: 10px 22px;
+    color: #0F172A;
+    background: #ffffff;
+  }
+  .btn-outline-nav:hover { background: #F8FAFC; border-color: #CBD5E1; }
+  .btn-solid-nav {
+    background: #0F172A;
+    color: #ffffff;
+    border-radius: 9999px;
+    padding: 10px 22px;
+  }
+  .btn-solid-nav:hover { background: #1E293B; }
+
+  /* Mega Menu */
+  .mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    width: 920px;
+    background: #ffffff;
+    border: 1px solid #E2E8F0;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+    padding: 28px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    z-index: 1000;
+  }
+  .nav-dropdown-wrapper:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+  }
+  .mega-menu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .mega-menu-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .mega-menu-category {
+    font-size: 11px;
+    font-weight: 700;
+    color: #94A3B8;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #F1F5F9;
+    margin-bottom: 6px;
+  }
+  .mega-menu-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+  .mega-menu-item:hover {
+    background: #F8FAFC;
+  }
+  .mega-menu-icon-wrap {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .mega-menu-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .mega-menu-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0F172A;
+  }
+  .mega-menu-desc {
+    font-size: 12px;
+    color: #64748B;
+    line-height: 1.35;
+  }
+  .mega-menu-footer {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #F1F5F9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+  }
+  .mega-menu-footer-left { display: flex; align-items: center; gap: 10px; }
+  .footer-badge { background: #F3E8FF; color: #7C3AED; font-weight: 600; padding: 3px 10px; border-radius: 100px; font-size: 12px; }
+  .footer-text { color: #64748B; font-size: 12px; }
+  .mega-menu-footer-link { color: #7C3AED; font-weight: 600; text-decoration: none; }
+  .mega-menu-footer-link:hover { text-decoration: underline; }
+
+  /* Mobile navigation styles managed globally by css/navbar.css */
+
+  /* ── 2. PRICING HERO ── */
+  .pricing-hero {
+    padding: 100px 0 0 0;
+    text-align: center;
+    background: linear-gradient(180deg, #FAFAFC 0%, #FFFFFF 100%);
+  }
+  .hero-headline {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 64px;
+    font-weight: 850;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: #0A0A0F;
+    max-width: 820px;
+    margin: 0 auto 24px auto;
+  }
+  .hero-subcopy {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    color: #6B7280;
+    margin-bottom: 40px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  /* Toggle Container */
+  .billing-toggle-wrapper {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 80px;
+  }
+  .billing-toggle-box {
+    position: relative;
+    background: #F1F5F9;
+    border: 1px solid #E2E8F0;
+    border-radius: var(--radius-full);
+    padding: 5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .billing-toggle-btn {
+    position: relative;
+    z-index: 2;
+    padding: 10px 24px;
+    border-radius: var(--radius-full);
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    color: #6B7280;
+    transition: color 0.25s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    outline: none;
+  }
+  .billing-toggle-btn.active {
+    color: #0F172A;
+  }
+  .toggle-slider-bg {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    height: calc(100% - 10px);
+    width: 105px;
+    background: #FFFFFF;
+    border-radius: var(--radius-full);
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.1);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), width 0.3s ease;
+    z-index: 1;
+  }
+  .save-badge {
+    background: var(--grad);
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 100px;
+    letter-spacing: 0.02em;
+    display: inline-block;
+  }
+  .billing-note {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #6B7280;
+    margin-top: 14px;
+  }
+  .billing-note strong {
+    color: #374151;
+  }
+
+  /* ── RESOURCES MEGA MENU ── */
+  .mega-menu-resources {
+    width: calc(100vw - 60px) !important;
+    max-width: 1220px !important;
+    border-radius: 26px !important;
+  }
+  .mega-menu-resources-grid {
+    display: grid;
+    grid-template-columns: 370px 1fr;
+    gap: 36px;
+    padding: 36px 40px;
+    background: #FFFFFF;
+    box-sizing: border-box;
+  }
+  .resources-left-col, .resources-right-col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .resource-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .resource-item {
+    display: flex !important;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 14px !important;
+    border-radius: 16px !important;
+    text-decoration: none !important;
+    background: transparent !important;
+    transition: all 0.2s ease !important;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+  .resource-item:hover {
+    background: rgba(108, 75, 255, 0.04) !important;
+    transform: translateY(-1px);
+  }
+  .resource-icon-wrap {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+  .resource-item:hover .resource-icon-wrap {
+    transform: scale(1.05);
+  }
+  .resource-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    flex: 1;
+  }
+  .resource-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0F172A;
+    line-height: 1.2;
+    transition: color 0.2s ease;
+  }
+  .resource-item:hover .resource-title {
+    color: var(--purple, #7C3AED);
+  }
+  .resource-desc {
+    font-size: 12.5px;
+    color: #64748B;
+    line-height: 1.4;
+  }
+  .resource-arrow {
+    color: #CBD5E1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+  .resource-item:hover .resource-arrow {
+    color: var(--purple, #7C3AED);
+    transform: translateX(4px);
+  }
+
+  /* Right Column: Featured Cards */
+  .featured-cards-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .featured-card-main {
+    background: linear-gradient(135deg, rgba(245, 243, 255, 0.75) 0%, rgba(254, 243, 249, 0.75) 50%, rgba(255, 247, 237, 0.75) 100%);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    border-radius: 20px;
+    padding: 28px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .featured-card-main:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 36px rgba(124, 58, 237, 0.06);
+  }
+  .featured-main-content {
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .featured-cards-wrap .featured-badge,
+  .mega-menu .featured-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 750;
+    letter-spacing: 0.06em;
+    color: #7C3AED;
+    background: rgba(124, 58, 237, 0.1);
+    padding: 4px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+  }
+  .featured-headline {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 21px;
+    font-weight: 800;
+    color: #0F172A;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+  .featured-desc {
+    font-size: 13px;
+    color: #64748B;
+    line-height: 1.5;
+    margin: 0;
+  }
+  .featured-link {
+    font-size: 14px;
+    font-weight: 700;
+    color: #7C3AED !important;
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+    transition: gap 0.2s ease;
+  }
+  .featured-link:hover {
+    gap: 10px;
+  }
+
+  /* Mini Dashboard Illustration in Main Card */
+  .featured-main-visual {
+    position: relative;
+    flex-shrink: 0;
+    width: 290px;
+  }
+  .mini-dashboard-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(15, 23, 42, 0.02);
+    position: relative;
+  }
+  .mini-dash-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #0F172A;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #F1F5F9;
+    margin-bottom: 12px;
+  }
+  .mini-dash-pipeline-title {
+    color: #64748B;
+    font-weight: 600;
+  }
+  .mini-dash-body {
+    display: flex;
+    gap: 14px;
+  }
+  .mini-dash-stats {
+    flex: 1.1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .mini-stat-label {
+    font-size: 10.5px;
+    color: #64748B;
+    font-weight: 500;
+  }
+  .mini-stat-val {
+    font-size: 19px;
+    font-weight: 800;
+    color: #0F172A;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .mini-stat-growth {
+    font-size: 11px;
+    font-weight: 700;
+    color: #10B981;
+    background: rgba(16, 185, 129, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  .mini-chart-svg {
+    margin-top: 6px;
+    width: 100%;
+    height: 34px;
+  }
+  .mini-dash-stages {
+    flex: 0.9;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 11px;
+    color: #475569;
+    justify-content: center;
+  }
+  .stage-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+  }
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .dot-purple { background: #2563EB; }
+  .dot-violet { background: #7C3AED; }
+  .dot-orange { background: #EA580C; }
+  .dot-pink { background: #EC4899; }
+  .stage-num {
+    font-weight: 700;
+    color: #0F172A;
+  }
+
+  .floating-closed-won-badge {
+    position: absolute;
+    bottom: -14px;
+    right: -10px;
+    background: #FFFFFF;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 14px;
+    padding: 10px 14px;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 5;
+  }
+  .won-check-circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #10B981;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .won-text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .won-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #0F172A;
+  }
+  .won-growth {
+    font-size: 10.5px;
+    font-weight: 600;
+    color: #10B981;
+  }
+
+  /* Featured Card 2 (Secondary Horizontal) */
+  .featured-card-secondary {
+    background: #FFFFFF;
+    border: 1px solid #F1F5F9;
+    border-radius: 16px;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .featured-card-secondary:hover {
+    border-color: #E2E8F0;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+  }
+  .secondary-card-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .secondary-text-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .secondary-title {
+    font-size: 14px;
+    font-weight: 750;
+    color: #0F172A;
+  }
+  .secondary-subtitle {
+    font-size: 13px;
+    color: #64748B;
+  }
+  .secondary-card-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .secondary-cta-link {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #7C3AED !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease;
+  }
+  .secondary-cta-link:hover {
+    color: #6D28D9 !important;
+  }
+  .calendar-icon-box {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: rgba(124, 58, 237, 0.08);
+    color: #7C3AED;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* Resources Footer Strip */
+  .mega-menu-resources-footer {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 40px;
+    background: #FBF9FE;
+    border-top: 1px solid #F1F5F9;
+    box-sizing: border-box;
+  }
+  .resources-footer-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #7C3AED 0%, #EC4899 100%);
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .resources-footer-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .res-footer-title {
+    font-size: 14px;
+    font-weight: 750;
+    color: #0F172A;
+  }
+  .res-footer-desc {
+    font-size: 13px;
+    color: #64748B;
+  }
+
+  /* ── 3. PRICING CARDS ── */
+  .pricing-cards-section {
+    padding: 0 0 120px 0;
+  }
+  .pricing-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    align-items: stretch;
+  }
+  .pricing-card {
+    background: #FFFFFF;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 44px 36px;
+    position: relative;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  .pricing-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+  }
+  .pricing-card.growth-card {
+    border: 2px solid var(--purple);
+    box-shadow: var(--shadow-glow);
+  }
+  .pricing-card.growth-card:hover {
+    box-shadow: 0 22px 50px rgba(124, 58, 237, 0.2);
+  }
+
+  .recommended-badge {
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #7C3AED 0%, #EC4899 50%, #F59E0B 100%);
+    color: #FFFFFF !important;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 9999px;
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
+    white-space: nowrap;
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .card-top {
+    margin-bottom: 28px;
+  }
+  .card-icon-wrap {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .sprout-icon-bg { background: #ECFDF5; color: #10B981; }
+  .lightning-icon-bg { background: #F3E8FF; color: #7C3AED; }
+  .enterprise-icon-bg { background: #EEF2FF; color: #4F46E5; }
+
+  .card-title {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 8px;
+  }
+  .card-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #6B7280;
+    line-height: 1.5;
+    min-height: 42px;
+  }
+
+  .card-pricing-block {
+    padding: 20px 0;
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+    margin-bottom: 28px;
+  }
+  .card-price-display {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+  }
+  .price-num {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 52px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: #0F172A;
+    line-height: 1;
+  }
+  .price-unit {
+    font-size: 15px;
+    font-weight: 500;
+    color: #6B7280;
+  }
+  .price-billing-sub {
+    font-size: 13px;
+    color: #94A3B8;
+    margin-top: 6px;
+    font-weight: 500;
+  }
+  .tailored-badge {
+    display: inline-block;
+    background: #EEF2FF;
+    color: #4F46E5;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 100px;
+  }
+
+  .card-features-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 36px;
+    flex-grow: 1;
+  }
+  .feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    color: #334155;
+    font-weight: 500;
+  }
+  .feature-check {
+    color: #7C3AED;
+    font-weight: 800;
+    font-size: 15px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* CTA Buttons */
+  .card-cta-btn {
+    width: 100%;
+    padding: 16px 24px;
+    border-radius: var(--radius-full);
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    text-align: center;
+  }
+  .btn-starter-cta {
+    background: #FFFFFF;
+    color: #7C3AED;
+    border: 1.5px solid #7C3AED;
+  }
+  .btn-starter-cta:hover {
+    background: #F3E8FF;
+    border-color: #6D28D9;
+    color: #6D28D9;
+  }
+  .btn-growth-cta {
+    background: var(--grad);
+    color: #FFFFFF;
+    border: none;
+    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.25);
+  }
+  .btn-growth-cta:hover {
+    box-shadow: 0 12px 28px rgba(124, 58, 237, 0.35);
+    opacity: 0.95;
+    transform: translateY(-1px);
+  }
+  .btn-enterprise-cta {
+    background: #FFFFFF;
+    color: #0F172A;
+    border: 1.5px solid #CBD5E1;
+  }
+  .btn-enterprise-cta:hover {
+    border-color: #7C3AED;
+    color: #7C3AED;
+    background: #F8FAFC;
+  }
+
+  /* ── 4. PLAN COMPARISON SECTION ── */
+  .comparison-section {
+    padding: 120px 0;
+    background: #FAFAFC;
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+  }
+  .comparison-table-wrapper {
+    margin-top: 60px;
+    background: #FFFFFF;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+  }
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 14px;
+  }
+  .comparison-table th, .comparison-table td {
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--border-light);
+    vertical-align: middle;
+  }
+  .comparison-table th {
+    background: #FFFFFF;
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: #0F172A;
+    text-align: center;
+  }
+  .comparison-table th:first-child {
+    text-align: left;
+    font-size: 15px;
+    font-weight: 700;
+    color: #64748B;
+    width: 34%;
+  }
+  .comparison-table td {
+    text-align: center;
+    color: #334155;
+  }
+  .comparison-table td:first-child {
+    text-align: left;
+    font-weight: 600;
+    color: #0F172A;
+  }
+
+  /* Growth Column Highlight */
+  .col-growth-bg {
+    background-color: #FAF5FF !important;
+  }
+  th.col-growth-bg {
+    background-color: #FAF5FF !important;
+    color: #7C3AED;
+  }
+  .growth-header-badge {
+    display: inline-block;
+    background: var(--grad);
+    color: #FFFFFF;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 100px;
+    margin-top: 4px;
+  }
+
+  /* Pricing emphasis in table */
+  .table-price-row {
+    transition: background 0.3s ease;
+  }
+  .table-price-row.active-billing-row {
+    background-color: #F3E8FF !important;
+  }
+  .table-price-row.active-billing-row td {
+    font-weight: 700;
+    color: #7C3AED;
+  }
+  .table-price-row.active-billing-row td:first-child {
+    color: #6D28D9;
+  }
+  .table-price-val {
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .table-saving-tag {
+    display: inline-block;
+    background: #ECFDF5;
+    color: #059669;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 100px;
+  }
+
+  /* Category headers in table */
+  .table-category-row td {
+    background: #F8FAFC;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #64748B;
+    padding: 12px 24px;
+    text-align: left !important;
+  }
+
+  .tbl-check { color: #7C3AED; font-weight: 800; font-size: 16px; }
+  .tbl-dash { color: #94A3B8; font-weight: 400; font-size: 16px; }
+
+  /* ── 5. CONNECTED SYSTEM SECTION ── */
+  .connected-section {
+    padding: 120px 0;
+    text-align: center;
+    background: #FFFFFF;
+  }
+  .workflow-grid-wrapper {
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap; /* Prevent wrapping on desktop */
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 0;
+  }
+  .workflow-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .workflow-icon-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #F3E8FF;
+    border: 1.5px solid #E9D5FF;
+    color: #7C3AED;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+  }
+  .workflow-node:hover .workflow-icon-circle {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.2);
+    background: #7C3AED;
+    color: #FFFFFF;
+  }
+  .workflow-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0F172A;
+    white-space: nowrap;
+  }
+  .workflow-arrow {
+    color: #C084FC;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 22px;
+    opacity: 0.7;
+    flex-shrink: 0;
+    padding: 0 2px;
+  }
+  .workflow-supporting {
+    font-family: 'Inter', sans-serif;
+    margin-top: 48px;
+    font-size: 16px;
+    color: #6B7280;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  /* ── 6. ENTERPRISE / CUSTOM PLAN SECTION — ANIMATED CONTAINER BACKGROUND ── */
+  .enterprise-custom-section {
+    padding: 0 0 120px 0;
+  }
+  .enterprise-card-box {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #7C3AED, #8B5CF6, #EC4899, #D946EF);
+    background-size: 400% 400%;
+    animation: containerGradientMove 12s ease infinite;
+    border-radius: 32px;
+    padding: 56px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    box-shadow: 0 20px 45px -10px rgba(124, 58, 237, 0.3);
+    color: #FFFFFF;
+  }
+
+  @keyframes containerGradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Floating glow blobs inside container for ambient ombré depth */
+  .cta-glow-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.45;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .blob-1 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, #F472B6, transparent 70%);
+    top: -50px;
+    left: 10%;
+    animation: floatBlob1 20s ease-in-out infinite alternate;
+  }
+  .blob-2 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, #8B5CF6, transparent 70%);
+    bottom: -50px;
+    right: 5%;
+    animation: floatBlob2 25s ease-in-out infinite alternate;
+  }
+  @keyframes floatBlob1 {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(60px, 40px) scale(1.15); }
+  }
+  @keyframes floatBlob2 {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(-50px, -30px) scale(1.1); }
+  }
+
+  .enterprise-left-visual {
+    flex-shrink: 0;
+    width: 130px;
+    height: 130px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+  }
+  .enterprise-content {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+  }
+  .enterprise-title {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+  }
+  .enterprise-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.92);
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+  .enterprise-bullets-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 14px;
+    font-weight: 600;
+    color: #FFFFFF;
+  }
+  .bullet-dot {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  .enterprise-cta-wrap {
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* TALK TO SALES BUTTON — CLEAN SECONDARY OUTLINED BUTTON THAT CONTRASTS WITH ANIMATED CONTAINER */
+  .btn-talk-to-sales {
+    background: #FFFFFF !important;
+    color: #7C3AED !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.9) !important;
+    padding: 16px 32px;
+    border-radius: var(--radius-full);
+    font-size: 15px;
+    font-weight: 750;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  }
+  .btn-talk-to-sales:hover {
+    background: #F8FAFC !important;
+    color: #6D28D9 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+  }
+
+  /* ── 7. PRICING FAQ ── */
+  .faq-section {
+    padding: 120px 0;
+    background: #FAFAFC;
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+  }
+  .faq-grid {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    align-items: start;
+  }
+  .faq-item {
+    background: #FFFFFF;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 24px 28px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.25s ease;
+    cursor: pointer;
+  }
+  .faq-item:hover {
+    border-color: #CBD5E1;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
+  }
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #0F172A;
+    gap: 16px;
+  }
+  .faq-chevron {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #64748B;
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+  }
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.35s ease, opacity 0.25s ease, margin-top 0.25s ease;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #6B7280;
+    line-height: 1.6;
+  }
+  .faq-item.open {
+    border-color: #C084FC;
+  }
+  .faq-item.open .faq-chevron {
+    transform: rotate(180deg);
+    background: #F3E8FF;
+    color: #7C3AED;
+  }
+  .faq-item.open .faq-answer {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 14px;
+  }
+
+  /* ── 8. FINAL CTA CONTAINER — ANIMATED GRADIENT CONTAINER ── */
+  .cta-section {
+    padding: 120px 0;
+  }
+  .cta-banner {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #7C3AED, #8B5CF6, #EC4899, #D946EF);
+    background-size: 400% 400%;
+    animation: containerGradientMove 12s ease infinite;
+    border-radius: 36px;
+    padding: 84px 56px;
+    text-align: center;
+    color: #FFFFFF;
+    box-shadow: 0 25px 50px -12px rgba(124, 58, 237, 0.3);
+  }
+  .cta-banner-title {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 44px;
+    font-weight: 850;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 2;
+  }
+  .cta-banner-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 28px;
+    font-weight: 400;
+    position: relative;
+    z-index: 2;
+  }
+  .cta-reassurance-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+  }
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+  }
+  .btn-cta-primary-white {
+    background: #FFFFFF;
+    color: #7C3AED;
+    padding: 16px 36px;
+    border-radius: var(--radius-full);
+    font-size: 16px;
+    font-weight: 750;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: all 0.25s ease;
+  }
+  .btn-cta-primary-white:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.22);
+    background: #FAFAFA;
+    color: #6D28D9;
+  }
+  .btn-cta-secondary {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    color: #FFFFFF;
+    padding: 16px 36px;
+    border-radius: var(--radius-full);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    backdrop-filter: blur(8px);
+  }
+  .btn-cta-secondary:hover {
+    background: rgba(255, 255, 255, 0.22);
+    border-color: #FFFFFF;
+  }
+
+  /* ── 9. GLOBAL DARK FOOTER (MATCHING LANDING PAGE EXACTLY) ── */
+  footer {
+    background: var(--dark);
+    padding: 80px 40px 40px;
+    position: relative;
+    z-index: 10;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 60px;
+  }
+  .footer-brand p {
+    font-size: 14px;
+    color: #9CA3AF;
+    margin-top: 16px;
+    line-height: 1.6;
+    max-width: 300px;
+  }
+  .footer-socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+  }
+  .social-btn {
+    width: 36px;
+    height: 36px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.06);
+    color: #9CA3AF;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .social-btn:hover {
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    border-color: rgba(255,255,255,0.15);
+    transform: translateY(-2px);
+  }
+  .footer-col-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 24px;
+  }
+  .footer-link {
+    display: block;
+    font-size: 14px;
+    color: #9CA3AF;
+    text-decoration: none;
+    margin-bottom: 14px;
+    transition: all 0.2s ease;
+  }
+  .footer-link:hover {
+    color: #fff;
+    transform: translateX(2px);
+  }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .footer-bottom p {
+    font-size: 13px;
+    color: #6B7280;
+  }
+  .footer-bottom-links {
+    display: flex;
+    gap: 24px;
+  }
+  .footer-bottom-links a {
+    font-size: 13px;
+    color: #6B7280;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .footer-bottom-links a:hover {
+    color: #fff;
+  }
+
+  /* Footer CTA Card */
+  .footer-cta-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 28px;
+    max-width: 300px;
+    box-sizing: border-box;
+    text-align: left;
+  }
+  .footer-cta-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+    letter-spacing: -0.2px;
+    text-transform: none;
+  }
+  .footer-cta-desc {
+    font-size: 13px;
+    color: #9CA3AF;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  .footer-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: var(--grad);
+    color: #fff !important;
+    text-decoration: none !important;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    width: 100%;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+  .footer-cta-btn:hover {
+    transform: translateY(-1.5px);
+    box-shadow: 0 4px 15px rgba(124,58,237,0.35);
+    filter: brightness(1.05);
+  }
+
+  /* Mobile CTA visible only on mobile/tablet */
+  .mobile-only-cta { display: none; }
+
+  /* ── RESPONSIVE STYLES ── */
+  @media (max-width: 1024px) {
+    nav { padding: 0 30px; }
+    .nav-links { display: none; }
+    .mobile-nav-toggle { display: flex; }
+    .pricing-cards-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .pricing-card { padding: 32px 24px; }
+    .hero-headline { font-size: 48px; }
+    .workflow-grid-wrapper {
+      overflow-x: auto;
+      justify-content: flex-start;
+      gap: 16px;
+      padding-bottom: 20px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .enterprise-card-box { flex-direction: column; text-align: center; padding: 40px; }
+    .enterprise-bullets-row { justify-content: center; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .footer-brand { grid-column: span 2; }
+    .desktop-only-cta { display: none; }
+    .mobile-only-cta { display: block; grid-column: span 2; max-width: 100%; margin-top: 16px; }
+  }
+
+  @media (max-width: 600px) {
+    .pricing-hero { padding: 60px 0 0 0; }
+    .hero-headline { font-size: 38px; }
+    .hero-subcopy { font-size: 16px; }
+    .pricing-cards-grid { grid-template-columns: 1fr; gap: 40px; }
+    .comparison-table-wrapper { overflow-x: auto; }
+    .comparison-table { min-width: 680px; }
+    .faq-grid { grid-template-columns: 1fr; }
+    .cta-banner { padding: 48px 24px; }
+    .cta-banner-title { font-size: 30px; }
+    .cta-reassurance-row { flex-direction: column; gap: 8px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+    .footer-brand { grid-column: span 1; }
+    .mobile-only-cta { grid-column: span 1; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 1. NAVIGATION -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="images/LEAD PILOT LOGO.png" alt="LeadPilot Logo" class="nav-logo-img" style="width: 28px; height: 28px; object-fit: contain;">
+    LeadPilot
+  </a>
+  <div class="nav-links">
+    <!-- 1. PRODUCT DROPDOWN -->
+    <div class="nav-dropdown-wrapper">
+      <a href="#" class="nav-dropdown-trigger nav-link-product">Product</a>
+      <div class="mega-menu">
+        <div class="mega-menu-grid">
+          <!-- Column 1: Lead Generation -->
+          <div class="mega-menu-column">
+            <div class="mega-menu-category">Lead Generation</div>
+            
+            <a href="lead-generator.html" class="mega-menu-item">
+              <div class="mega-menu-icon-wrap" style="background: rgba(37, 99, 235, 0.08); color: #2563EB;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21l-6-6" /><circle cx="15" cy="9" r="3" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">Lead Generator</span>
+                <span class="mega-menu-desc">Find verified companies and decision-makers using advanced filters.</span>
+              </div>
+            </a>
+            
+            <a href="lead-forms.html" class="mega-menu-item">
+              <div class="mega-menu-icon-wrap" style="background: rgba(16, 163, 74, 0.08); color: #16A34A;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><line x1="9" y1="9" x2="15" y2="9" /><line x1="9" y1="13" x2="15" y2="13" /><line x1="9" y1="17" x2="13" y2="17" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">AI Lead Forms</span>
+                <span class="mega-menu-desc">Capture inbound leads with smart forms that sync with CRM.</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Column 2: Sales Pipeline -->
+          <div class="mega-menu-column">
+            <div class="mega-menu-category">Sales Pipeline</div>
+            
+            <a href="crm-pipeline.html" class="mega-menu-item">
+              <div class="mega-menu-icon-wrap" style="background: rgba(234, 88, 12, 0.08); color: #EA580C;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 3v18h18" /><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">CRM &amp; Pipeline</span>
+                <span class="mega-menu-desc">Manage leads, deals, and your complete pipeline from one workspace.</span>
+              </div>
+            </a>
+            
+            <a href="meeting-booking.html" class="mega-menu-item">
+              <div class="mega-menu-icon-wrap" style="background: rgba(37, 99, 235, 0.08); color: #2563EB;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /><path d="M9 16l2 2 4-4" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">Meeting Booking</span>
+                <span class="mega-menu-desc">Let prospects book meetings instantly with calendar sync.</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Column 3: AI & Automation -->
+          <div class="mega-menu-column">
+            <div class="mega-menu-category">AI &amp; Automation</div>
+            
+            <a href="ai-sales-assistant.html" class="mega-menu-item">
+              <div class="mega-menu-icon-wrap" style="background: rgba(124, 58, 237, 0.08); color: #7C3AED;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">AI Sales Assistant</span>
+                <span class="mega-menu-desc">AI assistance for research and sales productivity.</span>
+              </div>
+            </a>
+            
+            <a href="ai-chatbot.html" class="mega-menu-item">
+              <div class="mega-menu-icon-wrap" style="background: rgba(5, 150, 105, 0.08); color: #059669;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /><path d="M8 10h.01M12 10h.01M16 10h.01" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">AI Chatbot</span>
+                <span class="mega-menu-desc">Automatically qualify website visitors and convert them.</span>
+              </div>
+            </a>
+
+            <a href="ai-sales-coach.html" class="mega-menu-item">
+              <div class="mega-menu-icon-wrap" style="background: rgba(124, 58, 237, 0.08); color: #7C3AED;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">AI Sales Coach</span>
+                <span class="mega-menu-desc">Analyze conversations and improve performance with AI.</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Column 4: Outreach -->
+          <div class="mega-menu-column">
+            <div class="mega-menu-category">Outreach</div>
+            
+            <a href="ai-sales-sequences.html" class="mega-menu-item">
+              <div class="mega-menu-icon-wrap" style="background: rgba(217, 119, 6, 0.08); color: #D97706;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">Sales Sequences</span>
+                <span class="mega-menu-desc">Build automated multi-step email and follow-up sequences.</span>
+              </div>
+            </a>
+            
+            <a href="quotations.html" class="mega-menu-item">
+<div class="mega-menu-icon-wrap" style="background: rgba(225, 29, 72, 0.08); color: #E11D48;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">Quotations</span>
+                <span class="mega-menu-desc">Generate proposals in seconds with built-in workflows.</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Mega Menu Footer -->
+        <div class="mega-menu-footer">
+          <div class="mega-menu-footer-left">
+            <span class="footer-badge">Everything connected.</span>
+            <span class="footer-text">LeadPilot combines lead generation, CRM, meetings, automation, AI, and sales coaching.</span>
+          </div>
+          <a href="index.html#tools" class="mega-menu-footer-link">View All Products →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRICING LINK -->
+    <a href="pricing.html" class="nav-link-pricing active" style="color: #0F172A; font-weight: 700;">Pricing</a>
+
+    <!-- 2. RESOURCES DROPDOWN -->
+    <div class="nav-dropdown-wrapper">
+      <a href="#" class="nav-dropdown-trigger nav-link-resources">Resources</a>
+      <div class="mega-menu mega-menu-resources">
+        <div class="mega-menu-resources-grid">
+          <!-- Left Column: RESOURCES -->
+          <div class="resources-left-col">
+            <div class="mega-menu-category">RESOURCES</div>
+            <div class="resource-items-list">
+                <!-- Item 1: Blog -->
+                <a href="blog.html" class="resource-item">
+                  <div class="resource-icon-wrap" style="background: rgba(124, 58, 237, 0.08); color: #7C3AED;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+                  </div>
+                  <div class="resource-text">
+                    <span class="resource-title">Blog</span>
+                    <span class="resource-desc">Product updates, sales insights, and industry trends.</span>
+                  </div>
+                  <div class="resource-arrow">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </div>
+                </a>
+
+                <!-- Item 2: Case Studies -->
+                <a href="case-studies.html" class="resource-item">
+                  <div class="resource-icon-wrap" style="background: rgba(234, 88, 12, 0.08); color: #EA580C;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </div>
+                  <div class="resource-text">
+                    <span class="resource-title">Case Studies</span>
+                    <span class="resource-desc">Real customer stories, results, and success journeys.</span>
+                  </div>
+                  <div class="resource-arrow">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </div>
+                </a>
+
+                <!-- Item 3: Free Resources -->
+                <a href="free-resources.html" class="resource-item">
+                  <div class="resource-icon-wrap" style="background: rgba(16, 185, 129, 0.08); color: #10B981;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                  </div>
+                  <div class="resource-text">
+                    <span class="resource-title">Free Resources</span>
+                    <span class="resource-desc">Templates, ebooks, playbooks, and checklists.</span>
+                  </div>
+                  <div class="resource-arrow">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </div>
+                </a>
+
+                <!-- Item 4: Webinars -->
+                <a href="webinars.html" class="resource-item">
+                  <div class="resource-icon-wrap" style="background: rgba(37, 99, 235, 0.08); color: #2563EB;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                  </div>
+                  <div class="resource-text">
+                    <span class="resource-title">Webinars</span>
+                    <span class="resource-desc">Live demos, training sessions, and product walkthroughs.</span>
+                  </div>
+                  <div class="resource-arrow">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+          <!-- Right Column: FEATURED -->
+          <div class="resources-right-col">
+            <div class="mega-menu-category">FEATURED</div>
+            <div class="featured-cards-wrap">
+              <!-- Featured Card 1 (Large Main Card) -->
+              <div class="featured-card-main">
+                <div class="featured-main-content">
+                  <span class="featured-badge">CASE STUDY</span>
+                  <h3 class="featured-headline">How sales teams close more deals with LeadPilot</h3>
+                  <p class="featured-desc">See how businesses simplified lead generation, CRM and follow-ups in one workspace.</p>
+                  <a href="case-studies.html" class="featured-link">Read Case Study &rarr;</a>
+                </div>
+                
+                <!-- Dashboard UI Graphic Illustration -->
+                <div class="featured-main-visual">
+                  <div class="mini-dashboard-card">
+                    <div class="mini-dash-header">
+                      <div class="mini-dash-title">Deals Overview</div>
+                      <div class="mini-dash-pipeline-title">Pipeline</div>
+                    </div>
+                    <div class="mini-dash-body">
+                      <div class="mini-dash-stats">
+                        <div class="mini-stat-label">Total Deals</div>
+                        <div class="mini-stat-val">248 <span class="mini-stat-growth">↑ 32.6%</span></div>
+                        <svg width="140" height="50" viewBox="0 0 140 50" fill="none" class="mini-chart-svg">
+                          <path d="M0 42 C 20 40, 35 30, 50 35 C 65 40, 80 18, 100 24 C 120 30, 130 10, 140 8" stroke="#7C3AED" stroke-width="2.5" fill="none"/>
+                        </svg>
+                      </div>
+                      <div class="mini-dash-stages">
+                        <div class="stage-row"><span class="dot dot-purple"></span> Qualified <span class="stage-num">82</span></div>
+                        <div class="stage-row"><span class="dot dot-violet"></span> Proposal <span class="stage-num">64</span></div>
+                        <div class="stage-row"><span class="dot dot-orange"></span> Negotiation <span class="stage-num">48</span></div>
+                        <div class="stage-row"><span class="dot dot-pink"></span> Closed Won <span class="stage-num">54</span></div>
+                      </div>
+                    </div>
+                    <!-- Floating Badge -->
+                    <div class="floating-closed-won-badge">
+                      <div class="won-check-circle">✓</div>
+                      <div class="won-text-block">
+                        <div class="won-title">Closed Won</div>
+                        <div class="won-growth">↑ 28% vs last month</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Featured Card 2 (Smaller Horizontal Card) -->
+              <div class="featured-card-secondary">
+                <div class="secondary-card-left">
+                  <span class="featured-badge">WEBINAR</span>
+                  <div class="secondary-text-group">
+                    <span class="secondary-title">AI for Modern Sales Teams</span>
+                    <span class="secondary-subtitle">Join our next live session.</span>
+                  </div>
+                </div>
+                <div class="secondary-card-right">
+                  <a href="webinars.html" class="secondary-cta-link">Reserve Your Seat &rarr;</a>
+                  <div class="calendar-icon-box">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mega Menu Footer Strip (No "Browse all resources" button) -->
+        <div class="mega-menu-resources-footer">
+          <div class="resources-footer-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+          </div>
+          <div class="resources-footer-text">
+            <span class="res-footer-title">Everything connected.</span>
+            <span class="res-footer-desc">Learn how LeadPilot helps sales teams generate leads, manage deals and automate repetitive work.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT LINK -->
+    <a href="about.html" class="nav-link-about">About</a>
+  </div>
+
+  <div class="nav-actions">
+    <a href="index.html#cta" class="btn-ghost-nav">Login</a>
+    <a href="index.html#cta" class="btn-outline-nav">Book Demo</a>
+    <a href="index.html#cta" class="btn-solid-nav">Start Free Trial</a>
+  </div>
+
+  <button class="mobile-nav-toggle" aria-label="Toggle Menu">
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+  </button>
+</nav>
+
+
+
+
+<!-- 2. PRICING HERO -->
+<section class="pricing-hero">
+  <div class="container">
+    <div class="eyebrow-badge">✦ PRICING</div>
+    
+    <h1 class="hero-headline">
+      Simple pricing.<br>
+      Everything you need to<br>
+      <span class="grad-text">move sales forward.</span>
+    </h1>
+    
+    <p class="hero-subcopy">
+      Start with the plan that fits your team. Upgrade as you grow.
+    </p>
+
+    <!-- Billing Toggle -->
+    <div class="billing-toggle-wrapper">
+      <div class="billing-toggle-box">
+        <div class="toggle-slider-bg" id="slider-bg"></div>
+        <button class="billing-toggle-btn" id="btn-monthly">Monthly</button>
+        <button class="billing-toggle-btn active" id="btn-annual">
+          Annual <span class="save-badge">Save 20%</span>
+        </button>
+      </div>
+      <p class="billing-note" id="billing-note-text">
+        All prices shown in <strong>USD</strong>, billed annually.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- 3. PRICING CARDS -->
+<section class="pricing-cards-section">
+  <div class="container">
+    <div class="pricing-cards-grid">
+      
+      <!-- STARTER CARD -->
+      <div class="pricing-card">
+        <div class="card-top">
+          <div class="card-icon-wrap sprout-icon-bg">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 20h10" />
+              <path d="M12 20v-8" />
+              <path d="M12 12c-3.3 0-6-2.7-6-6 3.3 0 6 2.7 6 6z" />
+              <path d="M12 12c3.3 0 6-2.7 6-6-3.3 0-6 2.7-6 6z" />
+            </svg>
+          </div>
+          <h3 class="card-title">Starter</h3>
+          <p class="card-desc">For small teams building their sales foundation.</p>
+        </div>
+
+        <div class="card-pricing-block">
+          <div class="card-price-display">
+            <span class="price-num" id="starter-price-val">$19</span>
+            <span class="price-unit">/user/month</span>
+          </div>
+          <div class="price-billing-sub" id="starter-billing-sub">Billed annually</div>
+        </div>
+
+        <ul class="card-features-list">
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Lead Generator — 500 credits/month</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>CRM & Pipeline</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Lead Management</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Deal Management</span>
+          </li>
+        </ul>
+
+        <a href="index.html#cta" class="card-cta-btn btn-starter-cta">Start Free Trial →</a>
+      </div>
+
+      <!-- GROWTH CARD (RECOMMENDED) -->
+      <div class="pricing-card growth-card">
+        <div class="recommended-badge">🔥 RECOMMENDED</div>
+        
+        <div class="card-top">
+          <div class="card-icon-wrap lightning-icon-bg">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+            </svg>
+          </div>
+          <h3 class="card-title">Growth</h3>
+          <p class="card-desc">For growing teams ready to automate and scale.</p>
+        </div>
+
+        <div class="card-pricing-block">
+          <div class="card-price-display">
+            <span class="price-num" id="growth-price-val">$39</span>
+            <span class="price-unit">/user/month</span>
+          </div>
+          <div class="price-billing-sub" id="growth-billing-sub">Billed annually</div>
+        </div>
+
+        <ul class="card-features-list">
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Lead Generator — 2,500 credits/month</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>CRM & Pipeline</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>AI Chatbot</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Meeting Booking</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Email Sequences</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>WhatsApp Sequences</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>AI Sales Assistant</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>AI Sales Coach</span>
+          </li>
+        </ul>
+
+        <a href="index.html#cta" class="card-cta-btn btn-growth-cta">Start Free Trial →</a>
+      </div>
+
+      <!-- ENTERPRISE CARD -->
+      <div class="pricing-card">
+        <div class="card-top">
+          <div class="card-icon-wrap enterprise-icon-bg">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="2" width="16" height="20" rx="2" ry="2" />
+              <line x1="9" y1="6" x2="9" y2="6.01" />
+              <line x1="15" y1="6" x2="15" y2="6.01" />
+              <line x1="9" y1="10" x2="9" y2="10.01" />
+              <line x1="15" y1="10" x2="15" y2="10.01" />
+              <line x1="9" y1="14" x2="9" y2="14.01" />
+              <line x1="15" y1="14" x2="15" y2="14.01" />
+              <path d="M9 22v-4h6v4" />
+            </svg>
+          </div>
+          <h3 class="card-title">Enterprise</h3>
+          <p class="card-desc">For larger teams that need more scale, control, and support.</p>
+        </div>
+
+        <div class="card-pricing-block">
+          <div class="card-price-display">
+            <span class="price-num">Custom</span>
+          </div>
+          <div class="price-billing-sub">
+            <span class="tailored-badge">Tailored pricing</span>
+          </div>
+        </div>
+
+        <ul class="card-features-list">
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Unlimited Lead Generator credits</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Everything in Growth</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>AI Sales Assistant</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>AI Sales Coach</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Dedicated Account Manager</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Custom CRM Security & Fields</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Advanced Capabilities</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Custom SLA & API Limits</span>
+          </li>
+        </ul>
+
+        <a href="index.html#cta" class="card-cta-btn btn-enterprise-cta">Book a Demo →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- 4. PLAN COMPARISON SECTION -->
+<section class="comparison-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow-badge">COMPARE PLANS</div>
+      <h2 class="section-title">Find the right fit for your team.</h2>
+      <p class="section-subtitle">
+        Compare pricing, features, automation, AI, and support across every LeadPilot plan.
+      </p>
+    </div>
+
+    <div class="comparison-table-wrapper">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>FEATURE</th>
+            <th>Starter</th>
+            <th class="col-growth-bg">
+              Growth
+              <div><span class="growth-header-badge">🔥 RECOMMENDED</span></div>
+            </th>
+            <th>Enterprise</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- PRICING ROWS -->
+          <tr class="table-price-row" id="row-monthly-price">
+            <td>Monthly price</td>
+            <td><span class="table-price-val">$24</span> /user/month</td>
+            <td class="col-growth-bg"><span class="table-price-val">$49</span> /user/month</td>
+            <td>Custom</td>
+          </tr>
+          <tr class="table-price-row active-billing-row" id="row-annual-price">
+            <td>Annual price</td>
+            <td><span class="table-price-val">$19</span> /user/month</td>
+            <td class="col-growth-bg"><span class="table-price-val">$39</span> /user/month</td>
+            <td>Custom</td>
+          </tr>
+          <tr class="table-price-row" id="row-annual-saving">
+            <td>Annual saving</td>
+            <td><span class="table-saving-tag">Save 20%</span></td>
+            <td class="col-growth-bg"><span class="table-saving-tag">Save 20%</span></td>
+            <td><span class="tbl-dash">—</span></td>
+          </tr>
+
+          <!-- CORE FEATURES CATEGORY -->
+          <tr class="table-category-row">
+            <td colspan="4">Core Sales & Lead Generation</td>
+          </tr>
+          <tr>
+            <td>Lead Generator credits</td>
+            <td>500/month</td>
+            <td class="col-growth-bg" style="font-weight: 700;">2,500/month</td>
+            <td>Unlimited</td>
+          </tr>
+          <tr>
+            <td>CRM & Pipeline</td>
+            <td><span class="tbl-check">✓</span></td>
+            <td class="col-growth-bg"><span class="tbl-check">✓</span></td>
+            <td><span class="tbl-check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Lead Management</td>
+            <td><span class="tbl-check">✓</span></td>
+            <td class="col-growth-bg"><span class="tbl-check">✓</span></td>
+            <td><span class="tbl-check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Deal Management</td>
+            <td><span class="tbl-check">✓</span></td>
+            <td class="col-growth-bg"><span class="tbl-check">✓</span></td>
+            <td><span class="tbl-check">✓</span></td>
+          </tr>
+
+          <!-- AI & AUTOMATION CATEGORY -->
+          <tr class="table-category-row">
+            <td colspan="4">AI & Automation</td>
+          </tr>
+          <tr>
+            <td>AI Chatbot</td>
+            <td><span class="tbl-dash">—</span></td>
+            <td class="col-growth-bg"><span class="tbl-check">✓</span></td>
+            <td><span class="tbl-check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Meeting Booking</td>
+            <td><span class="tbl-dash">—</span></td>
+            <td class="col-growth-bg"><span class="tbl-check">✓</span></td>
+            <td><span class="tbl-check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Email Sequences</td>
+            <td><span class="tbl-dash">—</span></td>
+            <td class="col-growth-bg"><span class="tbl-check">✓</span></td>
+            <td><span class="tbl-check">✓</span></td>
+          </tr>
+          <tr>
+            <td>WhatsApp Sequences</td>
+            <td><span class="tbl-dash">—</span></td>
+            <td class="col-growth-bg"><span class="tbl-check">✓</span></td>
+            <td><span class="tbl-check">✓</span></td>
+          </tr>
+          <tr>
+            <td>AI Sales Assistant</td>
+            <td><span class="tbl-dash">—</span></td>
+            <td class="col-growth-bg"><span class="tbl-check">✓</span></td>
+            <td><span class="tbl-check">✓</span></td>
+          </tr>
+          <tr>
+            <td>AI Sales Coach</td>
+            <td><span class="tbl-dash">—</span></td>
+            <td class="col-growth-bg"><span class="tbl-check">✓</span></td>
+            <td><span class="tbl-check">✓</span></td>
+          </tr>
+
+          <!-- ENTERPRISE & SUPPORT CATEGORY -->
+          <tr class="table-category-row">
+            <td colspan="4">Enterprise & Support</td>
+          </tr>
+          <tr>
+            <td>Dedicated Account Manager</td>
+            <td><span class="tbl-dash">—</span></td>
+            <td class="col-growth-bg"><span class="tbl-dash">—</span></td>
+            <td><span class="tbl-check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Custom CRM Security & Fields</td>
+            <td><span class="tbl-dash">—</span></td>
+            <td class="col-growth-bg"><span class="tbl-dash">—</span></td>
+            <td><span class="tbl-check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Custom SLA & API Limits</td>
+            <td><span class="tbl-dash">—</span></td>
+            <td class="col-growth-bg"><span class="tbl-dash">—</span></td>
+            <td><span class="tbl-check">✓</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<!-- 5. CONNECTED SYSTEM SECTION (ONE SINGLE HORIZONTAL ROW ON DESKTOP) -->
+<section class="connected-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow-badge">ONE CONNECTED SYSTEM</div>
+      <h2 class="section-title">More than software seats.<br>A complete sales workflow.</h2>
+    </div>
+
+    <!-- ONE SINGLE HORIZONTAL LINE ON DESKTOP -->
+    <div class="workflow-grid-wrapper">
+      <!-- Step 1 -->
+      <div class="workflow-node">
+        <div class="workflow-icon-circle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </div>
+        <span class="workflow-label">Find Leads</span>
+      </div>
+      <span class="workflow-arrow">→</span>
+
+      <!-- Step 2 -->
+      <div class="workflow-node">
+        <div class="workflow-icon-circle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>
+        </div>
+        <span class="workflow-label">Capture</span>
+      </div>
+      <span class="workflow-arrow">→</span>
+
+      <!-- Step 3 -->
+      <div class="workflow-node">
+        <div class="workflow-icon-circle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <span class="workflow-label">AI Chatbot</span>
+      </div>
+      <span class="workflow-arrow">→</span>
+
+      <!-- Step 4 -->
+      <div class="workflow-node">
+        <div class="workflow-icon-circle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
+        </div>
+        <span class="workflow-label">CRM</span>
+      </div>
+      <span class="workflow-arrow">→</span>
+
+      <!-- Step 5 -->
+      <div class="workflow-node">
+        <div class="workflow-icon-circle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="m9 16 2 2 4-4"/></svg>
+        </div>
+        <span class="workflow-label">Meetings</span>
+      </div>
+      <span class="workflow-arrow">→</span>
+
+      <!-- Step 6 -->
+      <div class="workflow-node">
+        <div class="workflow-icon-circle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <span class="workflow-label">Quotes</span>
+      </div>
+      <span class="workflow-arrow">→</span>
+
+      <!-- Step 7 -->
+      <div class="workflow-node">
+        <div class="workflow-icon-circle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </div>
+        <span class="workflow-label">Follow-ups</span>
+      </div>
+      <span class="workflow-arrow">→</span>
+
+      <!-- Step 8 -->
+      <div class="workflow-node">
+        <div class="workflow-icon-circle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <span class="workflow-label">Deals</span>
+      </div>
+      <span class="workflow-arrow">→</span>
+
+      <!-- Step 9 -->
+      <div class="workflow-node">
+        <div class="workflow-icon-circle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+        </div>
+        <span class="workflow-label">AI Coaching</span>
+      </div>
+    </div>
+
+    <p class="workflow-supporting">
+      LeadPilot connects the tools your team needs from first contact to performance.
+    </p>
+  </div>
+</section>
+
+
+<!-- 6. ENTERPRISE / CUSTOM PLAN SECTION — LARGE ANIMATED GRADIENT CONTAINER BACKGROUND -->
+<section class="enterprise-custom-section">
+  <div class="container">
+    <div class="enterprise-card-box">
+      <!-- Animated ambient light blobs -->
+      <div class="cta-glow-blob blob-1"></div>
+      <div class="cta-glow-blob blob-2"></div>
+
+      <!-- Left Visual -->
+      <div class="enterprise-left-visual">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          <path d="m9 12 2 2 4-4" />
+        </svg>
+      </div>
+
+      <!-- Center Content -->
+      <div class="enterprise-content">
+        <h3 class="enterprise-title">Need something more tailored?</h3>
+        <p class="enterprise-subtitle">
+          Get custom limits, security, integrations, support, and infrastructure for your organisation.
+        </p>
+        <div class="enterprise-bullets-row">
+          <span>Custom limits</span>
+          <span class="bullet-dot">•</span>
+          <span>Advanced security</span>
+          <span class="bullet-dot">•</span>
+          <span>Priority support</span>
+          <span class="bullet-dot">•</span>
+          <span>Custom integrations</span>
+        </div>
+      </div>
+
+      <!-- Right CTA — CLEAN SECONDARY OUTLINED BUTTON THAT CONTRASTS WITH ANIMATED CONTAINER -->
+      <div class="enterprise-cta-wrap">
+        <a href="index.html#cta" class="btn-talk-to-sales">Talk to Sales →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 7. PRICING FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow-badge">PRICING FAQ</div>
+      <h2 class="section-title">Questions about pricing?</h2>
+    </div>
+
+    <div class="faq-grid">
+      <!-- Q1 -->
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Can I switch plans later?</span>
+          <div class="faq-chevron">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </div>
+        </div>
+        <div class="faq-answer">
+          Yes! You can upgrade or downgrade your plan at any time directly from your account settings. Upgrades take effect immediately with prorated billing, while downgrades apply at the end of your current billing cycle.
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How does annual billing work?</span>
+          <div class="faq-chevron">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </div>
+        </div>
+        <div class="faq-answer">
+          Annual billing is charged upfront for the entire year at a 20% discount compared to monthly billing. You will receive a single annual invoice.
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What counts as a Lead Generator credit?</span>
+          <div class="faq-chevron">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </div>
+        </div>
+        <div class="faq-answer">
+          One credit allows you to export or reveal verified contact details (email address and direct phone line) for one lead. Unused credits rollover for active monthly and annual subscribers.
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Is there a limit on users?</span>
+          <div class="faq-chevron">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </div>
+        </div>
+        <div class="faq-answer">
+          All LeadPilot plans scale per user/month. You can add as many team members as needed, and each user gets full access to the features included in your plan level.
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Can I cancel anytime?</span>
+          <div class="faq-chevron">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </div>
+        </div>
+        <div class="faq-answer">
+          Absolutely. There are no long-term commitments or lock-in contracts for Starter and Growth plans. You can cancel anytime from your dashboard with one click.
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What happens if I exceed my plan limits?</span>
+          <div class="faq-chevron">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </div>
+        </div>
+        <div class="faq-answer">
+          If you run out of credits, you can easily top up credit packs or upgrade to the next tier without interrupting your sales sequences or workflows.
+        </div>
+      </div>
+
+      <!-- Q7 -->
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Do you offer custom plans?</span>
+          <div class="faq-chevron">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </div>
+        </div>
+        <div class="faq-answer">
+          Yes! Our Enterprise plan is tailored for larger organisations requiring custom credit allocations, enterprise security, SLA guarantees, and custom integrations.
+        </div>
+      </div>
+
+      <!-- Q8 -->
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What is included in the free trial?</span>
+          <div class="faq-chevron">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </div>
+        </div>
+        <div class="faq-answer">
+          Our 14-day free trial gives you full access to Growth plan features so you can test lead generation, CRM pipelines, AI chatbot, meeting booking, and sales coaching risk-free.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 8. FINAL CTA — LARGE ANIMATED GRADIENT CONTAINER BACKGROUND -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-banner">
+      <!-- Animated ambient light blobs -->
+      <div class="cta-glow-blob blob-1"></div>
+      <div class="cta-glow-blob blob-2"></div>
+
+      <h2 class="cta-banner-title">
+        Ready to put your sales workflow in one place?
+      </h2>
+      <p class="cta-banner-sub">
+        Start with LeadPilot and upgrade when your team is ready.
+      </p>
+
+      <div class="cta-reassurance-row">
+        <span>✓ No credit card required</span>
+        <span>✓ Setup in minutes</span>
+        <span>✓ Cancel anytime</span>
+      </div>
+
+      <div class="cta-buttons">
+        <a href="index.html#cta" class="btn-cta-primary-white">Start Free Trial →</a>
+        <a href="index.html#cta" class="btn-cta-secondary">Book a Demo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 9. OFFICIAL GLOBAL FOOTER -->
+<script src="components/footer.js"></script>
+
+
+<!-- INTERACTIVITY SCRIPT -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Billing Toggle Elements
+  const btnMonthly = document.getElementById('btn-monthly');
+  const btnAnnual = document.getElementById('btn-annual');
+  const sliderBg = document.getElementById('slider-bg');
+  const noteText = document.getElementById('billing-note-text');
+
+  // Prices & Subtexts
+  const starterPriceVal = document.getElementById('starter-price-val');
+  const starterBillingSub = document.getElementById('starter-billing-sub');
+  const growthPriceVal = document.getElementById('growth-price-val');
+  const growthBillingSub = document.getElementById('growth-billing-sub');
+
+  // Table rows
+  const rowMonthlyPrice = document.getElementById('row-monthly-price');
+  const rowAnnualPrice = document.getElementById('row-annual-price');
+
+  function setBillingMode(mode) {
+    if (mode === 'monthly') {
+      btnMonthly.classList.add('active');
+      btnAnnual.classList.remove('active');
+      
+      // Position slider pill over Monthly button
+      sliderBg.style.transform = 'translateX(0px)';
+      sliderBg.style.width = '105px';
+
+      noteText.innerHTML = 'All prices shown in <strong>USD</strong>, billed monthly.';
+
+      // Update pricing cards
+      starterPriceVal.textContent = '$24';
+      starterBillingSub.textContent = 'Billed monthly';
+
+      growthPriceVal.textContent = '$49';
+      growthBillingSub.textContent = 'Billed monthly';
+
+      // Table row emphasis
+      rowMonthlyPrice.classList.add('active-billing-row');
+      rowAnnualPrice.classList.remove('active-billing-row');
+    } else {
+      btnAnnual.classList.add('active');
+      btnMonthly.classList.remove('active');
+
+      // Position slider pill over Annual button
+      sliderBg.style.transform = 'translateX(107px)';
+      sliderBg.style.width = '165px';
+
+      noteText.innerHTML = 'All prices shown in <strong>USD</strong>, billed annually.';
+
+      // Update pricing cards
+      starterPriceVal.textContent = '$19';
+      starterBillingSub.textContent = 'Billed annually';
+
+      growthPriceVal.textContent = '$39';
+      growthBillingSub.textContent = 'Billed annually';
+
+      // Table row emphasis
+      rowAnnualPrice.classList.add('active-billing-row');
+      rowMonthlyPrice.classList.remove('active-billing-row');
+    }
+  }
+
+  btnMonthly.addEventListener('click', () => setBillingMode('monthly'));
+  btnAnnual.addEventListener('click', () => setBillingMode('annual'));
+
+  // Initialize Annual by default
+  setBillingMode('annual');
+
+
+  // FAQ Accordion Interactivity
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      item.classList.toggle('open');
+    });
+  });
+
+
+  // Mobile Nav Drawer Toggle
+  const mobileToggleBtn = document.querySelector('.mobile-nav-toggle');
+  const mobileCloseBtn = document.querySelector('.mobile-drawer-close');
+  const mobileDrawer = document.querySelector('.mobile-nav-drawer');
+
+  if (mobileToggleBtn && mobileCloseBtn && mobileDrawer) {
+    mobileToggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      mobileDrawer.classList.add('active');
+    });
+
+    const closeDrawer = () => mobileDrawer.classList.remove('active');
+
+    mobileCloseBtn.addEventListener('click', closeDrawer);
+
+    document.addEventListener('click', (e) => {
+      if (mobileDrawer.classList.contains('active') && !mobileDrawer.contains(e.target) && !mobileToggleBtn.contains(e.target)) {
+        closeDrawer();
+      }
+    });
+  }
+});
+</script>
+<script src="components/navbar.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,467 @@
+#!/usr/bin/env python3
+import re
+
+FILE = 'crm-pipeline.html'
+
+with open(FILE, 'r', encoding='utf-8') as f:
+    html = f.read()
+
+start_idx = html.find('<!-- Feature Comparison Table')
+if start_idx == -1:
+    start_idx = html.find('<div class="compare-table-wrapper">')
+
+end_idx = html.find('</section>', start_idx)
+
+if start_idx != -1 and end_idx != -1:
+    NEW_HTML_BLOCK = '''<!-- Feature Comparison Table (Primary Content, exact match to reference) -->
+    <div class="compare-table-wrapper">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th class="col-features">FEATURES</th>
+            <th class="col-brand">
+              <div class="compare-table-brand-header">
+                <img src="images/HUBSPOT LOGO.png" alt="HubSpot Logo" class="compare-logo-img">
+                <span>HubSpot</span>
+              </div>
+            </th>
+            <th class="col-brand">
+              <div class="compare-table-brand-header">
+                <img src="images/LEAD PILOT LOGO.png" alt="LeadPilot Logo" class="compare-logo-img">
+                <span>LeadPilot</span>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <!-- 1. Lead Capture -->
+          <tr>
+            <td>
+              <div class="compare-feature-cell">
+                <div class="compare-feature-icon">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </div>
+                <div class="compare-feature-info">
+                  <div class="compare-feature-name">Lead Capture</div>
+                  <div class="compare-feature-desc">Capture leads from forms, pages, and sources</div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="status-pill hs-available">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#22C55E"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span>Available</span>
+              </div>
+              <div class="status-sub">Basic forms</div>
+            </td>
+            <td>
+              <div class="status-pill lp-status">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#7C3AED"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span>Advanced</span>
+              </div>
+              <div class="status-sub">Forms, pages, popups, quizzes, offline, integrations</div>
+            </td>
+          </tr>
+
+          <!-- 2. CRM & Pipeline -->
+          <tr>
+            <td>
+              <div class="compare-feature-cell">
+                <div class="compare-feature-icon">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                </div>
+                <div class="compare-feature-info">
+                  <div class="compare-feature-name">CRM & Pipeline</div>
+                  <div class="compare-feature-desc">Manage leads and track pipeline</div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="status-pill hs-available">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#22C55E"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span>Available</span>
+              </div>
+              <div class="status-sub">Basic CRM</div>
+            </td>
+            <td>
+              <div class="status-pill lp-status">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#7C3AED"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span>Advanced</span>
+              </div>
+              <div class="status-sub">Smart CRM, custom pipelines, auto-updates</div>
+            </td>
+          </tr>
+
+          <!-- 3. AI Lead Qualification -->
+          <tr>
+            <td>
+              <div class="compare-feature-cell">
+                <div class="compare-feature-icon">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+                </div>
+                <div class="compare-feature-info">
+                  <div class="compare-feature-name">AI Lead Qualification</div>
+                  <div class="compare-feature-desc">Qualify leads automatically using AI</div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="status-pill hs-not-avail">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#EF4444"><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"/></svg>
+                <span>Not Available</span>
+              </div>
+              <div class="status-sub">—</div>
+            </td>
+            <td>
+              <div class="status-pill lp-status">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#7C3AED"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span>Included</span>
+              </div>
+              <div class="status-sub">AI scores, intent, fit & engagement</div>
+            </td>
+          </tr>
+
+          <!-- 4. Meeting Booking -->
+          <tr>
+            <td>
+              <div class="compare-feature-cell">
+                <div class="compare-feature-icon">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                </div>
+                <div class="compare-feature-info">
+                  <div class="compare-feature-name">Meeting Booking</div>
+                  <div class="compare-feature-desc">Book meetings automatically</div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="status-pill hs-not-avail">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#EF4444"><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"/></svg>
+                <span>Not Available</span>
+              </div>
+              <div class="status-sub">Needs third-party</div>
+            </td>
+            <td>
+              <div class="status-pill lp-status">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#7C3AED"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span>Included</span>
+              </div>
+              <div class="status-sub">Auto booking, calendar sync, smart routing</div>
+            </td>
+          </tr>
+
+          <!-- 5. Quotes & Proposals -->
+          <tr>
+            <td>
+              <div class="compare-feature-cell">
+                <div class="compare-feature-icon">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                </div>
+                <div class="compare-feature-info">
+                  <div class="compare-feature-name">Quotes & Proposals</div>
+                  <div class="compare-feature-desc">Create and send quotes / proposals</div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="status-pill hs-available">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#22C55E"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span>Available</span>
+              </div>
+              <div class="status-sub">Basic quotes</div>
+            </td>
+            <td>
+              <div class="status-pill lp-status">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#7C3AED"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span>Advanced</span>
+              </div>
+              <div class="status-sub">Smart quotes, templates, approvals, e-sign</div>
+            </td>
+          </tr>
+
+          <!-- 6. Automated Follow Ups -->
+          <tr>
+            <td>
+              <div class="compare-feature-cell">
+                <div class="compare-feature-icon">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </div>
+                <div class="compare-feature-info">
+                  <div class="compare-feature-name">Automated Follow Ups</div>
+                  <div class="compare-feature-desc">Follow up with leads automatically</div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="status-pill hs-available">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#22C55E"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span>Available</span>
+              </div>
+              <div class="status-sub">Basic workflows</div>
+            </td>
+            <td>
+              <div class="status-pill lp-status">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#7C3AED"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span>Advanced</span>
+              </div>
+              <div class="status-sub">AI follow-ups across email, SMS, WhatsApp</div>
+            </td>
+          </tr>
+
+          <!-- 7. AI Sales Assistant -->
+          <tr>
+            <td>
+              <div class="compare-feature-cell">
+                <div class="compare-feature-icon">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <div class="compare-feature-info">
+                  <div class="compare-feature-name">AI Sales Assistant</div>
+                  <div class="compare-feature-desc">AI assists to write, reply & summarize</div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="status-pill hs-not-avail">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#EF4444"><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"/></svg>
+                <span>Not Available</span>
+              </div>
+              <div class="status-sub">Add-on required</div>
+            </td>
+            <td>
+              <div class="status-pill lp-status">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#7C3AED"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span>Included</span>
+              </div>
+              <div class="status-sub">AI writer, email reply, summaries, insights</div>
+            </td>
+          </tr>
+
+          <!-- 8. Chatbot -->
+          <tr>
+            <td>
+              <div class="compare-feature-cell">
+                <div class="compare-feature-icon">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                </div>
+                <div class="compare-feature-info">
+                  <div class="compare-feature-name">Chatbot</div>
+                  <div class="compare-feature-desc">Engage leads 24/7 with AI chatbot</div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="status-pill hs-not-avail">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#EF4444"><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"/></svg>
+                <span>Not Available</span>
+              </div>
+              <div class="status-sub">Third-party needed</div>
+            </td>
+            <td>
+              <div class="status-pill lp-status">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#7C3AED"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span>Included</span>
+              </div>
+              <div class="status-sub">AI chatbot, lead capture, smart replies</div>
+            </td>
+          </tr>
+
+          <!-- 9. Multi-channel Engagement -->
+          <tr>
+            <td>
+              <div class="compare-feature-cell">
+                <div class="compare-feature-icon">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div class="compare-feature-info">
+                  <div class="compare-feature-name">Multi-channel Engagement</div>
+                  <div class="compare-feature-desc">Email, SMS, WhatsApp in one place</div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="status-pill hs-available">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#22C55E"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span>Available</span>
+              </div>
+              <div class="status-sub">Limited channels</div>
+            </td>
+            <td>
+              <div class="status-pill lp-status">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#7C3AED"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span>Advanced</span>
+              </div>
+              <div class="status-sub">Email, SMS, WhatsApp, in-app, push</div>
+            </td>
+          </tr>
+
+          <!-- 10. Reporting & Analytics -->
+          <tr>
+            <td>
+              <div class="compare-feature-cell">
+                <div class="compare-feature-icon">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
+                </div>
+                <div class="compare-feature-info">
+                  <div class="compare-feature-name">Reporting & Analytics</div>
+                  <div class="compare-feature-desc">Track performance and revenue</div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="status-pill hs-available">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#22C55E"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span>Available</span>
+              </div>
+              <div class="status-sub">Basic reports</div>
+            </td>
+            <td>
+              <div class="status-pill lp-status">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#7C3AED"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span>Advanced</span>
+              </div>
+              <div class="status-sub">Real-time dashboards, revenue attribution</div>
+            </td>
+          </tr>
+
+          <!-- 11. Integrations -->
+          <tr>
+            <td>
+              <div class="compare-feature-cell">
+                <div class="compare-feature-icon">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                </div>
+                <div class="compare-feature-info">
+                  <div class="compare-feature-name">Integrations</div>
+                  <div class="compare-feature-desc">Connect with 3rd party tools</div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="status-pill hs-available">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#22C55E"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span>Available</span>
+              </div>
+              <div class="status-sub">Many integrations</div>
+            </td>
+            <td>
+              <div class="status-pill lp-status">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#7C3AED"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span>Advanced</span>
+              </div>
+              <div class="status-sub">100+ integrations + webhook + API</div>
+            </td>
+          </tr>
+
+          <!-- 12. Pricing -->
+          <tr>
+            <td>
+              <div class="compare-feature-cell">
+                <div class="compare-feature-icon">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v12M15 9.5H10.5a2.5 2.5 0 0 0 0 5H14a2.5 2.5 0 0 1 0 5H9"/></svg>
+                </div>
+                <div class="compare-feature-info">
+                  <div class="compare-feature-name">Pricing</div>
+                  <div class="compare-feature-desc">Simple, transparent pricing</div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="status-pill hs-not-avail">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#EF4444"><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"/></svg>
+                <span>Expensive</span>
+              </div>
+              <div class="status-sub">Many add-ons</div>
+            </td>
+            <td>
+              <div class="status-pill lp-status">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#7C3AED"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span>All-in-One</span>
+              </div>
+              <div class="status-sub">One price. Everything included.</div>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <!-- Bottom Summary Strip across the table footer -->
+      <div class="compare-table-footer-strip">
+        <div class="compare-strip-pill red">
+          <span>⚠️</span> HubSpot needs multiple tools, add-ons and manual work.
+        </div>
+        <div class="compare-strip-pill purple">
+          <span>✓</span> LeadPilot gives you everything in one AI-powered platform.
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Compact KPI Summary Strip (Secondary Summary, exact match to reference) -->
+    <div class="compare-kpi-container" id="kpi-strip">
+
+      <!-- KPI 1: 60% Faster Setup -->
+      <div class="compare-kpi-card" id="kpi-card-0">
+        <div class="compare-kpi-icon-wrap purple">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+        </div>
+        <div class="compare-kpi-text">
+          <div class="compare-kpi-num purple"><span class="kpi-countup" data-target="60" data-suffix="%">0%</span></div>
+          <div class="compare-kpi-title">Faster Setup</div>
+          <div class="compare-kpi-desc">Get started in minutes,<br>not weeks.</div>
+        </div>
+      </div>
+
+      <!-- KPI 2: 40% Lower Cost -->
+      <div class="compare-kpi-card" id="kpi-card-1">
+        <div class="compare-kpi-icon-wrap pink">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="2" x2="12" y2="22"/>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </div>
+        <div class="compare-kpi-text">
+          <div class="compare-kpi-num pink"><span class="kpi-countup" data-target="40" data-suffix="%">0%</span></div>
+          <div class="compare-kpi-title">Lower Cost</div>
+          <div class="compare-kpi-desc">One platform. One price.<br>Everything included.</div>
+        </div>
+      </div>
+
+      <!-- KPI 3: 3× Faster Lead Response (ROCKET ICON RESTORED) -->
+      <div class="compare-kpi-card" id="kpi-card-2">
+        <div class="compare-kpi-icon-wrap orange">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2.5c0 0 3.5 3 4.5 7.5 1.1 0 3.5 1.5 4.5 3.5-1.5 1.5-3.5 1.5-5 1.5-.5 2-2 4-4 5.5v2.5l-2-2-2 2v-2.5c-2-1.5-3.5-3.5-4-5.5-1.5 0-3.5 0-5-1.5 1-2 3.4-3.5 4.5-3.5C8.5 5.5 12 2.5 12 2.5z"/>
+          </svg>
+        </div>
+        <div class="compare-kpi-text">
+          <div class="compare-kpi-num orange"><span class="kpi-countup" data-target="3" data-suffix="×">0×</span></div>
+          <div class="compare-kpi-title">Faster Lead Response</div>
+          <div class="compare-kpi-desc">Engage leads instantly<br>and close more deals.</div>
+        </div>
+      </div>
+
+      <!-- KPI 4: Everything Included -->
+      <div class="compare-kpi-card" id="kpi-card-3">
+        <div class="compare-kpi-icon-wrap green">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+          </svg>
+        </div>
+        <div class="compare-kpi-text">
+          <div class="compare-kpi-num dark">Everything<br>Included</div>
+          <div class="compare-kpi-title">No limits</div>
+          <div class="compare-kpi-desc">No add-ons. No limits.<br>Just results.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>'''
+
+html = html[:start_idx] + NEW_HTML_BLOCK + '\n\n'
+
+with open(FILE, 'w', encoding='utf-8') as f:
+    f.write(html)
+print("Cleaned duplicate HTML block successfully.")

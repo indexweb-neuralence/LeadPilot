@@ -1,0 +1,19 @@
+python3 -c "
+import json, re
+
+with open('/Users/amanamuhammed/.gemini/antigravity/brain/67b9bfad-7c28-4c07-8386-12036697c9aa/.system_generated/logs/transcript_full.jsonl') as f:
+    text = f.read()
+
+# Clean JSON strings containing Javascript code
+# Search for 'function initKanban' or similar
+for m in re.finditer(r'// ── MINI KANBAN|// ── CUSTOM STAGES|function initKanban', text):
+    start = max(0, m.start() - 100)
+    end = min(len(text), m.start() + 4000)
+    snippet = text[start:end]
+    # Replace json escapes
+    clean = snippet.replace('\\n', '\n').replace('\\\"', '\"').replace('\\\\', '\\')
+    print('=== FOUND SNIPPET ===')
+    print(clean[:300])
+    with open('extracted_snippet.js', 'w') as out:
+        out.write(clean)
+"

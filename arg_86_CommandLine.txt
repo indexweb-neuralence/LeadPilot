@@ -1,0 +1,30 @@
+python3 -c "
+import json
+
+with open('/Users/amanamuhammed/.gemini/antigravity/brain/67b9bfad-7c28-4c07-8386-12036697c9aa/.system_generated/logs/transcript_full.jsonl') as f:
+    lines = f.readlines()
+
+best_content = ''
+for line in lines:
+    if 'crm-pipeline.html' in line and ('initKanban' in line or 'initStages' in line):
+        if len(line) > len(best_content):
+            best_content = line
+
+print('Best line length:', len(best_content))
+data = json.loads(best_content)
+
+# Search inside content or tool_calls
+content_str = str(data)
+
+pos_script = content_str.find('<script>')
+pos_footer = content_str.find('<footer>')
+print('script pos:', pos_script, 'footer pos:', pos_footer)
+
+if pos_script != -1:
+    extracted = content_str[pos_script:pos_script+35000]
+    # clean string representation
+    extracted = extracted.replace('\\\\n', '\n').replace('\\n', '\n').replace('\\\"', '\"')
+    with open('full_recovered_script.html', 'w') as out:
+        out.write(extracted)
+    print('Wrote full_recovered_script.html!')
+"

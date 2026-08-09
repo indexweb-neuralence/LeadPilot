@@ -1,0 +1,1 @@
+(sub)\n    print('Wrote found_kanban.txt')\n\"","Cwd":"/Users/amanamuhammed/Desktop/Lead Pilot","WaitMsBeforeAsync":5000,"toolAction":"Finding initKanban in transcript_full.jsonl","toolSummary":"Find initKanban in transcript_full.jsonl"}}]}

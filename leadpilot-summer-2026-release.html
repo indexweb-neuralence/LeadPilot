@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="images/LEAD PILOT LOGO.png">
+  <link rel="apple-touch-icon" href="images/LEAD PILOT LOGO.png">
+  <title>LeadPilot Summer 2026 Release: Smart Forms, CRM Sync & V2 Coach | LeadPilot Blog</title>
+  <meta name="description" content="An in-depth product breakdown of the LeadPilot Summer 2026 Release. Discover technical enhancements to Smart AI Lead Forms, sub-second bi-directional CRM Sync, AI Conversation Coach V2, and sub-100ms API performance benchmarks.">
+  <meta name="keywords" content="LeadPilot product release, Summer 2026 features, Smart AI Lead Forms, CRM Sync, V2 Coach, sales technology update">
+  <link rel="canonical" href="https://leadpilot.ai/blog/leadpilot-summer-2026-release.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://leadpilot.ai/blog/leadpilot-summer-2026-release.html">
+  <meta property="og:title" content="LeadPilot Summer 2026 Release: Smart Forms, CRM Sync & V2 Coach">
+  <meta property="og:description" content="Explore all the new features, performance upgrades, and workflow integrations released this month across the LeadPilot suite.">
+  <meta property="og:image" content="https://leadpilot.ai/images/blog_art_updates.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LeadPilot Summer 2026 Release: Smart Forms, CRM Sync & V2 Coach">
+  <meta name="twitter:description" content="Explore all the new features and performance upgrades released across the LeadPilot suite.">
+  <meta name="twitter:image" content="https://leadpilot.ai/images/blog_art_updates.jpg">
+
+  <!-- Google Fonts: Inter & Inter Tight (Exact LeadPilot Site Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Core Styles -->
+  <link rel="stylesheet" href="css/blog-article.css">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": "https://leadpilot.ai/blog/leadpilot-summer-2026-release.html#article",
+        "headline": "LeadPilot Summer 2026 Release: Smart Forms, CRM Sync & V2 Coach",
+        "description": "An in-depth product breakdown of the LeadPilot Summer 2026 Release.",
+        "datePublished": "2026-07-05T08:00:00+00:00",
+        "dateModified": "2026-07-30T10:00:00+00:00",
+        "author": {
+          "@type": "Organization",
+          "name": "LeadPilot Product Team"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "LeadPilot"
+        },
+        "image": "https://leadpilot.ai/images/blog_art_updates.jpg",
+        "articleSection": "Product Updates"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://leadpilot.ai" },
+          { "@type": "ListItem", "position": 2, "name": "Resources", "item": "https://leadpilot.ai/blog.html" },
+          { "@type": "ListItem", "position": 3, "name": "Blog", "item": "https://leadpilot.ai/blog.html" },
+          { "@type": "ListItem", "position": 4, "name": "LeadPilot Summer 2026 Release Notes", "item": "https://leadpilot.ai/blog/leadpilot-summer-2026-release.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do Smart AI Lead Forms increase conversion rates?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Smart AI Lead Forms dynamically reduce required input fields to just a work email address while automatically enriching company size, technographic stack, and location in real time, driving a 35% increase in inbound form submissions."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar" id="reading-progress-bar"></div>
+
+  <!-- EXACT GLOBAL NAVIGATION COMPONENT -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="images/LEAD PILOT LOGO.png" alt="LeadPilot Logo">
+      LeadPilot
+    </a>
+
+    <div class="nav-links">
+      <div class="nav-dropdown-wrapper">
+        <a href="#" class="nav-dropdown-trigger nav-link-product">Product <i data-lucide="chevron-down" style="width: 14px; height: 14px;"></i></a>
+        <div class="mega-menu">
+          <div class="mega-menu-grid">
+            <div class="mega-menu-column">
+              <div class="mega-menu-category">Core OS</div>
+              <a href="lead-generator.html" class="mega-menu-item">
+                <div class="mega-menu-icon-wrap" style="background: rgba(124, 58, 237, 0.08); color: #7C3AED;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </div>
+                <div class="mega-menu-text">
+                  <span class="mega-menu-title">Lead Generator</span>
+                  <span class="mega-menu-desc">Find verified B2B contacts and decision-makers in seconds.</span>
+                </div>
+              </a>
+              <a href="lead-forms.html" class="mega-menu-item">
+                <div class="mega-menu-icon-wrap" style="background: rgba(236, 72, 153, 0.08); color: #EC4899;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                </div>
+                <div class="mega-menu-text">
+                  <span class="mega-menu-title">AI Lead Forms</span>
+                  <span class="mega-menu-desc">Convert visitors into qualified leads automatically.</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="mega-menu-column">
+              <div class="mega-menu-category">Pipeline</div>
+              <a href="crm-pipeline.html" class="mega-menu-item">
+                <div class="mega-menu-icon-wrap" style="background: rgba(59, 130, 246, 0.08); color: #3B82F6;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="14" y="14" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /></svg>
+                </div>
+                <div class="mega-menu-text">
+                  <span class="mega-menu-title">CRM &amp; Pipeline</span>
+                  <span class="mega-menu-desc">Manage deals, activities, and revenue pipelines visually.</span>
+                </div>
+              </a>
+              <a href="meeting-booking.html" class="mega-menu-item">
+                <div class="mega-menu-icon-wrap" style="background: rgba(16, 185, 129, 0.08); color: #10B981;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                </div>
+                <div class="mega-menu-text">
+                  <span class="mega-menu-title">Meeting Booking</span>
+                  <span class="mega-menu-desc">Let qualified buyers book meetings directly on your calendar.</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="mega-menu-column">
+              <div class="mega-menu-category">Intelligence</div>
+              <a href="ai-sales-sequences.html" class="mega-menu-item">
+                <div class="mega-menu-icon-wrap" style="background: rgba(245, 158, 11, 0.08); color: #F59E0B;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+                </div>
+                <div class="mega-menu-text">
+                  <span class="mega-menu-title">AI Sales Assistant</span>
+                  <span class="mega-menu-desc">Automate research, note-taking, and follow-ups effortlessly.</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="mega-menu-column">
+              <div class="mega-menu-category">Outreach</div>
+              <a href="index.html#tools" class="mega-menu-item">
+                <div class="mega-menu-icon-wrap" style="background: rgba(217, 119, 6, 0.08); color: #D97706;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" /></svg>
+                </div>
+                <div class="mega-menu-text">
+                  <span class="mega-menu-title">Sales Sequences</span>
+                  <span class="mega-menu-desc">Build automated multi-step email and follow-up sequences.</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="mega-menu-footer">
+            <div class="mega-menu-footer-left">
+              <span class="footer-badge">Everything connected.</span>
+              <span class="footer-text">LeadPilot combines lead generation, CRM, meetings, automation, AI, and sales coaching.</span>
+            </div>
+            <a href="index.html#tools" class="mega-menu-footer-link">View All Products →</a>
+          </div>
+        </div>
+      </div>
+
+      <a href="pricing.html" class="nav-link-pricing">Pricing</a>
+
+      <!-- 2. RESOURCES DROPDOWN -->
+      <div class="nav-dropdown-wrapper">
+        <a href="blog.html" class="nav-dropdown-trigger nav-link-resources">Resources <i data-lucide="chevron-down" style="width: 14px; height: 14px;"></i></a>
+        <div class="mega-menu mega-menu-resources">
+          <div class="mega-menu-resources-grid">
+            <div class="resources-left-col">
+              <div class="mega-menu-category">RESOURCES</div>
+              <div class="resource-items-list">
+                <!-- Item 1: Blog -->
+                <a href="blog.html" class="resource-item">
+                  <div class="resource-icon-wrap" style="background: rgba(124, 58, 237, 0.08); color: #7C3AED;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+                  </div>
+                  <div class="resource-text">
+                    <span class="resource-title">Blog</span>
+                    <span class="resource-desc">Product updates, sales insights, and industry trends.</span>
+                  </div>
+                  <div class="resource-arrow">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </div>
+                </a>
+
+                <!-- Item 2: Case Studies -->
+                <a href="case-studies.html" class="resource-item">
+                  <div class="resource-icon-wrap" style="background: rgba(234, 88, 12, 0.08); color: #EA580C;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </div>
+                  <div class="resource-text">
+                    <span class="resource-title">Case Studies</span>
+                    <span class="resource-desc">Real customer stories, results, and success journeys.</span>
+                  </div>
+                  <div class="resource-arrow">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </div>
+                </a>
+
+                <!-- Item 3: Free Resources -->
+                <a href="free-resources.html" class="resource-item">
+                  <div class="resource-icon-wrap" style="background: rgba(16, 185, 129, 0.08); color: #10B981;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                  </div>
+                  <div class="resource-text">
+                    <span class="resource-title">Free Resources</span>
+                    <span class="resource-desc">Templates, ebooks, playbooks, and checklists.</span>
+                  </div>
+                  <div class="resource-arrow">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </div>
+                </a>
+
+                <!-- Item 4: Webinars -->
+                <a href="webinars.html" class="resource-item">
+                  <div class="resource-icon-wrap" style="background: rgba(37, 99, 235, 0.08); color: #2563EB;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                  </div>
+                  <div class="resource-text">
+                    <span class="resource-title">Webinars</span>
+                    <span class="resource-desc">Live demos, training sessions, and product walkthroughs.</span>
+                  </div>
+                  <div class="resource-arrow">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="resources-right-col">
+              <div class="mega-menu-category">FEATURED</div>
+              <div class="featured-cards-wrap">
+                <div class="featured-card-main">
+                  <div class="featured-main-content">
+                    <span class="featured-badge">CASE STUDY</span>
+                    <h3 class="featured-headline">How sales teams close more deals with LeadPilot</h3>
+                    <p class="featured-desc">See how businesses simplified lead generation, CRM and follow-ups in one workspace.</p>
+                    <a href="blog.html" class="featured-link">Read Case Study &rarr;</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="about.html" class="nav-link-about">About</a>
+    </div>
+
+    <div class="nav-actions">
+      <a href="index.html#cta" class="btn-ghost-nav">Login</a>
+      <a href="index.html#cta" class="btn-outline-nav">Book Demo</a>
+      <a href="index.html#cta" class="btn-solid-nav">Start Free Trial</a>
+    </div>
+
+    <button class="mobile-nav-toggle" aria-label="Toggle Menu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+  </nav>
+
+
+
+
+  <!-- MAIN ARTICLE PAGE WRAPPER -->
+  <main class="article-page-wrap">
+    <div class="container" style="max-width: 960px; margin: 0 auto; padding: 40px 24px 0;">
+      
+
+
+      <span class="article-category-tag">Product Updates &amp; Engineering</span>
+      <h1 class="article-main-title">LeadPilot Summer 2026 Release: Smart Forms, CRM Sync & V2 Coach</h1>
+      <p class="article-lead-paragraph">A comprehensive breakdown of all new features, performance milestones, and infrastructure integrations released across the LeadPilot suite.</p>
+
+      <div class="article-meta-share-bar">
+        <div class="author-meta-details">
+          <img src="images/LEAD PILOT LOGO.png" alt="LeadPilot Team" class="author-avatar-img">
+          <div class="author-text-wrap">
+            <span class="author-name-text">LeadPilot Product Team</span>
+            <div class="article-publish-details">
+              <span>Product Management &amp; Engineering</span>
+              <span>•</span>
+              <span>July 05, 2026</span>
+              <span>•</span>
+              <span>12 min read (2,500 words)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-share-group">
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://leadpilot.ai/blog/leadpilot-summer-2026-release.html" target="_blank" class="share-btn"><i data-lucide="linkedin" style="width: 18px; height: 18px;"></i></a>
+          <a href="https://twitter.com/intent/tweet?url=https://leadpilot.ai/blog/leadpilot-summer-2026-release.html" target="_blank" class="share-btn"><i data-lucide="twitter" style="width: 18px; height: 18px;"></i></a>
+          <a href="#" id="share-copy-btn" class="share-btn"><i data-lucide="link" style="width: 18px; height: 18px;"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-hero-banner">
+      <img src="images/blog_art_updates.jpg" alt="Summer 2026 Release 3D Editorial Illustration">
+    </div>
+
+    <div class="article-layout-container">
+      
+      <aside class="toc-sidebar">
+        <div class="toc-title"><i data-lucide="list" style="width: 16px; height: 16px; color: #7C3AED;"></i> Contents</div>
+        <ul class="toc-links-list">
+          <li><a href="#executive-summary" class="active">1. Executive Summary</a></li>
+          <li><a href="#forms">2. Smart AI Lead Forms</a></li>
+          <li><a href="#sync">3. Bi-Directional CRM Sync</a></li>
+          <li><a href="#coach">4. V2 AI Sales Coach</a></li>
+          <li><a href="#performance">5. Sub-100ms Performance</a></li>
+          <li><a href="#faq">6. Frequently Asked Questions</a></li>
+          <li><a href="#takeaways">7. Release Highlights</a></li>
+        </ul>
+      </aside>
+
+      <article class="article-content-body">
+        
+        <section id="executive-summary">
+          <div class="article-callout-box" style="background: linear-gradient(135deg, #FAF8FF 0%, #FFF5F9 100%); border-left: 4px solid #7C3AED; padding: 28px; border-radius: 16px;">
+            <div class="callout-header" style="font-size: 18px; font-weight: 800; color: #0F172A;">
+              <i data-lucide="file-text" style="color: #7C3AED;"></i> Executive Summary
+            </div>
+            <p class="callout-body" style="font-size: 16px; color: #334155; line-height: 1.7; margin-top: 10px;">
+              The <strong>LeadPilot Summer 2026 Release</strong> represents our largest platform milestone of the year. This release delivers progressive <a href="lead-forms.html">Smart AI Lead Forms</a>, sub-second bi-directional CRM Sync with Salesforce and HubSpot, and our upgraded <a href="ai-sales-coach.html">V2 AI Conversation Coach</a>.
+            </p>
+          </div>
+        </section>
+
+        <section id="forms">
+          <h2>2. Smart AI Lead Forms: 35% Inbound Conversion Lift</h2>
+          <p>
+            Traditional forms lose up to 50% of prospects due to excessive field friction. <a href="lead-forms.html">LeadPilot Smart Lead Forms</a> dynamically collapse fields down to a single work email input while performing live background enrichment.
+          </p>
+        </section>
+
+        <section id="sync">
+          <h2>3. Bi-Directional Sub-Second CRM Sync</h2>
+          <p>
+            Guarantees sub-second multi-way data synchronization across <a href="crm-pipeline.html">CRM &amp; Pipeline Workspace</a>, Salesforce Enterprise, and HubSpot.
+          </p>
+        </section>
+
+        <section id="coach">
+          <h2>4. V2 AI Sales Coach & Real-Time Screen Battlecards</h2>
+          <p>
+            Featuring enhanced NLP sentiment tracking and automated post-call summary output directly inside <a href="ai-sales-assistant.html">AI Sales Assistant</a>.
+          </p>
+        </section>
+
+        <section id="performance">
+          <h2>5. Sub-100ms API Latency & 3x Faster Page Loading</h2>
+          <p>
+            Architectural optimizations deliver 65% faster dashboard rendering and sub-100ms outbound trigger speeds.
+          </p>
+        </section>
+
+        <section id="faq">
+          <h2>6. Frequently Asked Questions (FAQ)</h2>
+          
+          <div class="faq-accordion-container">
+            <div class="faq-accordion-item">
+              <button class="faq-accordion-header" id="faq-header-1" aria-expanded="false" aria-controls="faq-answer-1">
+                <span class="faq-question-text">Are these Summer 2026 updates available to all plans?</span>
+                <i data-lucide="chevron-down" class="faq-chevron-icon"></i>
+              </button>
+              <div class="faq-accordion-body" id="faq-answer-1" role="region" aria-labelledby="faq-header-1" aria-hidden="true">
+                <div class="faq-answer-content">
+                  <p>Yes. All features, performance upgrades, and CRM sync enhancements are live for existing LeadPilot users immediately.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="takeaways">
+          <div class="key-takeaways-card">
+            <div class="takeaways-title"><i data-lucide="sparkles" style="color: #7C3AED;"></i> Release Highlights</div>
+            <ul class="takeaways-list">
+              <li><i data-lucide="arrow-right"></i> Deploy progressive AI lead forms for 35% higher inbound conversion.</li>
+              <li><i data-lucide="arrow-right"></i> Experience sub-second two-way CRM sync across Salesforce &amp; HubSpot.</li>
+              <li><i data-lucide="arrow-right"></i> Upgrade your reps to AI Conversation Coach V2 today.</li>
+            </ul>
+          </div>
+        </section>
+
+        <div class="author-bio-card">
+          <img src="images/LEAD PILOT LOGO.png" alt="LeadPilot Team" class="author-bio-avatar">
+          <div class="author-bio-content">
+            <div class="author-bio-name">LeadPilot Product Team</div>
+            <div class="author-bio-role">Product Management &amp; Engineering</div>
+            <p class="author-bio-text">The LeadPilot Product Team is dedicated to building the world's most intelligent AI-powered sales operating system.</p>
+          </div>
+        </div>
+
+        <div class="article-prev-next-grid">
+          <a href="ai-conversation-intelligence.html" class="prev-next-card">
+            <span class="prev-next-label"><i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i> Previous Article</span>
+            <span class="prev-next-title">AI Conversation Intelligence</span>
+          </a>
+          <a href="ai-sales-operating-system.html" class="prev-next-card" style="text-align: right; align-items: flex-end;">
+            <span class="prev-next-label">Featured Article <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i></span>
+            <span class="prev-next-title">The AI Sales Operating System</span>
+          </a>
+        </div>
+
+      </article>
+    </div>
+  </main>
+
+  <!-- OFFICIAL GLOBAL FOOTER -->
+  <script src="components/footer.js"></script>
+  <script src="js/blog-article.js"></script>
+  <script src="components/navbar.js"></script>
+</body>
+</html>

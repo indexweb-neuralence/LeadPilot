@@ -1,0 +1,1 @@
+Script to fix Hero overlap and text truncation, and restore the complete <script> block and <footer> block.

@@ -1,0 +1,2477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="images/LEAD PILOT LOGO.png">
+<link rel="apple-touch-icon" href="images/LEAD PILOT LOGO.png">
+<title>Frequently Asked Questions (FAQ) – LeadPilot</title>
+<meta name="description" content="Quick answers to common questions about LeadPilot — from lead generation and CRM to meeting booking, quotations, sales sequences, AI tools, and pricing.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+  /* ── BASE & TOKENS ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    background-color: #FFFFFF;
+    overflow-x: hidden;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :root {
+    --purple: #7C3AED;
+    --purple-light: #8B5CF6;
+    --purple-pale: #F3E8FF;
+    --purple-subtle: #FAF5FF;
+    --pink: #EC4899;
+    --grad: linear-gradient(135deg, #7C3AED 0%, #EC4899 100%);
+    --grad-text: linear-gradient(135deg, #2563EB 0%, #7C3AED 30%, #EC4899 70%, #F97316 100%);
+    --dark: #0A0A0F;
+    --dark-muted: #475569;
+    --text-slate: #6B7280;
+    --border-color: #E2E8F0;
+    --border-light: #F1F5F9;
+    --radius-lg: 24px;
+    --radius-md: 16px;
+    --radius-sm: 12px;
+    --radius-full: 9999px;
+    --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+    --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.03);
+    --shadow-glow: 0 16px 40px rgba(124, 58, 237, 0.12);
+  }
+
+  /* Container */
+  .container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* Animated Ombré Gradient Text */
+  .ombre-text {
+    background: linear-gradient(135deg, #2563EB 0%, #7C3AED 25%, #EC4899 50%, #F97316 75%, #2563EB 100%);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: textGradientFlow 8s ease infinite;
+    display: inline-block;
+  }
+
+  @keyframes textGradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Eyebrow badge */
+  .eyebrow-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #F3E8FF;
+    color: #7C3AED;
+    border: 1px solid #E9D5FF;
+    padding: 8px 20px;
+    border-radius: var(--radius-full);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(124, 58, 237, 0.08);
+  }
+
+  /* ── 1. GLOBAL NAVIGATION (EXACT SHARED COMPONENT) ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: #ffffff;
+    border-bottom: 1px solid #F1F5F9;
+    padding: 0 60px;
+    height: 88px;
+    display: flex; align-items: center; justify-content: space-between;
+    transition: all 0.3s ease;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; font-size: 19px; font-weight: 800; color: #0F172A; text-decoration: none; letter-spacing: -0.5px; }
+  .nav-logo img { width: 28px; height: 28px; object-fit: contain; }
+  .nav-links { display: flex; gap: 36px; align-items: center; position: absolute; left: 50%; transform: translateX(-50%); }
+  .nav-links a { color: #475569; text-decoration: none; font-size: 15px; font-weight: 500; display: flex; align-items: center; gap: 4px; transition: color 0.2s ease; }
+  .nav-links a:hover { color: #0F172A; }
+  
+  .nav-dropdown-wrapper {
+    position: relative;
+    height: 88px;
+    display: flex;
+    align-items: center;
+  }
+  .nav-dropdown-trigger {
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  .nav-actions { display: flex; gap: 14px; align-items: center; }
+  .nav-actions a { text-decoration: none; font-size: 15px; font-weight: 600; transition: all 0.2s ease; }
+  .btn-ghost-nav { color: #475569; padding: 10px 16px; }
+  .btn-ghost-nav:hover { color: #0F172A; }
+  .btn-outline-nav {
+    border: 1px solid #E2E8F0;
+    border-radius: 9999px;
+    padding: 10px 22px;
+    color: #0F172A;
+    background: #ffffff;
+  }
+  .btn-outline-nav:hover { background: #F8FAFC; border-color: #CBD5E1; }
+  .btn-solid-nav {
+    background: #0F172A;
+    color: #ffffff;
+    border-radius: 9999px;
+    padding: 10px 22px;
+  }
+  .btn-solid-nav:hover { background: #1E293B; }
+
+  /* Mega Menu */
+  .mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    width: 920px;
+    background: #ffffff;
+    border: 1px solid #E2E8F0;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+    padding: 28px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    z-index: 1000;
+  }
+  .nav-dropdown-wrapper:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+  }
+  .mega-menu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .mega-menu-column { display: flex; flex-direction: column; gap: 8px; }
+  .mega-menu-category { font-size: 11px; font-weight: 700; color: #94A3B8; text-transform: uppercase; letter-spacing: 0.08em; padding-bottom: 8px; border-bottom: 1px solid #F1F5F9; margin-bottom: 6px; }
+  .mega-menu-item { display: flex; align-items: flex-start; gap: 12px; padding: 10px; border-radius: 12px; text-decoration: none; transition: background 0.2s ease; }
+  .mega-menu-item:hover { background: #F8FAFC; }
+  .mega-menu-icon-wrap { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .mega-menu-text { display: flex; flex-direction: column; gap: 2px; }
+  .mega-menu-title { font-size: 14px; font-weight: 600; color: #0F172A; }
+  .mega-menu-desc { font-size: 12px; color: #64748B; line-height: 1.35; }
+  .mega-menu-footer { margin-top: 20px; padding-top: 16px; border-top: 1px solid #F1F5F9; display: flex; align-items: center; justify-content: space-between; font-size: 13px; }
+  .mega-menu-footer-left { display: flex; align-items: center; gap: 10px; }
+  .footer-badge { background: #F3E8FF; color: #7C3AED; font-weight: 600; padding: 3px 10px; border-radius: 100px; font-size: 12px; }
+  .footer-text { color: #64748B; font-size: 12px; }
+  .mega-menu-footer-link { color: #7C3AED; font-weight: 600; text-decoration: none; }
+  .mega-menu-footer-link:hover { text-decoration: underline; }
+
+  /* Mobile Toggle */
+  .mobile-nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
+  .hamburger-line { width: 22px; height: 2px; background: #0F172A; border-radius: 2px; }
+  .mobile-nav-drawer { position: fixed; top: 0; right: -100%; width: 320px; height: 100vh; background: #ffffff; z-index: 1000; padding: 24px; box-shadow: -10px 0 30px rgba(0,0,0,0.1); transition: right 0.3s ease; display: flex; flex-direction: column; gap: 20px; }
+  .mobile-nav-drawer.active { right: 0; }
+  .mobile-drawer-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 16px; border-bottom: 1px solid #E2E8F0; }
+  .mobile-drawer-close { background: none; border: none; font-size: 24px; cursor: pointer; color: #64748B; }
+  .mobile-drawer-links { display: flex; flex-direction: column; gap: 14px; }
+  .mobile-drawer-links a { font-size: 16px; font-weight: 600; color: #0F172A; text-decoration: none; }
+
+  /* ── 2. SECTION 01: FAQ HERO & SEARCH ── */
+  .faq-hero-section {
+    padding: 100px 0 70px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle at 50% 30%, rgba(243, 232, 255, 0.6) 0%, rgba(255, 255, 255, 1) 70%);
+  }
+  .hero-ambient-glow {
+    position: absolute;
+    width: 600px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.12) 0%, rgba(124, 58, 237, 0.1) 50%, transparent 70%);
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: blur(60px);
+    pointer-events: none;
+  }
+  .hero-content {
+    max-width: 820px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-title {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 64px;
+    font-weight: 850;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: #0F172A;
+    margin-bottom: 18px;
+  }
+  .hero-title-dark { display: block; color: #0F172A; }
+  .hero-subcopy {
+    font-size: 18.5px;
+    color: #475569;
+    line-height: 1.55;
+    max-width: 760px;
+    margin: 0 auto 36px auto;
+    font-weight: 450;
+  }
+
+  /* Search Field Container */
+  .faq-search-box {
+    position: relative;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .faq-search-input {
+    width: 100%;
+    height: 64px;
+    background: #FFFFFF;
+    border: 1.5px solid #E9D5FF;
+    border-radius: var(--radius-full);
+    padding: 0 24px 0 58px;
+    font-family: inherit;
+    font-size: 16.5px;
+    color: #0F172A;
+    box-shadow: 0 8px 24px rgba(124, 58, 237, 0.08);
+    outline: none;
+    transition: all 0.25s ease;
+  }
+  .faq-search-input::placeholder { color: #94A3B8; }
+  .faq-search-input:focus {
+    border-color: #7C3AED;
+    box-shadow: 0 10px 30px rgba(124, 58, 237, 0.16);
+  }
+  .faq-search-icon {
+    position: absolute;
+    left: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #7C3AED;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+  }
+
+  /* ── 3. CATEGORY FILTER PILLS ── */
+  .pills-section {
+    padding: 30px 0 50px 0;
+    background: #FFFFFF;
+    border-bottom: 1px solid #F1F5F9;
+  }
+  .pills-scroll-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .filter-pill-btn {
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: var(--radius-full);
+    padding: 9px 20px;
+    font-size: 14px;
+    font-weight: 650;
+    color: #0F172A;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+  .filter-pill-btn:hover {
+    border-color: #C084FC;
+    color: #7C3AED;
+    background: #FAF5FF;
+  }
+  .filter-pill-btn.active {
+    background: #F3E8FF;
+    color: #7C3AED;
+    border-color: #7C3AED;
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.12);
+  }
+
+  /* ── 4. POPULAR QUESTIONS (2 x 2 GRID) ── */
+  .popular-faq-section {
+    padding: 70px 0 60px 0;
+    background: #FFFFFF;
+  }
+  .popular-faq-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .section-eyebrow {
+    font-size: 12px;
+    font-weight: 800;
+    color: #7C3AED;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .section-title-dark {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 850;
+    color: #0F172A;
+    letter-spacing: -0.02em;
+  }
+
+  /* ── RESOURCES MEGA MENU ── */
+  .mega-menu-resources {
+    width: calc(100vw - 60px) !important;
+    max-width: 1220px !important;
+    border-radius: 26px !important;
+  }
+  .mega-menu-resources-grid {
+    display: grid;
+    grid-template-columns: 370px 1fr;
+    gap: 36px;
+    padding: 36px 40px;
+    background: #FFFFFF;
+    box-sizing: border-box;
+  }
+  .resources-left-col, .resources-right-col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .resource-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .resource-item {
+    display: flex !important;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 14px !important;
+    border-radius: 16px !important;
+    text-decoration: none !important;
+    background: transparent !important;
+    transition: all 0.2s ease !important;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+  .resource-item:hover {
+    background: rgba(108, 75, 255, 0.04) !important;
+    transform: translateY(-1px);
+  }
+  .resource-icon-wrap {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+  .resource-item:hover .resource-icon-wrap {
+    transform: scale(1.05);
+  }
+  .resource-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    flex: 1;
+  }
+  .resource-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0F172A;
+    line-height: 1.2;
+    transition: color 0.2s ease;
+  }
+  .resource-item:hover .resource-title {
+    color: var(--purple, #7C3AED);
+  }
+  .resource-desc {
+    font-size: 12.5px;
+    color: #64748B;
+    line-height: 1.4;
+  }
+  .resource-arrow {
+    color: #CBD5E1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+  .resource-item:hover .resource-arrow {
+    color: var(--purple, #7C3AED);
+    transform: translateX(4px);
+  }
+
+  /* Right Column: Featured Cards */
+  .featured-cards-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .featured-card-main {
+    background: linear-gradient(135deg, rgba(245, 243, 255, 0.75) 0%, rgba(254, 243, 249, 0.75) 50%, rgba(255, 247, 237, 0.75) 100%);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    border-radius: 20px;
+    padding: 28px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .featured-card-main:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 36px rgba(124, 58, 237, 0.06);
+  }
+  .featured-main-content {
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .featured-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 750;
+    letter-spacing: 0.06em;
+    color: #7C3AED;
+    background: rgba(124, 58, 237, 0.1);
+    padding: 4px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+  }
+  .featured-headline {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 21px;
+    font-weight: 800;
+    color: #0F172A;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+  .featured-desc {
+    font-size: 13px;
+    color: #64748B;
+    line-height: 1.5;
+    margin: 0;
+  }
+  .featured-link {
+    font-size: 14px;
+    font-weight: 700;
+    color: #7C3AED !important;
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+    transition: gap 0.2s ease;
+  }
+  .featured-link:hover {
+    gap: 10px;
+  }
+
+  /* Mini Dashboard Illustration in Main Card */
+  .featured-main-visual {
+    position: relative;
+    flex-shrink: 0;
+    width: 290px;
+  }
+  .mini-dashboard-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(15, 23, 42, 0.02);
+    position: relative;
+  }
+  .mini-dash-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #0F172A;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #F1F5F9;
+    margin-bottom: 12px;
+  }
+  .mini-dash-pipeline-title {
+    color: #64748B;
+    font-weight: 600;
+  }
+  .mini-dash-body {
+    display: flex;
+    gap: 14px;
+  }
+  .mini-dash-stats {
+    flex: 1.1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .mini-stat-label {
+    font-size: 10.5px;
+    color: #64748B;
+    font-weight: 500;
+  }
+  .mini-stat-val {
+    font-size: 19px;
+    font-weight: 800;
+    color: #0F172A;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .mini-stat-growth {
+    font-size: 11px;
+    font-weight: 700;
+    color: #10B981;
+    background: rgba(16, 185, 129, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  .mini-chart-svg {
+    margin-top: 6px;
+    width: 100%;
+    height: 34px;
+  }
+  .mini-dash-stages {
+    flex: 0.9;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 11px;
+    color: #475569;
+    justify-content: center;
+  }
+  .stage-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+  }
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .dot-purple { background: #2563EB; }
+  .dot-violet { background: #7C3AED; }
+  .dot-orange { background: #EA580C; }
+  .dot-pink { background: #EC4899; }
+  .stage-num {
+    font-weight: 700;
+    color: #0F172A;
+  }
+
+  .floating-closed-won-badge {
+    position: absolute;
+    bottom: -14px;
+    right: -10px;
+    background: #FFFFFF;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 14px;
+    padding: 10px 14px;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 5;
+  }
+  .won-check-circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #10B981;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .won-text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .won-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #0F172A;
+  }
+  .won-growth {
+    font-size: 10.5px;
+    font-weight: 600;
+    color: #10B981;
+  }
+
+  /* Featured Card 2 (Secondary Horizontal) */
+  .featured-card-secondary {
+    background: #FFFFFF;
+    border: 1px solid #F1F5F9;
+    border-radius: 16px;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .featured-card-secondary:hover {
+    border-color: #E2E8F0;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+  }
+  .secondary-card-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .secondary-text-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .secondary-title {
+    font-size: 14px;
+    font-weight: 750;
+    color: #0F172A;
+  }
+  .secondary-subtitle {
+    font-size: 13px;
+    color: #64748B;
+  }
+  .secondary-card-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .secondary-cta-link {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #7C3AED !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease;
+  }
+  .secondary-cta-link:hover {
+    color: #6D28D9 !important;
+  }
+  .calendar-icon-box {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: rgba(124, 58, 237, 0.08);
+    color: #7C3AED;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* Resources Footer Strip */
+  .mega-menu-resources-footer {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 40px;
+    background: #FBF9FE;
+    border-top: 1px solid #F1F5F9;
+    box-sizing: border-box;
+  }
+  .resources-footer-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #7C3AED 0%, #EC4899 100%);
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .resources-footer-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .res-footer-title {
+    font-size: 14px;
+    font-weight: 750;
+    color: #0F172A;
+  }
+  .res-footer-desc {
+    font-size: 13px;
+    color: #64748B;
+  }
+
+  .popular-2x2-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .popular-q-card {
+    background: #FFFFFF;
+    border: 1.5px solid #E9D5FF;
+    border-radius: 18px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: var(--shadow-sm);
+  }
+  .popular-q-card:hover {
+    border-color: #C084FC;
+    background: #FAF5FF;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(124, 58, 237, 0.1);
+  }
+  .popular-q-text {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 17px;
+    font-weight: 800;
+    color: #0F172A;
+  }
+  .popular-q-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #F3E8FF;
+    color: #7C3AED;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+
+  /* ── 5. MAIN ACCORDION SECTION ── */
+  .main-faq-section {
+    padding: 60px 0 120px 0;
+    background: #FFFFFF;
+  }
+  .faq-container-narrow {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .cat-block-heading {
+    margin: 64px 0 24px 0;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #F3E8FF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .cat-block-title {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 26px;
+    font-weight: 850;
+    color: #0F172A;
+    letter-spacing: -0.015em;
+  }
+  .cat-block-tag {
+    font-size: 12px;
+    font-weight: 800;
+    color: #7C3AED;
+    background: #F3E8FF;
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    letter-spacing: 0.06em;
+  }
+
+  /* Accordions List */
+  .faq-accordion-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .faq-item-row {
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.25s ease;
+  }
+  .faq-item-row.open {
+    background: #FAF5FF;
+    border-color: #C084FC;
+    box-shadow: 0 8px 24px rgba(124, 58, 237, 0.08);
+  }
+
+  .faq-question-btn {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 22px 28px;
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: #0F172A;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    cursor: pointer;
+  }
+  .faq-question-btn:hover { color: #7C3AED; }
+
+  .toggle-icon-badge {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #F1F5F9;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    flex-shrink: 0;
+    transition: all 0.25s ease;
+  }
+  .faq-item-row.open .toggle-icon-badge {
+    background: #7C3AED;
+    color: #FFFFFF;
+    transform: rotate(45deg);
+  }
+
+  .faq-answer-pane {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.35s ease;
+    padding: 0 28px;
+  }
+  .faq-item-row.open .faq-answer-pane {
+    max-height: 300px;
+    padding: 0 28px 24px 28px;
+  }
+  .faq-answer-text {
+    font-size: 15.5px;
+    color: #475569;
+    line-height: 1.65;
+  }
+  .faq-answer-cta {
+    margin-top: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14.5px;
+    font-weight: 750;
+    color: #7C3AED;
+    text-decoration: none;
+  }
+  .faq-answer-cta:hover { text-decoration: underline; color: #6D28D9; }
+
+  /* No search results state */
+  .no-faq-results {
+    display: none;
+    text-align: center;
+    padding: 60px 20px;
+  }
+  .no-faq-results.active { display: block; }
+  .no-results-title {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 26px;
+    font-weight: 850;
+    color: #0F172A;
+    margin-bottom: 10px;
+  }
+
+  /* ── 6. SECTION 07: NEED MORE HELP? ── */
+  .need-help-section {
+    padding: 110px 0;
+  }
+  .need-help-card {
+    background: linear-gradient(135deg, #FFFFFF 0%, #FAF5FF 100%);
+    border: 1.5px solid #E9D5FF;
+    border-radius: 36px;
+    padding: 64px 56px;
+    box-shadow: var(--shadow-glow);
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+  .need-help-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 48px auto;
+  }
+  .two-sides-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    position: relative;
+  }
+  .two-sides-container::before {
+    content: "";
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    left: 50%;
+    width: 1px;
+    background: #E9D5FF;
+    transform: translateX(-50%);
+  }
+
+  .side-box {
+    text-align: center;
+    padding: 12px 24px;
+  }
+  .side-box-title {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 850;
+    color: #0F172A;
+    margin-bottom: 8px;
+  }
+  .side-box-desc {
+    font-size: 15px;
+    color: #64748B;
+    line-height: 1.55;
+    margin-bottom: 24px;
+  }
+  .btn-side-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #F3E8FF;
+    color: #7C3AED;
+    border: 1px solid #E9D5FF;
+    border-radius: var(--radius-full);
+    padding: 14px 32px;
+    font-size: 15px;
+    font-weight: 750;
+    text-decoration: none;
+    transition: all 0.25s ease;
+  }
+  .btn-side-action:hover {
+    background: var(--grad);
+    color: #FFFFFF;
+    border-color: transparent;
+    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.25);
+  }
+
+  /* ── 7. GLOBAL DARK FOOTER (EXACT SHARED COMPONENT) ── */
+  footer {
+    background: var(--dark);
+    padding: 80px 40px 40px;
+    position: relative;
+    z-index: 10;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 60px;
+  }
+  .footer-brand p {
+    font-size: 14px;
+    color: #9CA3AF;
+    margin-top: 16px;
+    line-height: 1.6;
+    max-width: 300px;
+  }
+  .footer-socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+  }
+  .social-btn {
+    width: 36px;
+    height: 36px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.06);
+    color: #9CA3AF;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .social-btn:hover {
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    border-color: rgba(255,255,255,0.15);
+    transform: translateY(-2px);
+  }
+  .footer-col-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 24px;
+  }
+  .footer-link {
+    display: block;
+    font-size: 14px;
+    color: #9CA3AF;
+    text-decoration: none;
+    margin-bottom: 14px;
+    transition: all 0.2s ease;
+  }
+  .footer-link:hover {
+    color: #fff;
+    transform: translateX(2px);
+  }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .footer-bottom p { font-size: 13px; color: #6B7280; }
+  .footer-bottom-links { display: flex; gap: 24px; }
+  .footer-bottom-links a { font-size: 13px; color: #6B7280; text-decoration: none; transition: color 0.2s ease; }
+  .footer-bottom-links a:hover { color: #fff; }
+
+  /* Footer CTA Card */
+  .footer-cta-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 28px;
+    max-width: 300px;
+    box-sizing: border-box;
+    text-align: left;
+  }
+  .footer-cta-title { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+  .footer-cta-desc { font-size: 13px; color: #9CA3AF; margin-bottom: 20px; line-height: 1.5; }
+  .footer-cta-btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+    background: var(--grad); color: #fff !important; text-decoration: none !important;
+    font-size: 13px; font-weight: 600; padding: 10px 20px; border-radius: 8px;
+    transition: all 0.2s ease; width: 100%; text-align: center; border: none; cursor: pointer;
+  }
+  .footer-cta-btn:hover { transform: translateY(-1.5px); box-shadow: 0 4px 15px rgba(124,58,237,0.35); }
+
+  /* Mobile CTA */
+  .mobile-only-cta { display: none; }
+
+  /* ── RESPONSIVE STYLES ── */
+  @media (max-width: 1024px) {
+    nav { padding: 0 30px; }
+    .nav-links { display: none; }
+    .mobile-nav-toggle { display: flex; }
+    .hero-title { font-size: 48px; }
+    .popular-2x2-grid { grid-template-columns: 1fr; }
+    .two-sides-container { grid-template-columns: 1fr; gap: 32px; }
+    .two-sides-container::before { display: none; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .footer-brand { grid-column: span 2; }
+    .desktop-only-cta { display: none; }
+    .mobile-only-cta { display: block; grid-column: span 2; max-width: 100%; margin-top: 16px; }
+  }
+
+  @media (max-width: 680px) {
+    .faq-hero-section { padding: 75px 0 50px 0; }
+    .hero-title { font-size: 38px; }
+    .hero-subcopy { font-size: 16px; }
+    .faq-search-input { height: 58px; font-size: 15px; }
+    .pills-scroll-wrapper { justify-content: flex-start; overflow-x: auto; padding-bottom: 8px; }
+    .need-help-card { padding: 40px 24px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+    .footer-brand { grid-column: span 1; }
+    .mobile-only-cta { grid-column: span 1; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; gap: 16px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ombre-text, .faq-answer-pane { animation: none; transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 1. NAVIGATION -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="images/LEAD PILOT LOGO.png" alt="LeadPilot Logo" class="nav-logo-img" style="width: 28px; height: 28px; object-fit: contain;">
+    LeadPilot
+  </a>
+  
+  <div class="nav-links">
+    <!-- 1. PRODUCT DROPDOWN -->
+    <div class="nav-dropdown-wrapper">
+      <a href="#" class="nav-dropdown-trigger nav-link-product">Product</a>
+      <div class="mega-menu">
+        <div class="mega-menu-grid">
+          <!-- Column 1: Lead Generation -->
+          <div class="mega-menu-column">
+            <div class="mega-menu-category">Lead Generation</div>
+            
+            <a href="lead-generator.html" class="mega-menu-item">
+              <div class="mega-menu-icon-wrap" style="background: rgba(37, 99, 235, 0.08); color: #2563EB;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21l-6-6" /><circle cx="15" cy="9" r="3" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">Lead Generator</span>
+                <span class="mega-menu-desc">Find verified companies and decision-makers using advanced filters.</span>
+              </div>
+            </a>
+            
+            <a href="lead-forms.html" class="mega-menu-item">
+              <div class="mega-menu-icon-wrap" style="background: rgba(16, 163, 74, 0.08); color: #16A34A;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><line x1="9" y1="9" x2="15" y2="9" /><line x1="9" y1="13" x2="15" y2="13" /><line x1="9" y1="17" x2="13" y2="17" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">AI Lead Forms</span>
+                <span class="mega-menu-desc">Capture inbound leads with smart forms that sync with CRM.</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Column 2: Sales Pipeline -->
+          <div class="mega-menu-column">
+            <div class="mega-menu-category">Sales Pipeline</div>
+            
+            <a href="crm-pipeline.html" class="mega-menu-item">
+              <div class="mega-menu-icon-wrap" style="background: rgba(234, 88, 12, 0.08); color: #EA580C;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 3v18h18" /><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">CRM &amp; Pipeline</span>
+                <span class="mega-menu-desc">Manage leads, deals, and your complete pipeline from one workspace.</span>
+              </div>
+            </a>
+            
+            <a href="meeting-booking.html" class="mega-menu-item">
+              <div class="mega-menu-icon-wrap" style="background: rgba(37, 99, 235, 0.08); color: #2563EB;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /><path d="M9 16l2 2 4-4" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">Meeting Booking</span>
+                <span class="mega-menu-desc">Let prospects book meetings instantly with calendar sync.</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Column 3: AI & Automation -->
+          <div class="mega-menu-column">
+            <div class="mega-menu-category">AI &amp; Automation</div>
+            
+            <a href="ai-sales-assistant.html" class="mega-menu-item">
+              <div class="mega-menu-icon-wrap" style="background: rgba(124, 58, 237, 0.08); color: #7C3AED;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">AI Sales Assistant</span>
+                <span class="mega-menu-desc">AI assistance for research and sales productivity.</span>
+              </div>
+            </a>
+            
+            <a href="ai-chatbot.html" class="mega-menu-item">
+              <div class="mega-menu-icon-wrap" style="background: rgba(5, 150, 105, 0.08); color: #059669;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /><path d="M8 10h.01M12 10h.01M16 10h.01" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">AI Chatbot</span>
+                <span class="mega-menu-desc">Automatically qualify website visitors and convert them.</span>
+              </div>
+            </a>
+
+            <a href="ai-sales-coach.html" class="mega-menu-item">
+              <div class="mega-menu-icon-wrap" style="background: rgba(124, 58, 237, 0.08); color: #7C3AED;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">AI Sales Coach</span>
+                <span class="mega-menu-desc">Analyze conversations and improve performance with AI.</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Column 4: Outreach -->
+          <div class="mega-menu-column">
+            <div class="mega-menu-category">Outreach</div>
+            
+            <a href="ai-sales-sequences.html" class="mega-menu-item">
+              <div class="mega-menu-icon-wrap" style="background: rgba(217, 119, 6, 0.08); color: #D97706;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">Sales Sequences</span>
+                <span class="mega-menu-desc">Build automated multi-step email and follow-up sequences.</span>
+              </div>
+            </a>
+            
+            <a href="quotations.html" class="mega-menu-item">
+<div class="mega-menu-icon-wrap" style="background: rgba(225, 29, 72, 0.08); color: #E11D48;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /></svg>
+              </div>
+              <div class="mega-menu-text">
+                <span class="mega-menu-title">Quotations</span>
+                <span class="mega-menu-desc">Generate proposals in seconds with built-in workflows.</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Mega Menu Footer -->
+        <div class="mega-menu-footer">
+          <div class="mega-menu-footer-left">
+            <span class="footer-badge">Everything connected.</span>
+            <span class="footer-text">LeadPilot combines lead generation, CRM, meetings, automation, AI, and sales coaching.</span>
+          </div>
+          <a href="index.html#tools" class="mega-menu-footer-link">View All Products →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRICING LINK -->
+    <a href="pricing.html" class="nav-link-pricing">Pricing</a>
+
+    <!-- 2. RESOURCES DROPDOWN -->
+    <div class="nav-dropdown-wrapper">
+      <a href="#" class="nav-dropdown-trigger nav-link-resources">Resources</a>
+      <div class="mega-menu mega-menu-resources">
+        <div class="mega-menu-resources-grid">
+          <!-- Left Column: RESOURCES -->
+          <div class="resources-left-col">
+            <div class="mega-menu-category">RESOURCES</div>
+            <div class="resource-items-list">
+                <!-- Item 1: Blog -->
+                <a href="blog.html" class="resource-item">
+                  <div class="resource-icon-wrap" style="background: rgba(124, 58, 237, 0.08); color: #7C3AED;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+                  </div>
+                  <div class="resource-text">
+                    <span class="resource-title">Blog</span>
+                    <span class="resource-desc">Product updates, sales insights, and industry trends.</span>
+                  </div>
+                  <div class="resource-arrow">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </div>
+                </a>
+
+                <!-- Item 2: Case Studies -->
+                <a href="case-studies.html" class="resource-item">
+                  <div class="resource-icon-wrap" style="background: rgba(234, 88, 12, 0.08); color: #EA580C;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </div>
+                  <div class="resource-text">
+                    <span class="resource-title">Case Studies</span>
+                    <span class="resource-desc">Real customer stories, results, and success journeys.</span>
+                  </div>
+                  <div class="resource-arrow">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </div>
+                </a>
+
+                <!-- Item 3: Free Resources -->
+                <a href="free-resources.html" class="resource-item">
+                  <div class="resource-icon-wrap" style="background: rgba(16, 185, 129, 0.08); color: #10B981;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                  </div>
+                  <div class="resource-text">
+                    <span class="resource-title">Free Resources</span>
+                    <span class="resource-desc">Templates, ebooks, playbooks, and checklists.</span>
+                  </div>
+                  <div class="resource-arrow">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </div>
+                </a>
+
+                <!-- Item 4: Webinars -->
+                <a href="webinars.html" class="resource-item">
+                  <div class="resource-icon-wrap" style="background: rgba(37, 99, 235, 0.08); color: #2563EB;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                  </div>
+                  <div class="resource-text">
+                    <span class="resource-title">Webinars</span>
+                    <span class="resource-desc">Live demos, training sessions, and product walkthroughs.</span>
+                  </div>
+                  <div class="resource-arrow">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+          <!-- Right Column: FEATURED -->
+          <div class="resources-right-col">
+            <div class="mega-menu-category">FEATURED</div>
+            <div class="featured-cards-wrap">
+              <!-- Featured Card 1 (Large Main Card) -->
+              <div class="featured-card-main">
+                <div class="featured-main-content">
+                  <span class="featured-badge">CASE STUDY</span>
+                  <h3 class="featured-headline">How sales teams close more deals with LeadPilot</h3>
+                  <p class="featured-desc">See how businesses simplified lead generation, CRM and follow-ups in one workspace.</p>
+                  <a href="case-studies.html" class="featured-link">Read Case Study &rarr;</a>
+                </div>
+                
+                <!-- Dashboard UI Graphic Illustration -->
+                <div class="featured-main-visual">
+                  <div class="mini-dashboard-card">
+                    <div class="mini-dash-header">
+                      <div class="mini-dash-title">Deals Overview</div>
+                      <div class="mini-dash-pipeline-title">Pipeline</div>
+                    </div>
+                    <div class="mini-dash-body">
+                      <div class="mini-dash-stats">
+                        <div class="mini-stat-label">Total Deals</div>
+                        <div class="mini-stat-val">248 <span class="mini-stat-growth">↑ 32.6%</span></div>
+                        <svg width="140" height="50" viewBox="0 0 140 50" fill="none" class="mini-chart-svg">
+                          <path d="M0 42 C 20 40, 35 30, 50 35 C 65 40, 80 18, 100 24 C 120 30, 130 10, 140 8" stroke="#7C3AED" stroke-width="2.5" fill="none"/>
+                        </svg>
+                      </div>
+                      <div class="mini-dash-stages">
+                        <div class="stage-row"><span class="dot dot-purple"></span> Qualified <span class="stage-num">82</span></div>
+                        <div class="stage-row"><span class="dot dot-violet"></span> Proposal <span class="stage-num">64</span></div>
+                        <div class="stage-row"><span class="dot dot-orange"></span> Negotiation <span class="stage-num">48</span></div>
+                        <div class="stage-row"><span class="dot dot-pink"></span> Closed Won <span class="stage-num">54</span></div>
+                      </div>
+                    </div>
+                    <!-- Floating Badge -->
+                    <div class="floating-closed-won-badge">
+                      <div class="won-check-circle">✓</div>
+                      <div class="won-text-block">
+                        <div class="won-title">Closed Won</div>
+                        <div class="won-growth">↑ 28% vs last month</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Featured Card 2 (Smaller Horizontal Card) -->
+              <div class="featured-card-secondary">
+                <div class="secondary-card-left">
+                  <span class="featured-badge">WEBINAR</span>
+                  <div class="secondary-text-group">
+                    <span class="secondary-title">AI for Modern Sales Teams</span>
+                    <span class="secondary-subtitle">Join our next live session.</span>
+                  </div>
+                </div>
+                <div class="secondary-card-right">
+                  <a href="webinars.html" class="secondary-cta-link">Reserve Your Seat &rarr;</a>
+                  <div class="calendar-icon-box">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mega Menu Footer Strip (No "Browse all resources" button) -->
+        <div class="mega-menu-resources-footer">
+          <div class="resources-footer-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+          </div>
+          <div class="resources-footer-text">
+            <span class="res-footer-title">Everything connected.</span>
+            <span class="res-footer-desc">Learn how LeadPilot helps sales teams generate leads, manage deals and automate repetitive work.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT LINK -->
+    <a href="about.html" class="nav-link-about">About</a>
+  </div>
+
+  <div class="nav-actions">
+    <a href="index.html#cta" class="btn-ghost-nav">Login</a>
+    <a href="index.html#cta" class="btn-outline-nav">Book Demo</a>
+    <a href="index.html#cta" class="btn-solid-nav">Start Free Trial</a>
+  </div>
+
+  <button class="mobile-nav-toggle" aria-label="Toggle Menu">
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+  </button>
+</nav>
+
+<!-- Mobile Nav Drawer -->
+<div class="mobile-nav-drawer">
+  <div class="mobile-drawer-header">
+    <a href="index.html" class="nav-logo">
+      <img src="images/LEAD PILOT LOGO.png" alt="LeadPilot Logo" style="width: 28px; height: 28px;">
+      LeadPilot
+    </a>
+    <button class="mobile-drawer-close" aria-label="Close Menu">&times;</button>
+  </div>
+  <div class="mobile-drawer-links">
+    <a href="lead-generator.html">Lead Generator</a>
+    <a href="lead-forms.html">AI Lead Forms</a>
+    <a href="meeting-booking.html">Meeting Booking</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="index.html#testimonials">Resources</a>
+    <a href="about.html">About</a>
+  </div>
+</div>
+
+
+<!-- 2. SECTION 01: FAQ HERO & SEARCH -->
+<section class="faq-hero-section">
+  <div class="hero-ambient-glow"></div>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="eyebrow-badge-pill">✦ FREQUENTLY ASKED QUESTIONS</div>
+
+      <h1 class="hero-title">
+        <span class="hero-title-dark">Questions?</span>
+        <span class="ombre-text">We’ve got answers.</span>
+      </h1>
+
+      <p class="hero-subcopy">
+        Everything you need to know about LeadPilot — from finding and managing leads to automation, sales tools, pricing, and support.
+      </p>
+
+      <!-- Search Box -->
+      <div class="faq-search-box">
+        <span class="faq-search-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" id="faq-search-input" class="faq-search-input" placeholder="Search frequently asked questions..." autocomplete="off">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 3. CATEGORY FILTER PILLS -->
+<section class="pills-section">
+  <div class="container">
+    <div class="pills-scroll-wrapper">
+      <button class="filter-pill-btn active" data-cat="all">All</button>
+      <button class="filter-pill-btn" data-cat="getting-started">Getting Started</button>
+      <button class="filter-pill-btn" data-cat="lead-generator">Lead Generator</button>
+      <button class="filter-pill-btn" data-cat="lead-capture">Lead Capture</button>
+      <button class="filter-pill-btn" data-cat="crm-pipeline">CRM &amp; Pipeline</button>
+      <button class="filter-pill-btn" data-cat="ai-automation">AI &amp; Automation</button>
+      <button class="filter-pill-btn" data-cat="sales-tools">Sales Tools</button>
+      <button class="filter-pill-btn" data-cat="pricing-billing">Pricing &amp; Billing</button>
+      <button class="filter-pill-btn" data-cat="account-team">Account &amp; Team</button>
+      <button class="filter-pill-btn" data-cat="security-privacy">Security &amp; Privacy</button>
+    </div>
+  </div>
+</section>
+
+
+<!-- 4. POPULAR QUESTIONS (2 x 2 GRID) -->
+<section class="popular-faq-section" id="popular-section">
+  <div class="container">
+    <div class="popular-faq-header">
+      <span class="section-eyebrow">POPULAR QUESTIONS</span>
+      <h2 class="section-title-dark">Quick answers to common questions.</h2>
+    </div>
+
+    <div class="popular-2x2-grid">
+      <div class="popular-q-card" onclick="jumpToFaq('what-is-leadpilot')">
+        <span class="popular-q-text">What is LeadPilot?</span>
+        <span class="popular-q-icon">&rarr;</span>
+      </div>
+
+      <div class="popular-q-card" onclick="jumpToFaq('how-does-lead-generator-work')">
+        <span class="popular-q-text">How does LeadPilot generate leads?</span>
+        <span class="popular-q-icon">&rarr;</span>
+      </div>
+
+      <div class="popular-q-card" onclick="jumpToFaq('sales-sequences-follow-up')">
+        <span class="popular-q-text">Can LeadPilot automatically follow up with leads?</span>
+        <span class="popular-q-icon">&rarr;</span>
+      </div>
+
+      <div class="popular-q-card" onclick="jumpToFaq('plans-available')">
+        <span class="popular-q-text">What LeadPilot plans are available?</span>
+        <span class="popular-q-icon">&rarr;</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 5. MAIN ACCORDION SECTION (9 CATEGORIES x 7 QUESTIONS EACH = 63 QUESTIONS) -->
+<section class="main-faq-section" id="faq-main">
+  <div class="container">
+    <div class="faq-container-narrow">
+      
+      <div style="text-align: center; margin-bottom: 40px;">
+        <span class="section-eyebrow">EVERYTHING LEADPILOT</span>
+        <h2 class="section-title-dark" style="font-size: 40px;">Find the answer you need.</h2>
+        <p style="font-size: 16.5px; color: #64748B; margin-top: 8px;">Browse common questions about LeadPilot and how its connected sales tools work together.</p>
+      </div>
+
+      <!-- SEARCH NO RESULTS -->
+      <div class="no-faq-results" id="no-results-box">
+        <h3 class="no-results-title">No answers found for "<span id="search-query-text"></span>"</h3>
+        <p style="color: #64748B; font-size: 15.5px; margin-bottom: 24px;">Try another search or explore our Help Center for comprehensive setup guides.</p>
+        <a href="help.html" class="btn-side-action">Visit Help Center &rarr;</a>
+      </div>
+
+      <!-- ALL CATEGORY BLOCKS -->
+      <div id="faq-categories-wrapper">
+
+        <!-- CATEGORY 01: GETTING STARTED -->
+        <div class="cat-block" data-category="getting-started">
+          <div class="cat-block-heading">
+            <h3 class="cat-block-title">Getting Started</h3>
+            <span class="cat-block-tag">01 • Workspace Setup</span>
+          </div>
+
+          <div class="faq-accordion-stack">
+            <div class="faq-item-row" id="what-is-leadpilot">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>What is LeadPilot?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">LeadPilot is an AI-powered sales platform that brings lead generation, lead capture, CRM, meetings, quotations, follow-ups, AI assistance, and sales insights into one connected workspace.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="who-is-leadpilot-for">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Who is LeadPilot designed for?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">LeadPilot is designed for businesses and sales teams that want to manage more of their sales journey from one connected platform instead of relying on multiple disconnected tools.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="how-do-i-get-started">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>How do I get started with LeadPilot?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">Create your account, configure your workspace, invite your team, and begin adding or generating leads. Detailed setup guidance is available in the LeadPilot Help Center.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="can-sales-team-use-together">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Can my sales team use LeadPilot together?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">Yes. LeadPilot is designed for collaborative sales workflows so team members can work together across leads, opportunities, and sales activities.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="what-parts-of-sales-process">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>What parts of the sales process can I manage in LeadPilot?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">LeadPilot is designed to support the journey from finding and capturing leads through CRM, meetings, quotations, follow-ups, deal management, and sales performance.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="do-i-need-multiple-tools">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Do I need multiple sales tools alongside LeadPilot?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">LeadPilot is designed to bring several core sales workflows into one connected system. The additional tools your business may need will depend on your specific workflow and requirements.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="where-can-i-learn">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Where can I learn how to use LeadPilot?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">Visit the LeadPilot Help Center for product guides, setup information, feature documentation, and support resources.</p>
+                <a href="help.html" class="faq-answer-cta">Visit Help Center &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CATEGORY 02: LEAD GENERATOR -->
+        <div class="cat-block" data-category="lead-generator">
+          <div class="cat-block-heading">
+            <h3 class="cat-block-title">Lead Generator</h3>
+            <span class="cat-block-tag">02 • Prospect Discovery</span>
+          </div>
+
+          <div class="faq-accordion-stack">
+            <div class="faq-item-row" id="what-is-lead-generator">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>What is LeadPilot’s Lead Generator?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">LeadPilot’s Lead Generator helps businesses discover potential prospects and bring new sales opportunities into their LeadPilot workflow.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="how-does-lead-generator-work">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>How does Lead Generator fit into my sales workflow?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">Prospects discovered through Lead Generator can move into the wider LeadPilot workflow, helping your team manage leads and opportunities without manually piecing together disconnected tools.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="can-leadpilot-find-prospects">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Can LeadPilot help me find new prospects?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">Yes. Lead Generator is designed to help teams discover potential prospects that can be brought into their sales workflow.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="what-happens-after-find-lead">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>What happens after I find a lead?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">Once a relevant prospect is identified, your team can continue managing that opportunity through LeadPilot’s connected sales workflow.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="can-team-manage-generated-leads">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Can my team manage generated leads inside LeadPilot?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">Yes. LeadPilot is designed so lead generation connects with the wider lead-management and sales process.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="does-generator-work-separately">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Does Lead Generator work separately from the CRM?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">Lead Generator is part of the broader LeadPilot sales ecosystem, allowing prospect discovery and lead management to remain connected rather than functioning as isolated workflows.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="why-use-leadpilot-generator">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Why use LeadPilot for lead generation?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">It helps reduce the gap between discovering a prospect and actually working that opportunity by keeping lead generation connected to the rest of the sales journey.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CATEGORY 03: LEAD CAPTURE (LEAD FORMS & QR CAPTURE) -->
+        <div class="cat-block" data-category="lead-capture">
+          <div class="cat-block-heading">
+            <h3 class="cat-block-title">Lead Forms &amp; QR Capture</h3>
+            <span class="cat-block-tag">03 • Inbound Capture</span>
+          </div>
+
+          <div class="faq-accordion-stack">
+            <div class="faq-item-row" id="what-are-lead-forms-qr">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>What are Lead Forms &amp; QR Capture?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">Lead Forms &amp; QR Capture provide simple ways to collect prospect information and bring new leads directly into the LeadPilot workflow.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="capture-leads-using-forms">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Can I capture leads using forms?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">Yes. Lead Forms allow businesses to collect prospect information through forms and bring those submissions into LeadPilot.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="qr-capture">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Can I capture leads using QR codes?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">Yes. QR Capture allows prospects to access a lead-capture experience through a QR code, making it useful for events, campaigns, physical locations, and offline-to-online interactions.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="where-do-captured-leads-go">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Where do captured leads go?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">Leads captured through supported LeadPilot capture methods can enter the connected LeadPilot workflow so your team can continue managing them.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="qr-events-useful">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Can QR Capture be useful at events?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">Yes. QR-based lead capture can provide a convenient way for event visitors or prospects to submit their information without requiring your team to manually enter every lead.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="how-lead-capture-connects-crm">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>How does lead capture connect with the CRM?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">LeadPilot is designed to keep lead capture connected with the wider lead-management workflow, reducing the need to manually move information between separate systems.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="why-use-lead-forms-qr">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Why use Lead Forms &amp; QR Capture?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">They give businesses multiple ways to turn interest into actionable lead information while keeping the next steps connected to the sales process.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CATEGORY 04: CRM & PIPELINE -->
+        <div class="cat-block" data-category="crm-pipeline">
+          <div class="cat-block-heading">
+            <h3 class="cat-block-title">CRM &amp; Pipeline</h3>
+            <span class="cat-block-tag">04 • Deal Management</span>
+          </div>
+
+          <div class="faq-accordion-stack">
+            <div class="faq-item-row" id="crm-pipeline">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>What is LeadPilot’s CRM &amp; Pipeline?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">CRM &amp; Pipeline gives your team a central place to organise leads, manage opportunities, track deal progress, and understand where prospects are within your sales process.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="track-deals-through-stages">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Can I track deals through different sales stages?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">Yes. The pipeline helps organise opportunities by stage so your team can understand what is progressing and what may require attention.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="manage-leads-deals-same-system">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Can I manage leads and deals in the same system?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">Yes. LeadPilot is designed to connect lead management with opportunity and deal workflows so teams have clearer context as prospects move through the sales journey.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="see-opportunity-location">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Can I see where an opportunity is in the pipeline?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">Yes. Pipeline visibility helps teams understand the current stage of their opportunities and manage the next steps more effectively.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="identify-deals-needing-attention">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Can LeadPilot help me identify deals that need attention?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">LeadPilot provides pipeline and sales context designed to help teams understand their opportunities and identify areas that may require action.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="crm-connects-other-features">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Does the CRM connect with other LeadPilot features?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">Yes. LeadPilot is built around a connected sales workflow, allowing CRM and pipeline information to work alongside other supported features such as meetings, quotations, follow-ups, and sales insights.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="why-use-connected-crm">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Why use a connected CRM and pipeline?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">Keeping lead and deal information connected gives teams a clearer view of the sales journey and reduces the need to piece together context across separate tools.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CATEGORY 05: AI & AUTOMATION -->
+        <div class="cat-block" data-category="ai-automation">
+          <div class="cat-block-heading">
+            <h3 class="cat-block-title">AI &amp; Automation</h3>
+            <span class="cat-block-tag">05 • Sales Intelligence</span>
+          </div>
+
+          <div class="faq-accordion-stack">
+            <div class="faq-item-row" id="how-does-leadpilot-use-ai">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>How does LeadPilot use AI?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">LeadPilot uses AI across selected sales workflows to help teams reduce repetitive work, surface useful context, support conversations, and make sales activities more efficient.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="what-is-ai-sales-assistant">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>What is the LeadPilot AI Sales Assistant?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">The AI Sales Assistant provides AI-powered assistance within LeadPilot to help users work more effectively across supported sales activities.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="what-is-ai-chatbot">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>What is the LeadPilot AI Chatbot?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">LeadPilot’s AI Chatbot is designed to engage website visitors, support conversations, and help businesses capture potential leads.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="what-is-ai-sales-coach">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>What is LeadPilot AI Sales Coach?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">AI Sales Coach helps managers understand sales performance, follow-through, commitments, and coaching opportunities using context from the connected LeadPilot sales workflow.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="automate-repetitive-sales-work">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Can LeadPilot automate repetitive sales work?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">LeadPilot includes automation across selected workflows, including structured follow-ups and other supported sales activities, helping teams spend less time on repetitive tasks.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="ai-help-with-followups">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Can AI help my team with follow-ups?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">LeadPilot’s AI and automation capabilities can support follow-up workflows and help teams maintain more consistent engagement with prospects.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="does-ai-replace-salespeople">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Does LeadPilot AI replace salespeople?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">No. LeadPilot’s AI features are designed to assist sales teams, reduce repetitive work, and provide useful context. People remain responsible for customer relationships, decisions, and sales outcomes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CATEGORY 06: SALES TOOLS -->
+        <div class="cat-block" data-category="sales-tools">
+          <div class="cat-block-heading">
+            <h3 class="cat-block-title">Sales Tools (Meetings, Quotes &amp; Sequences)</h3>
+            <span class="cat-block-tag">06 • Execution Tools</span>
+          </div>
+
+          <div class="faq-accordion-stack">
+            <div class="faq-item-row" id="meeting-booking">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Does LeadPilot include Meeting Booking?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">Yes. LeadPilot includes Meeting Booking functionality designed to help prospects schedule meetings with your team as part of the connected sales workflow.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="meeting-booking-connects-leads">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>How does Meeting Booking connect with my leads?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">Meeting Booking helps keep scheduled sales conversations connected with the wider LeadPilot workflow so the next step with a prospect remains visible to the team.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="quotations">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Can I create quotations in LeadPilot?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">Yes. LeadPilot allows teams to create and send professional quotations quickly while keeping quotation activity connected with the relevant sales opportunity.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="how-fast-create-quotation">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>How quickly can I create a quotation?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">LeadPilot is designed to let teams create and send professional quotations in around 60 seconds, helping reduce unnecessary manual quotation work.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="track-quotations-after-sending">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Can I track quotations after sending them?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">Yes. LeadPilot provides quotation tracking, including visibility into views and quotation status, helping teams understand what happens after a quote is sent.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="sales-sequences">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>What are Sales Sequences?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">Sales Sequences automate structured, multi-step email follow-ups so teams can stay in touch with prospects without manually sending every follow-up.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="sales-sequences-follow-up">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Can LeadPilot automatically follow up until a prospect replies?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">Yes. Sales Sequences are designed to automate multi-step email follow-ups and continue the configured outreach until the prospect replies, helping reduce the chance of leads going cold.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CATEGORY 07: PRICING & BILLING -->
+        <div class="cat-block" data-category="pricing-billing">
+          <div class="cat-block-heading">
+            <h3 class="cat-block-title">Pricing &amp; Billing</h3>
+            <span class="cat-block-tag">07 • Plans &amp; Subscriptions</span>
+          </div>
+
+          <div class="faq-accordion-stack">
+            <div class="faq-item-row" id="plans-available">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>What LeadPilot plans are available?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">LeadPilot currently offers Starter, Growth, and Unlimited plans designed for different levels of sales functionality and business needs.</p>
+                <a href="pricing.html" class="faq-answer-cta">View Pricing &rarr;</a>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="pay-monthly-annually">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Can I pay monthly or annually?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">LeadPilot provides monthly and annual pricing options. Visit the Pricing page to compare the current rates and available savings.</p>
+                <a href="pricing.html" class="faq-answer-cta">Compare Pricing &rarr;</a>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="starter-plan-details">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>What is included in the Starter plan?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">The Starter plan provides the core LeadPilot features included in the current Starter offering. Refer to the Pricing page for the complete and current feature list.</p>
+                <a href="pricing.html" class="faq-answer-cta">View Starter &rarr;</a>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="growth-plan-details">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>What is included in the Growth plan?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">Growth expands the LeadPilot feature set and includes additional sales capabilities such as the AI Sales Assistant where shown in the current plan configuration.</p>
+                <a href="pricing.html" class="faq-answer-cta">View Growth &rarr;</a>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="unlimited-plan-details">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>What is included in the Unlimited plan?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">Unlimited provides LeadPilot’s broader feature offering for teams that need access to the capabilities listed under the current Unlimited plan.</p>
+                <a href="pricing.html" class="faq-answer-cta">View Unlimited &rarr;</a>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="book-demo-before-plan">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Can I book a demo before choosing a plan?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">Yes. You can book a demo to explore LeadPilot and discuss which plan may be suitable for your business.</p>
+                <a href="index.html#cta" class="faq-answer-cta">Book Demo &rarr;</a>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="who-to-contact-pricing">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Who can I contact about pricing?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">For sales and pricing enquiries, contact:</p>
+                <a href="mailto:sales@neuralence.ai" class="faq-answer-cta">sales@neuralence.ai &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CATEGORY 08: ACCOUNT & TEAM -->
+        <div class="cat-block" data-category="account-team">
+          <div class="cat-block-heading">
+            <h3 class="cat-block-title">Account &amp; Team</h3>
+            <span class="cat-block-tag">08 • Collaboration</span>
+          </div>
+
+          <div class="faq-accordion-stack">
+            <div class="faq-item-row" id="multiple-team-members">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Can multiple team members use LeadPilot?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">Yes. LeadPilot is designed for collaborative sales teams working together within a shared business workflow.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="invite-team-members">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Can I invite team members to my workspace?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">LeadPilot supports team-based workflows so authorised users can work together within the business workspace.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="manage-profile">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Can I manage my LeadPilot profile?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">Yes. LeadPilot provides supported account and profile settings that allow users to manage relevant personal and workspace information.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="workspace-settings">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Can I manage workspace settings?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">LeadPilot includes workspace settings for supported business, team, and platform preferences.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="collaborate-on-leads">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Can different team members work on leads and opportunities?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">LeadPilot is designed to support collaborative lead and opportunity management across sales teams.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="account-help-center">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Where can I get help with my account?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">Visit the LeadPilot Help Center for setup and account guidance. If you still need assistance, use the Contact Us page to reach the appropriate team.</p>
+                <a href="help.html" class="faq-answer-cta">Visit Help Center &rarr;</a>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="contact-account-issue">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>How can I contact LeadPilot about an account issue?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">Use the LeadPilot Contact Us page and select the appropriate support enquiry so your message can be directed to the right team.</p>
+                <a href="contact.html" class="faq-answer-cta">Contact Us &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CATEGORY 09: SECURITY & PRIVACY -->
+        <div class="cat-block" data-category="security-privacy">
+          <div class="cat-block-heading">
+            <h3 class="cat-block-title">Security &amp; Privacy</h3>
+            <span class="cat-block-tag">09 • Data Compliance</span>
+          </div>
+
+          <div class="faq-accordion-stack">
+            <div class="faq-item-row" id="how-data-handled">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>How does LeadPilot handle my data?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">LeadPilot handles personal information according to its applicable privacy practices and policies. Detailed information about how information is collected, used, and handled is available in the Privacy Policy.</p>
+                <a href="privacy-policy.html" class="faq-answer-cta">Read Privacy Policy &rarr;</a>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="does-leadpilot-share-data">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Does LeadPilot share my data?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">Refer to LeadPilot’s current Privacy Policy for the authoritative explanation of how information may be processed, disclosed, or handled.</p>
+                <a href="privacy-policy.html" class="faq-answer-cta">Read Privacy Policy &rarr;</a>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="how-data-protected">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>How is LeadPilot data protected?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">LeadPilot uses security measures designed to protect information handled through the platform. For current details about LeadPilot’s privacy and data practices, refer to the Privacy Policy.</p>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="does-leadpilot-use-cookies">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Does LeadPilot use cookies?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">LeadPilot may use cookies and similar technologies for functionality, preferences, analytics, and other purposes described in the Cookies Policy.</p>
+                <a href="cookies-policy.html" class="faq-answer-cta">Read Cookies Policy &rarr;</a>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="manage-cookie-preferences">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Can I manage my cookie preferences?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">Where optional cookie preferences are available, you can review or change your choices using LeadPilot’s cookie preference controls.</p>
+                <a href="cookies-policy.html" class="faq-answer-cta">Manage Cookie Preferences &rarr;</a>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="where-read-terms">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Where can I read LeadPilot’s Terms of Use?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">You can review the terms governing use of LeadPilot on the Terms of Use page.</p>
+                <a href="terms-of-use.html" class="faq-answer-cta">Read Terms of Use &rarr;</a>
+              </div>
+            </div>
+
+            <div class="faq-item-row" id="who-contact-privacy-data">
+              <button class="faq-question-btn" onclick="toggleFaq(this)">
+                <span>Who can I contact about privacy or data requests?</span>
+                <span class="toggle-icon-badge">+</span>
+              </button>
+              <div class="faq-answer-pane">
+                <p class="faq-answer-text">For privacy and data-related enquiries, contact:</p>
+                <a href="mailto:privacy@neuralence.ai" class="faq-answer-cta">privacy@neuralence.ai &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 6. SECTION 07: NEED MORE HELP? -->
+<section class="need-help-section">
+  <div class="container">
+    <div class="need-help-card">
+      <div class="need-help-header">
+        <span class="section-eyebrow">NEED MORE HELP?</span>
+        <h2 class="section-title-dark" style="font-size: 40px; margin-bottom: 12px;">Still have a question?</h2>
+        <p style="font-size: 16px; color: #64748B;">Explore detailed guides in the Help Center or get in touch with our team if you need more help.</p>
+      </div>
+
+      <div class="two-sides-container">
+        <!-- LEFT: HELP CENTER -->
+        <div class="side-box">
+          <h3 class="side-box-title">HELP CENTER</h3>
+          <p class="side-box-desc">Need step-by-step guidance? Browse setup guides, product documentation, and detailed resources.</p>
+          <a href="help.html" class="btn-side-action">Visit Help Center &rarr;</a>
+        </div>
+
+        <!-- RIGHT: CONTACT US -->
+        <div class="side-box">
+          <h3 class="side-box-title">CONTACT US</h3>
+          <p class="side-box-desc">Need help with something specific? Tell us what you need and we’ll connect you with the right team.</p>
+          <a href="contact.html" class="btn-side-action">Contact Us &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 7. OFFICIAL GLOBAL FOOTER -->
+<script src="components/footer.js"></script>
+
+
+<!-- INTERACTIVITY, SEARCH & ANCHOR DEEP-LINKING SCRIPT -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Mobile Drawer Toggle
+  const mobileToggleBtn = document.querySelector('.mobile-nav-toggle');
+  const mobileCloseBtn = document.querySelector('.mobile-drawer-close');
+  const mobileDrawer = document.querySelector('.mobile-nav-drawer');
+
+  if (mobileToggleBtn && mobileCloseBtn && mobileDrawer) {
+    mobileToggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      mobileDrawer.classList.add('active');
+    });
+
+    const closeDrawer = () => mobileDrawer.classList.remove('active');
+
+    mobileCloseBtn.addEventListener('click', closeDrawer);
+
+    document.addEventListener('click', (e) => {
+      if (mobileDrawer.classList.contains('active') && !mobileDrawer.contains(e.target) && !mobileToggleBtn.contains(e.target)) {
+        closeDrawer();
+      }
+    });
+  }
+
+  // Category Pill Filtering
+  const filterBtns = document.querySelectorAll('.filter-pill-btn');
+  const catBlocks = document.querySelectorAll('.cat-block');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const selectedCat = btn.getAttribute('data-cat');
+      
+      // Clear search input if pill is manually clicked
+      const searchInput = document.getElementById('faq-search-input');
+      if (searchInput) searchInput.value = '';
+      document.getElementById('no-results-box').classList.remove('active');
+
+      catBlocks.forEach(block => {
+        if (selectedCat === 'all' || block.getAttribute('data-category') === selectedCat) {
+          block.style.display = 'block';
+          // Show all items inside
+          block.querySelectorAll('.faq-item-row').forEach(row => row.style.display = 'block');
+        } else {
+          block.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Real-time FAQ Search across Questions & Answers
+  const searchInput = document.getElementById('faq-search-input');
+  const noResultsBox = document.getElementById('no-results-box');
+  const searchQueryText = document.getElementById('search-query-text');
+
+  if (searchInput) {
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.trim().toLowerCase();
+
+      // Reset pill filters to 'all' visually when searching
+      if (query !== '') {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        document.querySelector('.filter-pill-btn[data-cat="all"]').classList.add('active');
+      }
+
+      let totalVisible = 0;
+
+      catBlocks.forEach(block => {
+        let blockVisibleCount = 0;
+        const rows = block.querySelectorAll('.faq-item-row');
+
+        rows.forEach(row => {
+          const qText = row.querySelector('.faq-question-btn span').innerText.toLowerCase();
+          const aText = row.querySelector('.faq-answer-pane').innerText.toLowerCase();
+
+          if (query === '' || qText.includes(query) || aText.includes(query)) {
+            row.style.display = 'block';
+            blockVisibleCount++;
+            totalVisible++;
+          } else {
+            row.style.display = 'none';
+          }
+        });
+
+        if (blockVisibleCount > 0) {
+          block.style.display = 'block';
+        } else {
+          block.style.display = 'none';
+        }
+      });
+
+      if (totalVisible === 0 && query !== '') {
+        searchQueryText.innerText = searchInput.value;
+        noResultsBox.classList.add('active');
+      } else {
+        noResultsBox.classList.remove('active');
+      }
+    });
+  }
+
+  // Handle URL Anchor Deep-Linking (e.g. #what-is-leadpilot or #quotations)
+  if (window.location.hash) {
+    const targetId = window.location.hash.substring(1);
+    jumpToFaq(targetId);
+  }
+});
+
+// Accordion Toggle
+function toggleFaq(btnElement) {
+  const parentRow = btnElement.closest('.faq-item-row');
+  const isOpen = parentRow.classList.contains('open');
+
+  // Optional: close other open rows in the same block for cleanliness
+  const container = parentRow.closest('.faq-accordion-stack');
+  if (container) {
+    container.querySelectorAll('.faq-item-row').forEach(row => {
+      if (row !== parentRow) row.classList.remove('open');
+    });
+  }
+
+  if (isOpen) {
+    parentRow.classList.remove('open');
+  } else {
+    parentRow.classList.add('open');
+  }
+}
+
+// Popular Question Jump & Deep Link Handler
+function jumpToFaq(targetId) {
+  const targetRow = document.getElementById(targetId);
+  if (!targetRow) return;
+
+  // Make sure category block is visible
+  const parentBlock = targetRow.closest('.cat-block');
+  if (parentBlock) {
+    // Reset category filter pills to all
+    document.querySelectorAll('.filter-pill-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector('.filter-pill-btn[data-cat="all"]').classList.add('active');
+
+    document.querySelectorAll('.cat-block').forEach(b => b.style.display = 'block');
+    document.querySelectorAll('.faq-item-row').forEach(r => r.style.display = 'block');
+  }
+
+  // Open the target accordion
+  targetRow.classList.add('open');
+
+  // Smooth scroll
+  targetRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+</script>
+
+</body>
+</html>

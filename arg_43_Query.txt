@@ -1,0 +1,1 @@
+initHeroAnimation\|initPipeline\|initHowItWorks\|initKanban\|initStages\|initAI\|initReporting\|initCollab\|initAutomation\|initCompare

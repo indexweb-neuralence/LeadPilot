@@ -1,0 +1,11 @@
+c9aa/.system_generated/logs/transcript_full.jsonl') as f:
+    text = f.read()
+
+pos = text.rfind('function initKanban')
+if pos != -1:
+    snippet = text[pos-100:pos+12000]
+    clean = snippet.encode('utf-8').decode('unicode_escape')
+    with open('crm_script_backup.js', 'w') as out:
+        out.write(clean)
+    print('Wrote crm_script_backup.js, len:', len(clean))
+"","Cwd":"/Users/amanamuhammed/Desktop/Lead Pilot","WaitMsBeforeAsync":5000,"toolAction":"Writing crm_script_backup.js","toolSummary":"Write crm_script_backup.js"}}]}

@@ -1,0 +1,22 @@
+python3 -c "
+import json
+
+with open('/Users/amanamuhammed/.gemini/antigravity/brain/67b9bfad-7c28-4c07-8386-12036697c9aa/.system_generated/logs/transcript_full.jsonl') as f:
+    for i, line in enumerate(f):
+        if 'initKanban' in line or 'initStages' in line or 'initHero' in line:
+            if 'PLANNER_RESPONSE' in line:
+                print(f'Line {i}: len {len(line)}')
+                # Try to parse
+                try:
+                    d = json.loads(line)
+                    tcs = d.get('tool_calls', [])
+                    for tc in tcs:
+                        args = tc.get('args', {})
+                        for k, v in args.items():
+                            if 'initKanban' in str(v):
+                                print(f'  Found in arg {k}, len {len(str(v))}')
+                                with open(f'arg_{i}_{k}.txt', 'w') as out:
+                                    out.write(str(v))
+                except Exception as e:
+                    print('Error:', e)
+"
