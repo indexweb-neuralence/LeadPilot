@@ -13,13 +13,13 @@
     // 2. Master Global Navigation HTML (Source of Truth matching Landing Page, without dropdown chevrons)
     const navHTML = `
   <a href="index.html" class="nav-logo">
-    <img src="images/LEAD PILOT LOGO.png" alt="LeadPilot Logo" class="nav-logo-img" style="width: 28px; height: 28px; object-fit: contain;">
+    <img src="images/LEAD PILOT LOGO.png" alt="LeadPilot Logo" class="nav-logo-img" width="28" height="28" style="width: 28px; height: 28px; object-fit: contain;">
     LeadPilot
   </a>
   <div class="nav-links">
     <!-- 1. PRODUCT DROPDOWN (NO CHEVRON ARROW) -->
     <div class="nav-dropdown-wrapper">
-      <a href="#" class="nav-dropdown-trigger nav-link-product">Product</a>
+      <a href="#" class="nav-dropdown-trigger nav-link-product" role="button" aria-expanded="false" aria-haspopup="true" aria-label="Product menu">Product</a>
       <div class="mega-menu">
         <div class="mega-menu-grid">
           <!-- Column 1: Lead Generation -->
@@ -149,7 +149,7 @@
 
     <!-- 2. RESOURCES DROPDOWN (NO CHEVRON ARROW) -->
     <div class="nav-dropdown-wrapper">
-      <a href="#" class="nav-dropdown-trigger nav-link-resources">Resources</a>
+      <a href="#" class="nav-dropdown-trigger nav-link-resources" role="button" aria-expanded="false" aria-haspopup="true" aria-label="Resources menu">Resources</a>
       <div class="mega-menu mega-menu-resources">
         <div class="mega-menu-resources-grid">
           <!-- Left Column: RESOURCES -->
@@ -222,7 +222,7 @@
               <div class="featured-card-main">
                 <div class="featured-main-content">
                   <span class="featured-badge">CASE STUDY</span>
-                  <h3 class="featured-headline">How sales teams close more deals with LeadPilot</h3>
+                  <div class="featured-headline">How sales teams close more deals with LeadPilot</div>
                   <p class="featured-desc">See how businesses simplified lead generation, CRM and follow-ups in one workspace.</p>
                   <a href="case-studies.html" class="featured-link">Read Case Study &rarr;</a>
                 </div>

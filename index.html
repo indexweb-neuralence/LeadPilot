@@ -3,13 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="LeadPilot is the all-in-one AI sales operating system combining lead generation, B2B database, CRM, meeting booking, AI chatbot, sales sequences, and quotations.">
+<link rel="canonical" href="https://www.leadpilot.one/">
+<meta property="og:title" content="LeadPilot – One platform. Every deal closed.">
+<meta property="og:description" content="LeadPilot is the all-in-one AI sales operating system combining lead generation, B2B database, CRM, meeting booking, AI chatbot, sales sequences, and quotations.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.leadpilot.one/">
+<meta property="og:image" content="https://www.leadpilot.one/images/LEAD%20PILOT%20LOGO.png">
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="images/LEAD PILOT LOGO.png">
 <link rel="apple-touch-icon" href="images/LEAD PILOT LOGO.png">
 <title>LeadPilot – One platform. Every deal closed.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
@@ -868,9 +875,9 @@
   .cost-now-label { font-size: 12px; color: #9CA3AF; }
   .cost-now-val { font-size: 38px; font-weight: 900; color: #fff; }
   @keyframes arrowPulse {
-    0% { transform: scale(1); opacity: 0.8; box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.4); }
-    50% { transform: scale(1.1); opacity: 1; box-shadow: 0 0 12px 4px rgba(168, 85, 247, 0.2); }
-    100% { transform: scale(1); opacity: 0.8; box-shadow: 0 0 0 0 rgba(168, 85, 247, 0); }
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
   }
   .cost-arrow {
     width: 36px; height: 36px; background: rgba(255,255,255,0.06); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 16px; align-self: center;
@@ -2872,15 +2879,15 @@
 
   @keyframes pulseSoft {
     0% {
-      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04);
+      opacity: 0.9;
       transform: scale(1);
     }
     50% {
-      box-shadow: 0 15px 30px -8px rgba(124, 58, 237, 0.08);
+      opacity: 1;
       transform: scale(1.03);
     }
     100% {
-      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04);
+      opacity: 0.9;
       transform: scale(1);
     }
   }
@@ -4653,10 +4660,10 @@
   }
   
   @keyframes verticalParticleMove {
-    0% { top: 0%; opacity: 0; }
+    0% { transform: translateY(0); opacity: 0; }
     10% { opacity: 1; }
     90% { opacity: 1; }
-    100% { top: 100%; opacity: 0; }
+    100% { transform: translateY(400px); opacity: 0; }
   }
 
   /* ── PRODUCTION POLISH & ACCESSIBILITY ── */
@@ -4703,15 +4710,16 @@
 <body>
 
 <!-- NAV -->
+<header role="banner">
 <nav>
   <a href="index.html" class="nav-logo">
-    <img src="images/LEAD PILOT LOGO.png" alt="LeadPilot Logo" class="nav-logo-img" style="width: 28px; height: 28px; object-fit: contain;">
+    <img src="images/LEAD PILOT LOGO.png" width="28" height="28" decoding="async" alt="LeadPilot Logo" class="nav-logo-img" style="width: 28px; height: 28px; object-fit: contain;">
     LeadPilot
   </a>
   <div class="nav-links">
     <!-- 1. PRODUCT DROPDOWN -->
     <div class="nav-dropdown-wrapper">
-      <a href="#" class="nav-dropdown-trigger nav-link-product">Product</a>
+      <a href="#" class="nav-dropdown-trigger nav-link-product" role="button" aria-expanded="false" aria-haspopup="true" aria-label="Product menu">Product</a>
       <div class="mega-menu">
         <div class="mega-menu-grid">
           <!-- Column 1: Lead Generation -->
@@ -4841,7 +4849,7 @@
 
     <!-- 2. RESOURCES DROPDOWN -->
     <div class="nav-dropdown-wrapper">
-      <a href="#" class="nav-dropdown-trigger nav-link-resources">Resources</a>
+      <a href="#" class="nav-dropdown-trigger nav-link-resources" role="button" aria-expanded="false" aria-haspopup="true" aria-label="Resources menu">Resources</a>
       <div class="mega-menu mega-menu-resources">
         <div class="mega-menu-resources-grid">
           <!-- Left Column: RESOURCES -->
@@ -4914,7 +4922,7 @@
               <div class="featured-card-main">
                 <div class="featured-main-content">
                   <span class="featured-badge">CASE STUDY</span>
-                  <h3 class="featured-headline">How sales teams close more deals with LeadPilot</h3>
+                  <div class="featured-headline">How sales teams close more deals with LeadPilot</h3>
                   <p class="featured-desc">See how businesses simplified lead generation, CRM and follow-ups in one workspace.</p>
                   <a href="case-studies.html" class="featured-link">Read Case Study &rarr;</a>
                 </div>
@@ -5001,12 +5009,13 @@
     <span class="hamburger-line"></span>
   </button>
 </nav>
+</header>
 
 <!-- Mobile Nav Slide-Out Drawer -->
 <div class="mobile-nav-drawer">
   <div class="mobile-drawer-header">
     <a href="index.html" class="nav-logo">
-      <img src="images/LEAD PILOT LOGO.png" alt="LeadPilot Logo" style="width: 28px; height: 28px; object-fit: contain;">
+      <img src="images/LEAD PILOT LOGO.png" width="28" height="28" decoding="async" alt="LeadPilot Logo" style="width: 28px; height: 28px; object-fit: contain;">
       LeadPilot
     </a>
     <button class="mobile-drawer-close" aria-label="Close Menu">&times;</button>
@@ -5025,6 +5034,8 @@
   </div>
 </div>
 
+
+<main id="main-content" role="main">
 
 <!-- HERO -->
 <section id="hero">
@@ -5048,7 +5059,7 @@
       <!-- Left Sidebar -->
       <div class="dash-sidebar">
         <div class="dash-logo">
-          <img src="images/LEAD PILOT LOGO.png" alt="LeadPilot Logo" class="dash-logo-img" style="width: 22px; height: 22px; object-fit: contain;">
+          <img src="images/LEAD PILOT LOGO.png" width="28" height="28" decoding="async" alt="LeadPilot Logo" class="dash-logo-img" style="width: 22px; height: 22px; object-fit: contain;">
           LeadPilot
         </div>
         
@@ -5361,21 +5372,21 @@
     <div class="stack-grid reveal-item">
       <div class="tool-card">
         <div class="tool-icon">
-          <img src="images/ZOOMINFO LOGO.png" alt="ZoomInfo" class="tool-logo-img" style="width: 60px; height: 60px;">
+          <img src="images/ZOOMINFO LOGO.png" width="120" height="30" loading="lazy" decoding="async" alt="ZoomInfo" class="tool-logo-img" style="width: 60px; height: 60px;">
         </div>
         <div class="tool-name">ZoomInfo</div>
         <div class="tool-price">$149<span>/mo</span></div>
       </div>
       <div class="tool-card">
         <div class="tool-icon">
-          <img src="images/Calendly LOGO.png" alt="Calendly" class="tool-logo-img" style="width: 62px; height: 62px;">
+          <img src="images/Calendly LOGO.png" width="120" height="30" loading="lazy" decoding="async" alt="Calendly" class="tool-logo-img" style="width: 62px; height: 62px;">
         </div>
         <div class="tool-name">Calendly</div>
         <div class="tool-price">$16<span>/mo</span></div>
       </div>
       <div class="tool-card">
         <div class="tool-icon">
-          <img src="images/HUBSPOT LOGO.png" alt="HubSpot" class="tool-logo-img" style="width: 60px; height: 60px;">
+          <img src="images/HUBSPOT LOGO.png" width="120" height="30" loading="lazy" decoding="async" alt="HubSpot" class="tool-logo-img" style="width: 60px; height: 60px;">
         </div>
         <div class="tool-name">HubSpot</div>
         <div class="tool-price">$90<span>/mo</span></div>
@@ -5397,21 +5408,21 @@
       </div>
       <div class="tool-card">
         <div class="tool-icon">
-          <img src="images/Intercom LOGO.png" alt="Intercom" class="tool-logo-img" style="width: 64px; height: 64px;">
+          <img src="images/Intercom LOGO.png" width="120" height="30" loading="lazy" decoding="async" alt="Intercom" class="tool-logo-img" style="width: 64px; height: 64px;">
         </div>
         <div class="tool-name">Intercom</div>
         <div class="tool-price">$74<span>/mo</span></div>
       </div>
       <div class="tool-card">
         <div class="tool-icon">
-          <img src="images/Pandadoc LOGO.png" alt="PandaDoc" class="tool-logo-img" style="width: 60px; height: 60px;">
+          <img src="images/Pandadoc LOGO.png" width="120" height="30" loading="lazy" decoding="async" alt="PandaDoc" class="tool-logo-img" style="width: 60px; height: 60px;">
         </div>
         <div class="tool-name">PandaDoc</div>
         <div class="tool-price">$49<span>/mo</span></div>
       </div>
       <div class="tool-card">
         <div class="tool-icon">
-          <img src="images/GONG LOGO.png" alt="Gong" class="tool-logo-img" style="width: 64px; height: 64px;">
+          <img src="images/GONG LOGO.png" width="120" height="30" loading="lazy" decoding="async" alt="Gong" class="tool-logo-img" style="width: 64px; height: 64px;">
         </div>
         <div class="tool-name">Gong</div>
         <div class="tool-price">$100<span>/mo</span></div>
@@ -5685,7 +5696,7 @@
           </circle>
         </svg>
         <div class="floating-visual-card">
-          <img src="images/LEAD PILOT LOGO.png" alt="LeadPilot Logo" class="floating-logo-img">
+          <img src="images/LEAD PILOT LOGO.png" width="28" height="28" decoding="async" alt="LeadPilot Logo" class="floating-logo-img">
         </div>
       </div>
     </div>
@@ -5909,7 +5920,7 @@
           <div class="rep-card">
             <div class="rep-header">
               <div class="rep-avatar-wrapper">
-                <img src="images/Male-profile.png" alt="Daniel Foster" class="rep-avatar-img">
+                <img src="images/Male-profile.png" width="64" height="64" loading="lazy" decoding="async" alt="Daniel Foster" class="rep-avatar-img">
                 <span class="status-dot online"></span>
               </div>
               <div class="rep-name">Daniel Foster</div>
@@ -5935,7 +5946,7 @@
           <div class="rep-card">
             <div class="rep-header">
               <div class="rep-avatar-wrapper">
-                <img src="images/Female-profile.png" alt="Emma Carter" class="rep-avatar-img">
+                <img src="images/Female-profile.png" width="64" height="64" loading="lazy" decoding="async" alt="Emma Carter" class="rep-avatar-img">
                 <span class="status-dot away"></span>
               </div>
               <div class="rep-name">Emma Carter</div>
@@ -6030,8 +6041,8 @@
         <!-- Column 1: Profile & Session Info -->
         <div class="widget-col">
           <div class="widget-avatars">
-            <img src="images/French male-profile.png" alt="French Male Profile" class="widget-avatar">
-            <img src="images/Latina Female-profile.png" alt="Latina Female Profile" class="widget-avatar">
+            <img src="images/French male-profile.png" width="64" height="64" loading="lazy" decoding="async" alt="French Male Profile" class="widget-avatar">
+            <img src="images/Latina Female-profile.png" width="64" height="64" loading="lazy" decoding="async" alt="Latina Female Profile" class="widget-avatar">
             <div class="widget-avatar-more">+1</div>
           </div>
           <div class="widget-team">Customer Success Team</div>
@@ -6413,7 +6424,7 @@
                 <tr>
                   <td>
                     <div class="lg-prospect-cell">
-                      <img src="images/Sophia Laurent.png" alt="Sophia Laurent" class="lg-prospect-avatar">
+                      <img src="images/Sophia Laurent.png" width="64" height="64" loading="lazy" decoding="async" alt="Sophia Laurent" class="lg-prospect-avatar">
                       <div class="lg-prospect-info">
                         <span class="lg-prospect-name">Sophia Laurent</span>
                         <span class="lg-prospect-subrole">Operations Manager</span>
@@ -6438,7 +6449,7 @@
                 <tr>
                   <td>
                     <div class="lg-prospect-cell">
-                      <img src="images/Daniel Brooks.png" alt="Daniel Brooks" class="lg-prospect-avatar">
+                      <img src="images/Daniel Brooks.png" width="64" height="64" loading="lazy" decoding="async" alt="Daniel Brooks" class="lg-prospect-avatar">
                       <div class="lg-prospect-info">
                         <span class="lg-prospect-name">Daniel Brooks</span>
                         <span class="lg-prospect-subrole">Managing Director</span>
@@ -6463,7 +6474,7 @@
                 <tr>
                   <td>
                     <div class="lg-prospect-cell">
-                      <img src="images/Emma Clarke.png" alt="Emma Clarke" class="lg-prospect-avatar">
+                      <img src="images/Emma Clarke.png" width="64" height="64" loading="lazy" decoding="async" alt="Emma Clarke" class="lg-prospect-avatar">
                       <div class="lg-prospect-info">
                         <span class="lg-prospect-name">Emma Clarke</span>
                         <span class="lg-prospect-subrole">General Manager</span>
@@ -6488,7 +6499,7 @@
                 <tr>
                   <td>
                     <div class="lg-prospect-cell">
-                      <img src="images/Oliver James.png" alt="Oliver James" class="lg-prospect-avatar">
+                      <img src="images/Oliver James.png" width="64" height="64" loading="lazy" decoding="async" alt="Oliver James" class="lg-prospect-avatar">
                       <div class="lg-prospect-info">
                         <span class="lg-prospect-name">Oliver James</span>
                         <span class="lg-prospect-subrole">Owner</span>
@@ -6513,7 +6524,7 @@
                 <tr>
                   <td>
                     <div class="lg-prospect-cell">
-                      <img src="images/Isabella Martin.png" alt="Isabella Martin" class="lg-prospect-avatar">
+                      <img src="images/Isabella Martin.png" width="64" height="64" loading="lazy" decoding="async" alt="Isabella Martin" class="lg-prospect-avatar">
                       <div class="lg-prospect-info">
                         <span class="lg-prospect-name">Isabella Martin</span>
                         <span class="lg-prospect-subrole">Director</span>
@@ -6557,7 +6568,7 @@
             <div class="lg-crm-list">
               <!-- CRM Card 1: Sophia Laurent -->
               <div class="lg-crm-card">
-                <img src="images/Sophia Laurent.png" alt="Sophia Laurent" class="lg-prospect-avatar">
+                <img src="images/Sophia Laurent.png" width="64" height="64" loading="lazy" decoding="async" alt="Sophia Laurent" class="lg-prospect-avatar">
                 <div class="lg-crm-card-info">
                   <span class="lg-prospect-name" style="font-size: 11.5px; font-weight: 700; color: #18181B;">Sophia Laurent</span>
                   <span class="lg-company-name" style="font-size: 10px; color: #71717A;">Vertex Hospitality</span>
@@ -6571,7 +6582,7 @@
 
               <!-- CRM Card 2: Daniel Brooks -->
               <div class="lg-crm-card">
-                <img src="images/Daniel Brooks.png" alt="Daniel Brooks" class="lg-prospect-avatar">
+                <img src="images/Daniel Brooks.png" width="64" height="64" loading="lazy" decoding="async" alt="Daniel Brooks" class="lg-prospect-avatar">
                 <div class="lg-crm-card-info">
                   <span class="lg-prospect-name" style="font-size: 11.5px; font-weight: 700; color: #18181B;">Daniel Brooks</span>
                   <span class="lg-company-name" style="font-size: 10px; color: #71717A;">NorthBridge Services</span>
@@ -6585,7 +6596,7 @@
 
               <!-- CRM Card 3: Emma Clarke -->
               <div class="lg-crm-card">
-                <img src="images/Emma Clarke.png" alt="Emma Clarke" class="lg-prospect-avatar">
+                <img src="images/Emma Clarke.png" width="64" height="64" loading="lazy" decoding="async" alt="Emma Clarke" class="lg-prospect-avatar">
                 <div class="lg-crm-card-info">
                   <span class="lg-prospect-name" style="font-size: 11.5px; font-weight: 700; color: #18181B;">Emma Clarke</span>
                   <span class="lg-company-name" style="font-size: 10px; color: #71717A;">Apex Facilities</span>
@@ -6619,7 +6630,7 @@
           <!-- Card 3: Sync To CRM -->
           <div class="lg-sync-card">
             <div class="lg-sync-logo-wrap">
-              <img src="images/LEAD PILOT LOGO.png" alt="LeadPilot Logo" style="width: 22px; height: 22px; object-fit: contain;">
+              <img src="images/LEAD PILOT LOGO.png" width="28" height="28" decoding="async" alt="LeadPilot Logo" style="width: 22px; height: 22px; object-fit: contain;">
             </div>
             <div class="lg-sync-info">
               <span class="lg-sync-title">Sync to CRM</span>
@@ -7485,6 +7496,7 @@ LeadPilot AI</textarea>
     </div>
   </div>
 </section>
+</main>
 
 <!-- OFFICIAL GLOBAL FOOTER -->
 <script src="components/footer.js"></script>
@@ -7600,13 +7612,32 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
+    let heroCanvasVisible = true;
+    let heroAnimFrameId = null;
+
     function animate() {
+      if (!heroCanvasVisible) {
+        heroAnimFrameId = null;
+        return;
+      }
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       particles.forEach(p => p.update());
       connect();
-      requestAnimationFrame(animate);
+      heroAnimFrameId = requestAnimationFrame(animate);
     }
-    animate();
+
+    const heroCanvasObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        heroCanvasVisible = entry.isIntersecting;
+        if (heroCanvasVisible) {
+          if (!heroAnimFrameId) heroAnimFrameId = requestAnimationFrame(animate);
+        } else if (heroAnimFrameId) {
+          cancelAnimationFrame(heroAnimFrameId);
+          heroAnimFrameId = null;
+        }
+      });
+    }, { threshold: 0 });
+    if (heroSection) heroCanvasObserver.observe(heroSection);
   }
 
   // ─── 3. PRICING TOGGLE SWITCHER ───
@@ -7848,7 +7879,14 @@ document.addEventListener('DOMContentLoaded', () => {
       cardDistances.forEach(cd => cd.triggered = false);
     }
 
+    let journeyVisible = false;
+    let journeyAnimFrameId = null;
+
     function tick(timestamp) {
+      if (!journeyVisible) {
+        journeyAnimFrameId = null;
+        return;
+      }
       if (!startTime) startTime = timestamp;
       
       if (animState === 'first-play') {
@@ -7876,14 +7914,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         
         if (progress < 1) {
-          requestAnimationFrame(tick);
+          journeyAnimFrameId = requestAnimationFrame(tick);
         } else {
           // Transition to the looping state once path is fully illuminated
           animState = 'looping';
           startTime = timestamp;
           journeyPath.style.strokeDashoffset = 0;
           cardDistances.forEach(cd => cd.triggered = false);
-          requestAnimationFrame(tick);
+          journeyAnimFrameId = requestAnimationFrame(tick);
         }
       } else if (animState === 'looping') {
         const elapsed = timestamp - startTime;
@@ -7910,22 +7948,29 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
         
-        requestAnimationFrame(tick);
+        journeyAnimFrameId = requestAnimationFrame(tick);
       }
     }
 
-    // Intersection Observer: Start the sequence only when the journey block is visible
+    // Intersection Observer: Run animation only when journey block is in view
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting && animState === 'idle') {
-          animState = 'first-play';
-          startTime = null;
-          resetStepStates();
-          requestAnimationFrame(tick);
-          observer.unobserve(entry.target);
+        journeyVisible = entry.isIntersecting;
+        if (journeyVisible) {
+          if (animState === 'idle') {
+            animState = 'first-play';
+            startTime = null;
+            resetStepStates();
+          }
+          if (!journeyAnimFrameId) {
+            journeyAnimFrameId = requestAnimationFrame(tick);
+          }
+        } else if (journeyAnimFrameId) {
+          cancelAnimationFrame(journeyAnimFrameId);
+          journeyAnimFrameId = null;
         }
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.1 });
 
     const journeyContainer = document.querySelector('.journey-container');
     if (journeyContainer) {
@@ -8020,11 +8065,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Hook up listeners
+  // Hook up listeners with debouncing
+  let resizeTimeout;
   window.addEventListener('load', updateWorkflowLines);
-  window.addEventListener('resize', updateWorkflowLines);
-  setTimeout(updateWorkflowLines, 100);
-  setTimeout(updateWorkflowLines, 500);
+  window.addEventListener('resize', () => {
+    if (resizeTimeout) cancelAnimationFrame(resizeTimeout);
+    resizeTimeout = requestAnimationFrame(updateWorkflowLines);
+  });
+  setTimeout(updateWorkflowLines, 200);
 });
 </script>
 
@@ -8054,43 +8102,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   
   sections.forEach(s => {
-    const rect = s.getBoundingClientRect();
-    if (rect.top < window.innerHeight + 150) {
-      revealSection(s);
-    } else {
-      observer.observe(s);
-    }
-  });
-});
-
-
-  // Mobile Nav Drawer Toggle Logic
-  const toggleBtn = document.querySelector('.mobile-nav-toggle');
-  const closeBtn = document.querySelector('.mobile-drawer-close');
-  const drawer = document.querySelector('.mobile-nav-drawer');
-  
-  if (toggleBtn && closeBtn && drawer) {
-    toggleBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      drawer.classList.add('active');
-      toggleBtn.setAttribute('aria-expanded', 'true');
-      closeBtn.focus();
-    });
-    
-    const closeDrawer = () => {
-      drawer.classList.remove('active');
-      toggleBtn.setAttribute('aria-expanded', 'false');
-      toggleBtn.focus();
-    };
-    
-    closeBtn.addEventListener('click', closeDrawer);
-    
-    // Close drawer when clicking a link
-    const drawerLinks = drawer.querySelectorAll('a');
-    drawerLinks.forEach(link => {
-      link.addEventListener('click', closeDrawer);
-    });
-    
     // Close drawer when clicking outside
     document.addEventListener('click', (e) => {
       if (drawer.classList.contains('active') && !drawer.contains(e.target) && !toggleBtn.contains(e.target)) {
